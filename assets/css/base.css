@@ -5,14 +5,14 @@
 
 /* --- Variables -------------------------------------------- */
 :root {
-  /* Palette "Émeraude sobre" */
+  /* Palette "Royal Marine" — bleu profond éditorial */
   --color-bg:           #FAFAF7;
   --color-surface:      #FFFFFF;
   --color-ink:          #1B1B18;
   --color-text:         #6F6F68;
-  --color-accent:       #2E7D5B;  /* émeraude principale */
-  --color-accent-soft:  #E5EFE9;  /* émeraude très claire — fonds subtils */
-  --color-accent-deep:  #1F5A40;  /* émeraude profonde — hovers */
+  --color-accent:       #1E3A8A;  /* royal marine — bleu profond signature */
+  --color-accent-soft:  #E6EAF4;  /* bleu très clair — fonds subtils */
+  --color-accent-deep:  #152868;  /* bleu encore plus profond — hovers, états actifs */
   --color-paper:        #F4F2EB;  /* crème chaud — sections respiration */
   --color-border:       rgba(0, 0, 0, 0.08);
   --color-border-strong: rgba(0, 0, 0, 0.15);
