@@ -5,14 +5,14 @@
 
 /* --- Variables -------------------------------------------- */
 :root {
-  /* Palette "Royal Marine" — bleu profond éditorial */
+  /* Palette "Royal Marine clair" — bleu signature plus lumineux */
   --color-bg:           #FAFAF7;
   --color-surface:      #FFFFFF;
   --color-ink:          #1B1B18;
   --color-text:         #6F6F68;
-  --color-accent:       #1E3A8A;  /* royal marine — bleu profond signature */
-  --color-accent-soft:  #E6EAF4;  /* bleu très clair — fonds subtils */
-  --color-accent-deep:  #152868;  /* bleu encore plus profond — hovers, états actifs */
+  --color-accent:       #2A4FAE;  /* bleu signature, plus lumineux que royal navy */
+  --color-accent-soft:  #EAEDF6;  /* bleu très clair — fonds subtils */
+  --color-accent-deep:  #1C3B91;  /* bleu profond — hovers, états actifs */
   --color-paper:        #F4F2EB;  /* crème chaud — sections respiration */
   --color-border:       rgba(0, 0, 0, 0.08);
   --color-border-strong: rgba(0, 0, 0, 0.15);
