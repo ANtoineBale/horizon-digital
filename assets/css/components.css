@@ -503,8 +503,32 @@
   background-color: var(--color-paper);
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  transition: background-color 0.3s ease;
 }
 
+.realisation-card:hover .realisation-thumb {
+  background-color: var(--color-accent-soft);
+}
+
+/* Logo affiché comme thumbnail (centré, contenu, sans déformation) */
+.realisation-thumb-logo {
+  max-width: 75%;
+  max-height: 75%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.realisation-card:hover .realisation-thumb-logo {
+  transform: scale(1.04);
+}
+
+/* Placeholder texte (pour les projets sans visuel encore) */
 .realisation-thumb-placeholder {
   width: 100%;
   height: 100%;
