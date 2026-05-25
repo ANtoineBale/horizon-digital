@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="SB">
+  <rect width="64" height="64" rx="8" fill="#FAFAF7"/>
+  <text x="6" y="52" font-family="'Inter Tight', 'Inter', system-ui, sans-serif" font-size="48" font-weight="500" fill="#2A4FAE" letter-spacing="-1.5">S</text>
+  <text x="34" y="52" font-family="'Inter Tight', 'Inter', system-ui, sans-serif" font-size="48" font-weight="500" font-style="italic" fill="#2A4FAE" letter-spacing="-1.5">B</text>
+</svg>
