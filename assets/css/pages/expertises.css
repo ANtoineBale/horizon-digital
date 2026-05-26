@@ -1,0 +1,361 @@
+/* ============================================================
+   pages/expertises.css — Page Expertises V2
+   ============================================================ */
+
+/* --- Hero ------------------------------------------------- */
+.expertises-hero {
+  padding-block: clamp(4rem, 7vw, 7rem) clamp(3rem, 5vw, 5rem);
+}
+
+.expertises-hero h1 {
+  max-width: 20ch;
+  margin-bottom: 1.5rem;
+}
+
+.expertises-hero h1 em {
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+.expertises-hero-sub {
+  max-width: 58ch;
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  color: var(--color-text);
+  margin-bottom: 2rem;
+}
+
+/* --- Ancres rapides --------------------------------------- */
+.expertises-anchors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 0.5px solid var(--color-border);
+}
+
+.expertises-anchor {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.125rem;
+  border-radius: var(--btn-radius);
+  border: 1px solid var(--color-border-strong);
+  font-size: var(--size-small);
+  font-weight: 500;
+  color: var(--color-ink);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.expertises-anchor::after {
+  content: '↓';
+  color: var(--color-accent);
+  transition: transform 0.2s ease;
+}
+
+.expertises-anchor:hover {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent-soft);
+  color: var(--color-accent-deep);
+}
+
+.expertises-anchor:hover::after {
+  transform: translateY(2px);
+}
+
+/* --- Section Offre --------------------------------------- */
+.offre {
+  padding-block: clamp(4rem, 7vw, 6rem);
+  scroll-margin-top: calc(var(--header-height) + 1rem);
+}
+
+.offre:nth-child(even) {
+  background-color: var(--color-paper);
+}
+
+.offre-inner {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .offre-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* Header sticky de l'offre */
+.offre-header {
+  position: sticky;
+  top: calc(var(--header-height) + 2rem);
+}
+
+@media (max-width: 900px) {
+  .offre-header {
+    position: static;
+  }
+}
+
+.offre-num {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 500;
+  color: var(--color-accent);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  margin-bottom: 0.75rem;
+}
+
+.offre-header h2 {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  margin-bottom: 1rem;
+}
+
+.offre-tagline {
+  font-size: var(--size-body);
+  color: var(--color-text);
+  line-height: 1.5;
+  max-width: 30ch;
+}
+
+/* Corps de l'offre */
+.offre-body {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.offre-pour-qui {
+  font-family: var(--font-display);
+  font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+  line-height: 1.45;
+  color: var(--color-ink);
+  letter-spacing: -0.01em;
+  padding-bottom: 2rem;
+  border-bottom: 0.5px solid var(--color-border);
+}
+
+.offre-pour-qui em {
+  font-style: italic;
+  color: var(--color-accent);
+}
+
+/* Grille 2 colonnes */
+.offre-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+
+@media (max-width: 600px) {
+  .offre-cols {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.offre-label {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+}
+
+.offre-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.offre-list li {
+  font-size: var(--size-body);
+  line-height: 1.5;
+  padding-left: 1.25rem;
+  position: relative;
+  color: var(--color-ink);
+}
+
+.offre-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  width: 0.5rem;
+  height: 1px;
+  background-color: var(--color-accent);
+}
+
+.offre-result {
+  font-size: var(--size-body);
+  line-height: var(--lh-body);
+  color: var(--color-ink);
+}
+
+/* --- Process en 4 étapes ---------------------------------- */
+.process-section .section-head {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.process-section .surtitre {
+  margin-inline: auto;
+}
+
+.process-section h2 {
+  max-width: 24ch;
+  margin-inline: auto;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.process-step {
+  background-color: var(--color-surface);
+  border: 0.5px solid var(--color-border);
+  border-radius: 12px;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  position: relative;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.process-step:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.process-step-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--color-accent);
+  letter-spacing: -0.02em;
+}
+
+.process-step h3 {
+  font-size: 1.125rem;
+  color: var(--color-ink);
+}
+
+.process-step p {
+  font-size: var(--size-small);
+  line-height: 1.55;
+  color: var(--color-text);
+}
+
+/* --- Tarifs ---------------------------------------------- */
+.tarifs-section {
+  background-color: var(--color-paper);
+}
+
+.tarifs-section .section-head {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tarifs-section .surtitre {
+  margin-inline: auto;
+}
+
+.tarifs-section h2 {
+  max-width: 22ch;
+  margin-inline: auto;
+}
+
+.tarifs-text {
+  max-width: 56ch;
+  margin: 2rem auto 0;
+  font-size: clamp(1rem, 1.3vw, 1.125rem);
+  line-height: var(--lh-body);
+  color: var(--color-text);
+  text-align: center;
+}
+
+.tarifs-text em {
+  color: var(--color-accent);
+  font-style: italic;
+}
+
+/* --- Outils (grille typographique sans icônes) ------------ */
+.outils-section .section-head {
+  margin-bottom: 3rem;
+}
+
+.outils-section h2 {
+  max-width: 24ch;
+}
+
+.outils-section .lead {
+  max-width: 56ch;
+  color: var(--color-text);
+  margin-top: 1rem;
+}
+
+.outils-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+@media (max-width: 900px) {
+  .outils-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.outils-col h3 {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 0.5px solid var(--color-accent);
+}
+
+.outils-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+.outils-col li {
+  font-size: var(--size-body);
+  font-weight: 500;
+  color: var(--color-ink);
+  line-height: 1.4;
+}
+
+.outils-col li small {
+  display: block;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-text);
+  margin-top: 0.15rem;
+}
