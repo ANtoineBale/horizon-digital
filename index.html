@@ -2,394 +2,641 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Studio Balesi — Le studio digital qui livre votre projet</title>
-  <meta name="description" content="Studio à une personne pour piloter votre lancement digital : marque, présence en ligne et conduite de projet. Marseille / Aix-en-Provence.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horizon Digital — Agence marketing, communication &amp; IA</title>
+  <meta name="description" content="Stratégie de marque, communication digitale et intégration de l'IA. Un partenaire unique pour concevoir, produire et livrer votre projet digital. Marseille / Aix — et à distance.">
+  <meta name="theme-color" content="#0A1226">
 
-  <meta property="og:title" content="Studio Balesi — Le studio digital qui livre votre projet">
-  <meta property="og:description" content="Un seul interlocuteur, des livrables clairs. Identité, présence et conduite de projet.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://studiobalesi.fr">
+  <meta property="og:url" content="https://horizondigital.fr">
+  <meta property="og:title" content="Horizon Digital — Agence marketing, communication &amp; IA">
+  <meta property="og:description" content="Stratégie de marque, communication digitale et intégration de l'IA. Un seul interlocuteur, du cadrage à la livraison.">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://horizondigital.fr">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
   <link rel="stylesheet" href="assets/css/components.css">
   <link rel="stylesheet" href="assets/css/pages/home.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Horizon Digital",
+    "description": "Agence de marketing, communication et stratégie digitale, spécialisée dans l'intégration de l'intelligence artificielle.",
+    "areaServed": "France",
+    "address": { "@type": "PostalAddress", "addressLocality": "Marseille", "addressRegion": "PACA", "addressCountry": "FR" },
+    "founder": { "@type": "Person", "name": "Antoine Balesi" },
+    "sameAs": ["https://www.linkedin.com/in/antoine-balesi-203494299"]
+  }
+  </script>
 </head>
 <body>
 
-  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+<a href="#main" class="skip-link">Aller au contenu principal</a>
 
-  <!-- HEADER -->
-  <header class="site-header" role="banner">
-    <div class="container">
-      <nav class="nav-inner" aria-label="Navigation principale">
-        <a href="index.html" class="nav-logo" aria-label="Studio Balesi — Accueil">
-          <img src="assets/images/logo-sb-blue.svg" alt="" width="160" height="40" class="nav-logo-img">
-        </a>
+<!-- ══════════════════════════════ HEADER ══════════════════════════════ -->
+<header class="header">
+  <div class="header__inner">
 
-        <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Ouvrir le menu">
-          <span></span><span></span><span></span>
-        </button>
+    <a href="index.html" class="logo logo--light" aria-label="Horizon Digital — Accueil">
+      <svg class="logo__mark" viewBox="0 0 128 88" aria-hidden="true">
+        <defs>
+          <linearGradient id="logoArc" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%"   stop-color="#1E7FE0"/>
+            <stop offset="50%"  stop-color="#63B4FF"/>
+            <stop offset="100%" stop-color="#1E7FE0"/>
+          </linearGradient>
+        </defs>
+        <g fill="#2E9BFF">
+          <rect x="34" y="8"  width="14" height="72" rx="1.5"/>
+          <rect x="80" y="8"  width="14" height="72" rx="1.5"/>
+          <rect x="34" y="36" width="60" height="14" rx="1.5"/>
+        </g>
+        <path d="M6 60 C 30 34, 98 34, 122 60 C 96 46, 32 46, 6 60 Z" fill="url(#logoArc)"/>
+      </svg>
+      <span class="logo__word">
+        <span class="logo__name">Horizon</span>
+        <span class="logo__sub">Digital</span>
+      </span>
+    </a>
 
-        <ul class="nav-links" id="nav-links" role="list">
-          <li><a href="index.html">Accueil</a></li>
-          <li class="nav-item-dropdown">
-            <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Expertises</button>
-            <div class="nav-dropdown" role="menu">
-              <a href="expertises.html#identite" role="menuitem">
-                Identité
-                <small>Marque, naming, charte</small>
-              </a>
-              <a href="expertises.html#presence" role="menuitem">
-                Présence
-                <small>Site, réseaux, contenus</small>
-              </a>
-              <a href="expertises.html#projet" role="menuitem">
-                Projet
-                <small>Cadrage, coordination</small>
-              </a>
-            </div>
-          </li>
-          <li><a href="realisations.html">Réalisations</a></li>
-          <li><a href="presentation.html">Présentation</a></li>
-          <li class="nav-cta"><a href="contact.html" class="btn btn-primary">Me contacter</a></li>
-        </ul>
-      </nav>
+    <nav class="nav" aria-label="Navigation principale">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="index.html" class="nav__link">Accueil</a></li>
+
+        <li class="nav__item nav__item--has-menu">
+          <button class="nav__trigger nav__link" aria-expanded="false" aria-haspopup="true">
+            Expertises
+            <svg class="nav__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true">
+              <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </button>
+          <div class="nav__menu" role="menu">
+            <a href="expertises.html#strategie" role="menuitem">Stratégie de marque<small>Positionnement, identité, plateforme</small></a>
+            <a href="expertises.html#communication" role="menuitem">Communication &amp; contenu<small>Ligne éditoriale, réseaux, campagnes</small></a>
+            <a href="expertises.html#presence" role="menuitem">Présence digitale<small>Site, SEO, acquisition</small></a>
+            <a href="expertises.html#ia" role="menuitem">IA &amp; automatisation<small>Workflows, contenus, outils sur mesure</small></a>
+          </div>
+        </li>
+
+        <li class="nav__item"><a href="realisations.html" class="nav__link">Réalisations</a></li>
+        <li class="nav__item"><a href="presentation.html" class="nav__link">Agence</a></li>
+        <li class="nav__item nav__cta"><a href="contact.html" class="btn btn--primary">Parlons de votre projet</a></li>
+      </ul>
+    </nav>
+
+    <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════════════════════════ HERO ══════════════════════════════ -->
+  <section class="hero">
+
+    <!-- Décor parallaxe : chaque couche a sa profondeur -->
+    <div class="horizon" data-horizon aria-hidden="true">
+      <div class="horizon__scene">
+
+        <div class="horizon__sky"></div>
+
+        <div class="horizon__stars horizon__stars--far" data-depth="0.04" data-scale="0.04"></div>
+        <div class="horizon__stars"                     data-depth="0.08" data-scale="0.06"></div>
+
+        <div class="horizon__sun" data-depth="0.14" data-scale="0.30"></div>
+
+        <!-- L'arc du logo, en très grand -->
+        <svg class="horizon__arc" viewBox="0 0 1200 260" preserveAspectRatio="none" data-depth="0.20" data-scale="0.38">
+          <defs>
+            <linearGradient id="arcGrad" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%"   stop-color="#1E7FE0" stop-opacity="0"/>
+              <stop offset="28%"  stop-color="#2E9BFF" stop-opacity=".75"/>
+              <stop offset="50%"  stop-color="#A8D3FF" stop-opacity=".95"/>
+              <stop offset="72%"  stop-color="#2E9BFF" stop-opacity=".75"/>
+              <stop offset="100%" stop-color="#1E7FE0" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M0 232 C 260 40, 940 40, 1200 232 C 920 120, 280 120, 0 232 Z"/>
+        </svg>
+
+        <div class="horizon__line" data-depth="0.24" data-scale="0.10"></div>
+
+        <!-- Trois plans de crêtes -->
+        <svg class="horizon__ridge horizon__ridge--far" viewBox="0 0 1440 320" preserveAspectRatio="none" data-depth="0.34" data-scale="0.16">
+          <path d="M0,224 C160,178 300,210 440,196 C620,178 760,226 900,212 C1060,196 1200,164 1440,196 L1440,320 L0,320 Z"/>
+        </svg>
+        <svg class="horizon__ridge horizon__ridge--mid" viewBox="0 0 1440 320" preserveAspectRatio="none" data-depth="0.55" data-scale="0.26">
+          <path d="M0,256 C180,222 320,270 480,252 C660,232 820,278 980,258 C1140,238 1300,270 1440,248 L1440,320 L0,320 Z"/>
+        </svg>
+        <svg class="horizon__ridge horizon__ridge--near" viewBox="0 0 1440 320" preserveAspectRatio="none" data-depth="0.82" data-scale="0.42">
+          <path d="M0,288 C200,266 360,302 540,288 C720,274 900,306 1080,292 C1240,280 1340,298 1440,286 L1440,320 L0,320 Z"/>
+        </svg>
+
+        <div class="horizon__grain"></div>
+        <div class="horizon__veil"></div>
+
+      </div>
     </div>
-  </header>
 
-  <!-- MAIN -->
-  <main id="main-content">
+    <div class="hero__content">
+      <div class="container hero__inner">
+        <span class="eyebrow">Marketing · Communication · Intelligence artificielle</span>
 
-    <!-- HERO -->
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="surtitre">Studio digital · Marseille / Aix</span>
-          <h1>Le studio à une personne pour piloter <em>votre lancement digital</em>.</h1>
-          <p class="hero-sub">
-            Vous avez le projet. Je conçois votre marque, je construis votre présence en ligne, et je vous accompagne jusqu'à la mise en service — sans vous laisser gérer dix prestataires.
-          </p>
-          <div class="hero-actions">
-            <a href="contact.html" class="btn btn-primary">Discutons de votre projet</a>
-            <a href="expertises.html" class="btn btn-secondary btn-arrow">Voir mes expertises</a>
-          </div>
-        </div>
+        <h1>Élargissez votre <span class="grad">horizon digital</span>.</h1>
 
-        <aside class="hero-meta" aria-label="Repères">
-          <div class="hero-meta-row">
-            <span class="dot"></span>
-            <strong>1 interlocuteur</strong>
-            <span>· vous parlez à la personne qui livre</span>
-          </div>
-          <div class="hero-meta-row">
-            <span class="dot"></span>
-            <strong>4 étapes</strong>
-            <span>· cadrage, conception, production, livraison</span>
-          </div>
-          <div class="hero-meta-row">
-            <span class="dot"></span>
-            <strong>Devis gratuit</strong>
-            <span>· après un premier échange sans engagement</span>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <!-- MARQUEE PREUVE -->
-    <section class="marquee" aria-label="Projets accompagnés">
-      <div class="marquee-inner">
-        <span class="marquee-item">FregaHouse</span>
-        <span class="marquee-item">Le Jardin du Repos</span>
-        <span class="marquee-item">Shibui</span>
-        <span class="marquee-item">Meet'up</span>
-        <span class="marquee-item">Portfolio éditorial</span>
-        <span class="marquee-item">SAS FregaConcept</span>
-        <!-- dupliqué pour boucle infinie -->
-        <span class="marquee-item" aria-hidden="true">FregaHouse</span>
-        <span class="marquee-item" aria-hidden="true">Le Jardin du Repos</span>
-        <span class="marquee-item" aria-hidden="true">Shibui</span>
-        <span class="marquee-item" aria-hidden="true">Meet'up</span>
-        <span class="marquee-item" aria-hidden="true">Portfolio éditorial</span>
-        <span class="marquee-item" aria-hidden="true">SAS FregaConcept</span>
-      </div>
-    </section>
-
-    <!-- INTRO — VOUS N'ÊTES PAS SEUL -->
-    <section class="intro-section">
-      <div class="container">
-        <span class="surtitre">Vous n'êtes pas seul</span>
-        <h2>Lancer un projet digital seul, c'est jongler avec dix prestataires.</h2>
-        <p class="lead">
-          Studio Balesi prend tout en main — la marque, le site, les contenus, la coordination — et vous fait gagner ce que vous ne devriez jamais perdre : du temps, de la clarté, et le contrôle de votre projet.
+        <p class="hero__sub">
+          Stratégie de marque, communication et intégration de l'IA.
+          Un partenaire unique pour concevoir, produire et livrer votre projet —
+          sans multiplier les prestataires.
         </p>
-      </div>
-    </section>
 
-    <!-- SERVICES — MON PLAN -->
-    <section class="services-section section-paper">
-      <div class="container">
-        <div class="section-head">
-          <span class="surtitre">Mes expertises</span>
-          <h2>Mon plan pour votre lancement digital.</h2>
-          <p class="lead">Selon là où en est votre projet, on commence par votre marque, par votre visibilité, ou par la conduite du projet lui-même.</p>
+        <div class="hero__actions">
+          <a href="contact.html" class="btn btn--primary">
+            Parlons de votre projet
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#expertises" class="btn btn--ghost">Découvrir mes expertises</a>
         </div>
 
-        <div class="services-grid fade-in">
-          <article class="service-card">
-            <span class="service-num">01 — Identité</span>
-            <h3>Donner un visage à votre marque.</h3>
-            <p>Positionnement, naming, logo, charte graphique, ton de voix. Tout pour qu'on vous reconnaisse — et qu'on s'en souvienne.</p>
-            <a href="expertises.html#identite" class="service-link">Découvrir l'offre Identité</a>
-          </article>
-
-          <article class="service-card">
-            <span class="service-num">02 — Présence</span>
-            <h3>Vous rendre visible et joignable.</h3>
-            <p>Site, profils réseaux, stratégie de contenu de lancement et premiers contenus prêts à publier. Une présence en ligne professionnelle, activable.</p>
-            <a href="expertises.html#presence" class="service-link">Découvrir l'offre Présence</a>
-          </article>
-
-          <article class="service-card">
-            <span class="service-num">03 — Projet</span>
-            <h3>Mener votre projet jusqu'au bout.</h3>
-            <p>Cadrage, coordination des intervenants, suivi d'avancement et conduite jusqu'à la livraison. Vous gardez la tête haute, je gère la mécanique.</p>
-            <a href="expertises.html#projet" class="service-link">Découvrir l'offre Projet</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- RÉALISATIONS PREVIEW -->
-    <section class="realisations-section">
-      <div class="container">
-        <div class="section-head">
-          <span class="surtitre">Des projets concrets</span>
-          <h2>Se démarquer efficacement grâce au digital.</h2>
-          <p class="lead">Avant Studio Balesi, j'ai lancé des marques, conçu des sites et coordonné des équipes. Voici ce que ça donne sur le terrain.</p>
-        </div>
-
-        <div class="realisations-grid fade-in">
-          <article class="realisation-card">
-            <div class="realisation-thumb">
-              <img src="assets/images/realisations/logo-fregahouse.png" alt="Logo FregaHouse" class="realisation-thumb-logo" loading="lazy">
-            </div>
-            <div class="realisation-body">
-              <span class="realisation-tags">Branding · Site web</span>
-              <h3>FregaHouse</h3>
-              <p>Création d'une marque immobilière de A à Z — naming des gammes Gaïa &amp; Lumina, identité, site, supports salon.</p>
-            </div>
-          </article>
-
-          <article class="realisation-card">
-            <div class="realisation-thumb">
-              <img src="assets/images/realisations/logo-jardin-du-repos.png" alt="Logo Le Jardin du Repos" class="realisation-thumb-logo" loading="lazy">
-            </div>
-            <div class="realisation-body">
-              <span class="realisation-tags">Service · Branding · Outil sur mesure</span>
-              <h3>Le Jardin du Repos</h3>
-              <p>Conception complète d'un service d'entretien de sépultures — du concept au premier client signé, simulateur tarifaire inclus.</p>
-            </div>
-          </article>
-
-          <article class="realisation-card">
-            <div class="realisation-thumb">
-              <img src="assets/images/realisations/logo-shibui.png" alt="Logo Shibui" class="realisation-thumb-logo" loading="lazy">
-            </div>
-            <div class="realisation-body">
-              <span class="realisation-tags">Application · Conduite de projet</span>
-              <h3>Shibui</h3>
-              <p>Cofondation d'une application dédiée à la recherche d'alternance — coordination d'équipe pluridisciplinaire en tant que chef de projet.</p>
-            </div>
-          </article>
-        </div>
-
-        <div style="margin-top: 2.5rem; text-align: center;">
-          <a href="realisations.html" class="btn btn-secondary btn-arrow">Voir toutes les réalisations</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- STATS -->
-    <section class="stats-section">
-      <div class="container">
-        <div class="section-head">
-          <span class="surtitre">Chiffres-clés</span>
-          <h2>Des résultats concrets, pas de la théorie.</h2>
-        </div>
-
-        <div class="stats fade-in">
-          <div class="stat">
-            <p class="stat-num"><em>4</em><span class="stat-suffix">sites</span></p>
-            <p class="stat-label">Sites internet conçus et lancés</p>
-            <p class="stat-detail">De la première maquette à la mise en ligne, avec passation complète.</p>
-          </div>
-          <div class="stat">
-            <p class="stat-num"><em>3</em><span class="stat-suffix">marques</span></p>
-            <p class="stat-label">Marques créées de A à Z</p>
-            <p class="stat-detail">Positionnement, naming, identité visuelle, charte et premiers supports.</p>
-          </div>
-          <div class="stat">
-            <p class="stat-num"><em>1</em><span class="stat-suffix">interlocuteur</span></p>
-            <p class="stat-label">Vous parlez à la personne qui livre</p>
-            <p class="stat-detail">Pas d'intermédiaire, pas de devis qui gonfle. Un studio, une personne, un projet.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- QUOTE / MANIFESTE -->
-    <section class="quote-section">
-      <div class="container">
-        <div class="quote-block">
-          <blockquote>
-            Une marque devient réelle quand elle rencontre <em>ses premiers clients</em>.
-          </blockquote>
-          <p class="quote-attr">Conviction Studio Balesi</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="faq-section section-paper">
-      <div class="container">
-        <div class="section-head">
-          <span class="surtitre">Foire aux questions</span>
-          <h2>Les points essentiels à connaître.</h2>
-        </div>
-
-        <div class="faq">
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>Comment évaluer si un studio à une personne peut suffire pour mon projet ?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                Si votre projet demande une marque cohérente, une présence digitale crédible et une coordination claire — oui. Quand il faut des compétences que je n'ai pas (motion design lourd, dev applicatif complexe), je le dis dès le cadrage et je m'entoure. L'honnêteté sur le périmètre est la base du studio.
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>Combien coûte un accompagnement Studio Balesi ?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                Chaque projet est différent. Je travaille sur devis après un premier échange de cadrage, qui est gratuit et sans engagement. Vous repartez avec une estimation claire (périmètre, planning, budget) et vous décidez ensuite.
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>Quels sont les délais pour livrer un projet complet ?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                Un kit de marque complet (Identité) demande en général 3 à 5 semaines. Un site vitrine (Présence) compte 4 à 8 semaines selon l'ampleur. Une mission Projet dépend du périmètre. Le planning est arrêté pendant le cadrage, avant toute production.
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>Travaillez-vous uniquement à Marseille et Aix-en-Provence ?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                Marseille et Aix sont mes terrains naturels — c'est là que je rencontre les clients quand c'est utile. Mais le travail se fait très bien à distance : la majorité des projets digitaux se mènent en visio + points d'étape. La géographie ne limite pas la collaboration.
-              </div>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <button class="faq-question" aria-expanded="false">
-              <span>Que se passe-t-il après la livraison du projet ?</span>
-              <span class="faq-icon" aria-hidden="true"></span>
-            </button>
-            <div class="faq-answer">
-              <div class="faq-answer-inner">
-                Vous repartez avec tous les fichiers source, une passation complète (manuel, accès, démos) et l'autonomie pour faire vivre le projet vous-même. Si vous voulez prolonger la collaboration (suivi, évolutions), on en parle — sans engagement de continuité.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA FINALE -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-block fade-in">
-          <span class="surtitre">Prêt à démarrer</span>
-          <h2>Discutons de votre projet ensemble.</h2>
-          <p>Un premier échange gratuit, sans engagement, pour comprendre votre besoin et voir si je peux vous aider.</p>
-          <a href="contact.html" class="btn btn-primary">Me contacter</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <p class="footer-mark">Studio <em>Balesi</em>.</p>
-          <p>Le studio digital à une personne pour piloter votre lancement. Marseille / Aix-en-Provence — et à distance.</p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Studio</h4>
-          <ul>
-            <li><a href="presentation.html">Présentation</a></li>
-            <li><a href="realisations.html">Réalisations</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="https://antoinebale.github.io" target="_blank" rel="noopener noreferrer">Portfolio personnel</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Expertises</h4>
-          <ul>
-            <li><a href="expertises.html#identite">Identité</a></li>
-            <li><a href="expertises.html#presence">Présence</a></li>
-            <li><a href="expertises.html#projet">Projet</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Légal</h4>
-          <ul>
-            <li><a href="mentions-legales.html">Mentions légales</a></li>
-            <li><a href="contact.html">Nous contacter</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">
-        <p>© 2026 Studio Balesi — SIREN [à compléter] — Tous droits réservés.</p>
-        <div class="footer-social">
-          <a href="https://www.linkedin.com/in/antoine-balesi-203494299" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-          <a href="mailto:contact@studiobalesi.fr">contact@studiobalesi.fr</a>
+        <div class="hero__trust">
+          <div class="hero__trust-item"><span class="hero__dot"></span><span><strong>1 interlocuteur</strong> du cadrage à la livraison</span></div>
+          <div class="hero__trust-item"><span class="hero__dot"></span><span><strong>IA intégrée</strong> à chaque étape</span></div>
+          <div class="hero__trust-item"><span class="hero__dot"></span><span><strong>Premier échange</strong> gratuit</span></div>
         </div>
       </div>
     </div>
-  </footer>
 
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/accordion.js"></script>
+    <div class="hero__scroll" aria-hidden="true">
+      <span>Défiler</span>
+      <span class="hero__scroll-line"></span>
+    </div>
+
+  </section>
+
+  <!-- ══════════════════════════ PREUVE SOCIALE ══════════════════════════ -->
+  <section class="marquee" aria-label="Marques et projets accompagnés">
+    <div class="marquee__track">
+      <span class="marquee__item">FregaHouse</span>
+      <span class="marquee__item">Le Jardin du Repos</span>
+      <span class="marquee__item">Shibui</span>
+      <span class="marquee__item">SAS FregaConcept</span>
+      <span class="marquee__item">Meet'up</span>
+      <span class="marquee__item" aria-hidden="true">FregaHouse</span>
+      <span class="marquee__item" aria-hidden="true">Le Jardin du Repos</span>
+      <span class="marquee__item" aria-hidden="true">Shibui</span>
+      <span class="marquee__item" aria-hidden="true">SAS FregaConcept</span>
+      <span class="marquee__item" aria-hidden="true">Meet'up</span>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ POSITIONNEMENT ══════════════════════════ -->
+  <section class="section">
+    <div class="container pitch__grid">
+
+      <div data-reveal>
+        <span class="eyebrow">Le constat</span>
+        <h2>Le digital avance vite. Votre marque ne devrait pas courir derrière.</h2>
+        <p class="lead">
+          Entre l'identité, le site, les contenus, les réseaux et maintenant l'IA,
+          les chantiers se multiplient — et les prestataires aussi.
+          Horizon Digital réunit tout ça sous une seule responsabilité : la mienne.
+        </p>
+
+        <div class="pitch__points">
+          <div class="pitch__point">
+            <span class="pitch__check" aria-hidden="true">
+              <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <strong>Un seul interlocuteur</strong>
+              <p>Vous parlez directement à la personne qui conçoit et qui produit. Pas d'intermédiaire, pas de devis qui gonfle.</p>
+            </div>
+          </div>
+
+          <div class="pitch__point">
+            <span class="pitch__check" aria-hidden="true">
+              <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <strong>L'IA au service du concret</strong>
+              <p>Pas de gadget. J'utilise l'IA pour produire plus vite et automatiser ce qui vous coûte du temps chaque semaine.</p>
+            </div>
+          </div>
+
+          <div class="pitch__point">
+            <span class="pitch__check" aria-hidden="true">
+              <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3.5 3.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <div>
+              <strong>Des livrables, pas des slides</strong>
+              <p>À chaque étape vous savez ce que vous obtenez et quand. Vous repartez autonome, avec les clés en main.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pitch__visual is-dark" data-reveal="1">
+        <div class="pitch__rings" aria-hidden="true">
+          <span class="pitch__ring"></span>
+          <span class="pitch__ring"></span>
+          <span class="pitch__ring"></span>
+          <span class="pitch__ring"></span>
+        </div>
+        <div class="pitch__stat">
+          <div class="pitch__stat-num">100 %</div>
+          <p class="pitch__stat-label">des projets engagés menés jusqu'à la mise en ligne</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ EXPERTISES ══════════════════════════ -->
+  <section class="section section--paper" id="expertises">
+    <div class="container">
+
+      <div class="section-head section-head--center" data-reveal>
+        <span class="eyebrow">Mes expertises</span>
+        <h2>Quatre leviers pour faire avancer votre projet.</h2>
+        <p class="lead">Selon là où vous en êtes, on démarre par la marque, par la visibilité, par l'acquisition — ou par l'automatisation.</p>
+      </div>
+
+      <div class="grid grid--4">
+
+        <article class="card expertise-card" data-reveal="0">
+          <span class="card__num">01</span>
+          <h3>Stratégie de marque</h3>
+          <p>Clarifier ce que vous êtes, pour qui, et pourquoi on devrait vous choisir.</p>
+          <ul>
+            <li>Positionnement</li>
+            <li>Naming &amp; identité</li>
+            <li>Charte graphique</li>
+            <li>Ton de voix</li>
+          </ul>
+          <a href="expertises.html#strategie" class="link-arrow">En savoir plus</a>
+        </article>
+
+        <article class="card expertise-card" data-reveal="1">
+          <span class="card__num">02</span>
+          <h3>Communication &amp; contenu</h3>
+          <p>Dire les bonnes choses, au bon endroit, avec régularité.</p>
+          <ul>
+            <li>Ligne éditoriale</li>
+            <li>Réseaux sociaux</li>
+            <li>Campagnes de lancement</li>
+            <li>Supports print &amp; digital</li>
+          </ul>
+          <a href="expertises.html#communication" class="link-arrow">En savoir plus</a>
+        </article>
+
+        <article class="card expertise-card" data-reveal="2">
+          <span class="card__num">03</span>
+          <h3>Présence digitale</h3>
+          <p>Un site qui vous ressemble, qu'on trouve et qui convertit.</p>
+          <ul>
+            <li>Site vitrine sur mesure</li>
+            <li>SEO technique &amp; éditorial</li>
+            <li>Profils &amp; fiches établissement</li>
+            <li>Mesure des résultats</li>
+          </ul>
+          <a href="expertises.html#presence" class="link-arrow">En savoir plus</a>
+        </article>
+
+        <article class="card expertise-card expertise-card--ai" data-reveal="3">
+          <span class="badge">Spécialité</span>
+          <h3>IA &amp; automatisation</h3>
+          <p>Gagner des heures chaque semaine sur ce qui est répétitif.</p>
+          <ul>
+            <li>Audit des tâches automatisables</li>
+            <li>Workflows Make / Zapier</li>
+            <li>Assistants &amp; prompts sur mesure</li>
+            <li>Formation de vos équipes</li>
+          </ul>
+          <a href="expertises.html#ia" class="link-arrow">En savoir plus</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ IA CONCRÈTE ══════════════════════════ -->
+  <section class="section is-dark stats-band">
+    <div class="container">
+
+      <div class="section-head section-head--center" data-reveal>
+        <span class="eyebrow">L'IA, concrètement</span>
+        <h2>Ce que l'IA change vraiment dans votre quotidien.</h2>
+        <p class="lead">Trois exemples de ce que je mets en place — mesurables dès le premier mois.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="card expertise-card expertise-card--ai" data-reveal="0">
+          <span class="card__num">Cas 01</span>
+          <h3>Production de contenu</h3>
+          <p>Une ligne éditoriale et des modèles de prompts calibrés sur votre ton de voix : vos publications passent de deux heures à vingt minutes, sans perdre votre voix.</p>
+        </article>
+
+        <article class="card expertise-card expertise-card--ai" data-reveal="1">
+          <span class="card__num">Cas 02</span>
+          <h3>Traitement des demandes</h3>
+          <p>Vos formulaires, e-mails et messages entrants sont triés, qualifiés et routés automatiquement. Vous ne traitez plus que ce qui mérite votre attention.</p>
+        </article>
+
+        <article class="card expertise-card expertise-card--ai" data-reveal="2">
+          <span class="card__num">Cas 03</span>
+          <h3>Devis &amp; relances</h3>
+          <p>Simulateurs, modèles de devis et séquences de relance automatisés — comme le simulateur tarifaire que j'ai codé pour Le Jardin du Repos.</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ MÉTHODE ══════════════════════════ -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">La méthode</span>
+        <h2>Quatre étapes, zéro zone grise.</h2>
+        <p class="lead">Vous savez à tout moment où en est le projet, ce qui arrive ensuite et ce que vous recevez à la fin.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step" data-reveal="0">
+          <div class="step__dot">01</div>
+          <h3>Cadrage</h3>
+          <p>On définit le besoin réel, l'objectif et le périmètre. Gratuit et sans engagement.</p>
+        </div>
+        <div class="step" data-reveal="1">
+          <div class="step__dot">02</div>
+          <h3>Conception</h3>
+          <p>Direction, contenu, planning. Rien ne démarre avant votre validation écrite.</p>
+        </div>
+        <div class="step" data-reveal="2">
+          <div class="step__dot">03</div>
+          <h3>Production</h3>
+          <p>Je réalise, avec des points d'étape réguliers pour garder le cap.</p>
+        </div>
+        <div class="step" data-reveal="3">
+          <div class="step__dot">04</div>
+          <h3>Livraison</h3>
+          <p>Passation complète : fichiers sources, accès, documentation. Vous êtes autonome.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ RÉALISATIONS ══════════════════════════ -->
+  <section class="section section--paper">
+    <div class="container">
+
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Réalisations</span>
+        <h2>Des marques lancées, pas des maquettes.</h2>
+        <p class="lead">Chaque projet est allé jusqu'au bout : mise en ligne, premiers clients, passation.</p>
+      </div>
+
+      <div class="grid grid--3">
+
+        <article class="card work-card" data-reveal="0">
+          <div class="work-card__thumb">
+            <img src="assets/images/realisations/logo-fregahouse.png" alt="Logo FregaHouse" loading="lazy" width="300" height="200">
+          </div>
+          <div class="work-card__body">
+            <p class="work-card__tags">Branding · Site · Salon</p>
+            <h3>FregaHouse</h3>
+            <p>Marque immobilière créée de A à Z : naming des gammes Gaïa &amp; Lumina, identité, site et supports salon. Livrée en 30 jours.</p>
+          </div>
+        </article>
+
+        <article class="card work-card" data-reveal="1">
+          <div class="work-card__thumb">
+            <img src="assets/images/realisations/logo-jardin-du-repos.png" alt="Logo Le Jardin du Repos" loading="lazy" width="300" height="200">
+          </div>
+          <div class="work-card__body">
+            <p class="work-card__tags">Service · Branding · Outil sur mesure</p>
+            <h3>Le Jardin du Repos</h3>
+            <p>Service d'entretien de sépultures cofondé et lancé : concept, marque, site et simulateur tarifaire codé main. Premier client signé.</p>
+          </div>
+        </article>
+
+        <article class="card work-card" data-reveal="2">
+          <div class="work-card__thumb">
+            <img src="assets/images/realisations/logo-shibui.png" alt="Logo Shibui" loading="lazy" width="300" height="200">
+          </div>
+          <div class="work-card__body">
+            <p class="work-card__tags">Produit · Conduite de projet</p>
+            <h3>Shibui</h3>
+            <p>Application dédiée à la recherche d'alternance. Pivot produit assumé et coordination d'une équipe de 12 personnes.</p>
+          </div>
+        </article>
+
+      </div>
+
+      <div style="margin-top: 2.75rem; text-align: center;" data-reveal="3">
+        <a href="realisations.html" class="btn btn--ghost">Voir toutes les réalisations <span class="btn__arrow" aria-hidden="true">→</span></a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ CHIFFRES ══════════════════════════ -->
+  <section class="section is-dark stats-band">
+    <div class="container">
+
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">En chiffres</span>
+        <h2>Du terrain, pas de la théorie.</h2>
+      </div>
+
+      <div class="stats">
+        <div class="stat" data-reveal="0">
+          <p class="stat__num"><span data-count="4">0</span><span class="stat__suffix">sites</span></p>
+          <p class="stat__label">Sites conçus et mis en ligne</p>
+          <p class="stat__desc">De la première maquette à la passation complète.</p>
+        </div>
+        <div class="stat" data-reveal="1">
+          <p class="stat__num"><span data-count="3">0</span><span class="stat__suffix">marques</span></p>
+          <p class="stat__label">Marques créées de A à Z</p>
+          <p class="stat__desc">Positionnement, naming, identité visuelle et premiers supports.</p>
+        </div>
+        <div class="stat" data-reveal="2">
+          <p class="stat__num"><span data-count="1">0</span><span class="stat__suffix">interlocuteur</span></p>
+          <p class="stat__label">Vous parlez à celui qui livre</p>
+          <p class="stat__desc">Pas d'intermédiaire, pas de perte d'information entre les étapes.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ FAQ ══════════════════════════ -->
+  <section class="section">
+    <div class="container">
+
+      <div class="section-head section-head--center" data-reveal>
+        <span class="eyebrow">Questions fréquentes</span>
+        <h2>Les points essentiels à connaître.</h2>
+      </div>
+
+      <div class="faq" data-reveal="1">
+
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">
+            <span>Une structure à une personne, est-ce suffisant pour mon projet ?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a"><div>
+            <p>Pour une marque, un site, une stratégie de contenu ou une automatisation : oui, et c'est même un avantage — rien ne se perd entre les intervenants. Quand un projet demande une compétence que je n'ai pas (motion design lourd, développement applicatif complexe), je le dis au cadrage et je m'entoure du bon profil.</p>
+          </div></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">
+            <span>Concrètement, qu'est-ce que l'IA apporte à mon projet ?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a"><div>
+            <p>Trois choses mesurables : de la vitesse sur la production de contenu, de l'automatisation sur les tâches répétitives (tri des demandes, relances, devis), et de la constance dans votre communication. Je commence toujours par un audit des tâches automatisables — s'il n'y a rien à gagner, je vous le dis.</p>
+          </div></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">
+            <span>Combien coûte un accompagnement ?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a"><div>
+            <p>Chaque projet étant différent, je travaille sur devis après un premier échange de cadrage — gratuit et sans engagement. Vous repartez avec une estimation claire : périmètre, planning, budget. Vous décidez ensuite, sans pression.</p>
+          </div></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">
+            <span>Quels sont les délais habituels ?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a"><div>
+            <p>Une identité de marque complète demande 3 à 5 semaines. Un site vitrine, 4 à 8 semaines selon l'ampleur. Une automatisation IA se met en place en 1 à 2 semaines. Le planning est arrêté pendant le cadrage, avant toute production.</p>
+          </div></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">
+            <span>Travaillez-vous à distance ?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a"><div>
+            <p>Oui. Je suis basé entre Marseille et Aix-en-Provence, où je rencontre volontiers les clients quand c'est utile. Mais la majorité des projets se mènent très bien en visio avec des points d'étape réguliers — la géographie n'a jamais bloqué une livraison.</p>
+          </div></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">
+            <span>Que se passe-t-il après la livraison ?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a"><div>
+            <p>Vous recevez tous les fichiers sources, les accès et une documentation de passation. Vous êtes autonome pour faire vivre le projet. Si vous préférez déléguer le suivi, on met en place un accompagnement mensuel — mais ce n'est jamais imposé.</p>
+          </div></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ CTA FINALE ══════════════════════════ -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta is-dark" data-reveal>
+        <span class="eyebrow">Prochaine étape</span>
+        <h2>Voyons jusqu'où va votre horizon.</h2>
+        <p>Un premier échange gratuit, sans engagement, pour comprendre votre besoin et voir concrètement comment je peux vous aider.</p>
+        <div class="cta__actions">
+          <a href="contact.html" class="btn btn--primary">Réserver mon échange <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <a href="realisations.html" class="btn btn--ghost">Voir mes réalisations</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══════════════════════════════ FOOTER ══════════════════════════════ -->
+<footer class="footer">
+  <div class="container">
+
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo logo--light" aria-label="Horizon Digital — Accueil">
+          <svg class="logo__mark" viewBox="0 0 128 88" aria-hidden="true">
+            <g fill="#2E9BFF">
+              <rect x="34" y="8"  width="14" height="72" rx="1.5"/>
+              <rect x="80" y="8"  width="14" height="72" rx="1.5"/>
+              <rect x="34" y="36" width="60" height="14" rx="1.5"/>
+            </g>
+            <path d="M6 60 C 30 34, 98 34, 122 60 C 96 46, 32 46, 6 60 Z" fill="#63B4FF"/>
+          </svg>
+          <span class="logo__word">
+            <span class="logo__name">Horizon</span>
+            <span class="logo__sub">Digital</span>
+          </span>
+        </a>
+        <p>Marketing, communication et intelligence artificielle. Un partenaire unique pour élargir votre horizon digital.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4>Expertises</h4>
+        <ul>
+          <li><a href="expertises.html#strategie">Stratégie de marque</a></li>
+          <li><a href="expertises.html#communication">Communication</a></li>
+          <li><a href="expertises.html#presence">Présence digitale</a></li>
+          <li><a href="expertises.html#ia">IA &amp; automatisation</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Agence</h4>
+        <ul>
+          <li><a href="presentation.html">Qui suis-je</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@horizondigital.fr">contact@horizondigital.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/antoine-balesi-203494299" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© <span data-year>2026</span> Horizon Digital — Marseille / Aix-en-Provence — Tous droits réservés.</p>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/in/antoine-balesi-203494299" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script src="assets/js/horizon.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

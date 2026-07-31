@@ -1,0 +1,256 @@
+/* ============================================================
+   design-system.css — Horizon Digital
+   Tokens · Reset · Typographie · Layout · Utilitaires
+   ============================================================ */
+
+/* ============================================================
+   1. TOKENS
+   Palette dérivée du logo : navy du mot-marque, bleu du "H",
+   bleu vif de l'arc. Tout le reste en découle.
+   ============================================================ */
+:root {
+  /* --- Bleus de marque --- */
+  --blue-700: #0F52A8;
+  --blue-600: #1668C9;  /* liens sur fond clair (contraste AA) */
+  --blue-500: #1E7FE0;  /* primaire — le "H" du logo */
+  --blue-400: #2E9BFF;  /* vif — l'arc du logo, accents sur fond sombre */
+  --blue-300: #63B4FF;  /* halo */
+  --blue-200: #A8D3FF;
+  --blue-100: #D6E9FF;
+  --blue-050: #EEF5FF;
+
+  /* --- Navys --- */
+  --navy-950: #060B18;  /* fond le plus profond */
+  --navy-900: #0A1226;  /* fond hero */
+  --navy-800: #101A33;
+  --navy-700: #16213E;  /* navy du mot-marque "HORIZON" */
+  --navy-600: #1F2C4C;
+  --navy-500: #2C3B60;
+
+  /* --- Neutres --- */
+  --white:  #FFFFFF;
+  --paper:  #F6F9FD;   /* fond de page clair */
+  --paper-2:#EDF3FA;   /* sections de respiration */
+  --ink:    #101A33;   /* titres sur fond clair */
+  --muted:  #55637F;   /* texte courant */
+  --muted-2:#7A87A3;   /* texte secondaire */
+  --line:   rgba(22, 33, 62, 0.10);
+  --line-2: rgba(22, 33, 62, 0.18);
+
+  /* --- Sur fond sombre --- */
+  --on-dark:        #EAF1FB;
+  --on-dark-muted:  rgba(234, 241, 251, 0.66);
+  --on-dark-line:   rgba(234, 241, 251, 0.14);
+
+  /* --- Dégradés signature (l'arc du logo) --- */
+  --grad-arc:  linear-gradient(90deg, var(--blue-500) 0%, var(--blue-300) 50%, var(--blue-500) 100%);
+  --grad-text: linear-gradient(100deg, var(--blue-400) 0%, var(--blue-300) 55%, var(--blue-200) 100%);
+  --grad-cta:  linear-gradient(135deg, var(--blue-500) 0%, var(--blue-400) 100%);
+
+  /* --- Typographie --- */
+  --font-display: 'Sora', system-ui, -apple-system, sans-serif;
+  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Échelle fluide */
+  --fs-hero:    clamp(2.75rem, 6.2vw, 5.25rem);
+  --fs-h2:      clamp(2rem, 3.8vw, 3.25rem);
+  --fs-h3:      clamp(1.25rem, 1.8vw, 1.5rem);
+  --fs-lead:    clamp(1.0625rem, 1.4vw, 1.25rem);
+  --fs-body:    1.0625rem;
+  --fs-sm:      0.9375rem;
+  --fs-xs:      0.8125rem;
+  --fs-eyebrow: 0.6875rem;
+
+  /* --- Rythme --- */
+  --section-y: clamp(5rem, 9vw, 8.5rem);
+  --gutter:    clamp(1.25rem, 4vw, 2.5rem);
+  --maxw:      1240px;
+  --maxw-text: 62ch;
+
+  /* --- Formes --- */
+  --r-sm:  8px;
+  --r-md:  14px;
+  --r-lg:  22px;
+  --r-xl:  32px;
+  --r-pill: 999px;
+
+  /* --- Ombres (portées bleutées, jamais grises) --- */
+  --shadow-sm: 0 2px 8px rgba(16, 26, 51, 0.05);
+  --shadow-md: 0 12px 32px -8px rgba(16, 26, 51, 0.12);
+  --shadow-lg: 0 28px 64px -16px rgba(16, 26, 51, 0.20);
+  --shadow-blue: 0 20px 48px -12px rgba(30, 127, 224, 0.35);
+
+  /* --- Transitions --- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-io:  cubic-bezier(0.65, 0, 0.35, 1);
+
+  --header-h: 76px;
+}
+
+/* ============================================================
+   2. RESET
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scroll-padding-top: calc(var(--header-h) + 1.5rem);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* `clip` et non `hidden` : `hidden` ferait du <body> un conteneur de
+     défilement, ce qui gèle window.scrollY (parallaxe + header cassés). */
+  overflow-x: clip;
+}
+
+img, svg, video, canvas { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+input, textarea, select { font: inherit; color: inherit; }
+
+/* ============================================================
+   3. TYPOGRAPHIE
+   ============================================================ */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--fs-hero); letter-spacing: -0.045em; }
+h2 { font-size: var(--fs-h2);   letter-spacing: -0.035em; }
+h3 { font-size: var(--fs-h3);   line-height: 1.25; }
+
+p { color: var(--muted); text-wrap: pretty; }
+
+/* Mot mis en valeur dans un titre — dégradé de l'arc */
+.grad {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Sur fond clair, le dégradé passe en bleu profond pour le contraste */
+.on-light .grad,
+section:not(.is-dark) .grad {
+  background: linear-gradient(100deg, var(--blue-600) 0%, var(--blue-500) 55%, var(--blue-400) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* Eyebrow / surtitre */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue-600);
+  margin-bottom: 1.25rem;
+}
+.eyebrow::before {
+  content: '';
+  width: 26px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--grad-arc);
+}
+.is-dark .eyebrow { color: var(--blue-300); }
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: var(--maxw-text);
+}
+.is-dark .lead,
+.is-dark p { color: var(--on-dark-muted); }
+.is-dark h1, .is-dark h2, .is-dark h3 { color: var(--on-dark); }
+
+/* ============================================================
+   4. LAYOUT
+   ============================================================ */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section { padding-block: var(--section-y); position: relative; }
+.section--tight { padding-block: clamp(3.5rem, 6vw, 5.5rem); }
+.section--paper { background: var(--paper-2); }
+.section--white { background: var(--white); }
+
+.is-dark { background: var(--navy-900); color: var(--on-dark); }
+
+.section-head { max-width: 720px; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
+.section-head--center { margin-inline: auto; text-align: center; }
+.section-head--center .eyebrow { justify-content: center; }
+.section-head--center .lead { margin-inline: auto; }
+.section-head h2 + .lead { margin-top: 1.25rem; }
+
+/* ============================================================
+   5. ANIMATIONS D'ENTRÉE
+   ============================================================ */
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(26px);
+    transition:
+      opacity 0.85s var(--ease-out),
+      transform 0.85s var(--ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  [data-reveal].is-visible { opacity: 1; transform: none; }
+}
+
+/* ============================================================
+   6. ACCESSIBILITÉ
+   ============================================================ */
+:focus-visible {
+  outline: 2px solid var(--blue-400);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 999;
+  padding: 0.875rem 1.5rem;
+  background: var(--navy-900);
+  color: var(--white);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  border-radius: 0 0 var(--r-sm) 0;
+  transform: translateY(-110%);
+  transition: transform 0.25s var(--ease-out);
+}
+.skip-link:focus { transform: none; outline: none; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
