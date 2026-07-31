@@ -318,46 +318,6 @@
 }
 
 /* ============================================================
-   MARQUEE — preuve sociale
-   ============================================================ */
-.marquee {
-  padding-block: 1.5rem;
-  overflow: hidden;
-  border-block: 1px solid var(--on-dark-line);
-  background: var(--navy-800);
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
-}
-.marquee__track {
-  display: flex;
-  align-items: center;
-  gap: 3.5rem;
-  width: max-content;
-  animation: marquee 38s linear infinite;
-}
-.marquee:hover .marquee__track { animation-play-state: paused; }
-.marquee__item {
-  display: inline-flex;
-  align-items: center;
-  gap: 3.5rem;
-  font-family: var(--font-display);
-  font-size: 1rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  color: rgba(234, 241, 251, 0.72);
-  white-space: nowrap;
-}
-.marquee__item::after {
-  content: '';
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--blue-400);
-  flex-shrink: 0;
-}
-@keyframes marquee { to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { .marquee__track { animation: none; } }
-
-/* ============================================================
    CARTES — effet "spotlight" au curseur
    ============================================================ */
 .card {

@@ -21,24 +21,48 @@
   }));
 
   const hero = scene.closest('.hero') || scene.parentElement;
+  const inner = scene.querySelector('.horizon__scene') || scene;
   let heroHeight = hero.offsetHeight;
   let ticking = false;
   let progress = 0;
+
+  /* --- Courbe de sortie -----------------------------------------------
+     L'horizon ne bouge pas tout de suite : il tient sa place pendant le
+     premier tiers du hero (le regard s'installe), puis il s'en va en
+     accélérant. C'est ce délai qui rend le départ perceptible.        */
+  const HOLD = 0.34;                 // part immobile du parcours
+  const TRAVEL = 0.95;               // amplitude de sortie (× hauteur du hero)
+  const FADE_FROM = 0.55;            // début de la disparition (en valeur adoucie)
+
+  function ease(p) {
+    if (p <= HOLD) return 0;
+    const t = (p - HOLD) / (1 - HOLD); // renormalisé 0 → 1
+    return t * t;                      // easeIn : démarre doux, finit vite
+  }
 
   /* --- Écriture : une seule passe, dans le rAF --- */
   function render() {
     ticking = false;
 
+    const e = ease(progress);
+
     for (const { el, depth, scale } of layers) {
       // Translation verticale : le plan descend d'autant plus qu'il est proche
-      const y = progress * depth * heroHeight * 0.55;
+      const y = e * depth * heroHeight * TRAVEL;
       // Agrandissement : donne la sensation d'avancer vers l'horizon
-      const s = 1 + progress * scale;
+      const s = 1 + e * scale;
       el.style.transform = `translate3d(0, ${y.toFixed(2)}px, 0) scale(${s.toFixed(4)})`;
     }
 
-    // Exposé en CSS pour piloter les opacités (ligne d'horizon, scroll cue)
-    scene.style.setProperty('--p', progress.toFixed(4));
+    // Disparition sur la fin du départ : l'horizon quitte vraiment le cadre
+    const fade = 1 - Math.max(0, (e - FADE_FROM) / (1 - FADE_FROM)) * 0.95;
+    inner.style.setProperty('--fade', fade.toFixed(3));
+
+    // Exposées sur le hero pour que les enfants ET l'indicateur de scroll héritent.
+    // --p : progression brute (indicateur de scroll)
+    // --e : progression adoucie (ligne d'horizon)
+    hero.style.setProperty('--p', progress.toFixed(4));
+    hero.style.setProperty('--e', e.toFixed(4));
   }
 
   /* --- Lecture : calcul de la progression du hero ---
@@ -62,8 +86,6 @@
   /* --- Parallaxe souris (desktop, pointeur fin uniquement) --- */
   function initPointerParallax() {
     if (!window.matchMedia('(pointer: fine)').matches) return;
-
-    const inner = scene.querySelector('.horizon__scene');
     if (!inner) return;
 
     let pending = false;
@@ -93,7 +115,8 @@
   /* --- Démarrage --- */
   if (reduced.matches) {
     // Mouvement désactivé : le décor reste une belle image fixe
-    scene.style.setProperty('--p', '0');
+    hero.style.setProperty('--p', '0');
+    hero.style.setProperty('--e', '0');
     return;
   }
 

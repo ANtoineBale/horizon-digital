@@ -19,19 +19,20 @@
 }
 
 /* --- Le décor : toutes les couches parallaxes --- */
+/* --p (brut) et --e (adouci) sont posés par le JS sur .hero,
+   pour que le décor ET l'indicateur de scroll en héritent. */
 .horizon {
   position: absolute;
   inset: 0;
   z-index: -1;
   overflow: hidden;
-  /* --p = progression du scroll (0 → 1), posée par le JS */
-  --p: 0;
 }
 
-/* Wrapper qui reçoit la parallaxe souris (desktop) */
+/* Wrapper qui reçoit la parallaxe souris (desktop) + le fondu de sortie */
 .horizon__scene {
   position: absolute;
   inset: -4%;
+  opacity: var(--fade, 1);
   transform: translate3d(
     calc(var(--mx, 0) * 14px),
     calc(var(--my, 0) * 10px),
@@ -113,7 +114,8 @@
   bottom: 26%;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(99, 180, 255, 0.55) 35%, rgba(168, 211, 255, 0.75) 50%, rgba(99, 180, 255, 0.55) 65%, transparent);
-  opacity: calc(1 - var(--p) * 1.6);
+  /* Suit la courbe adoucie : la ligne tient, puis s'efface avec le décor */
+  opacity: calc(1 - var(--e, 0) * 1.4);
 }
 
 /* Grain cinématique très léger */
