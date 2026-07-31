@@ -99,7 +99,11 @@ html {
 }
 
 body {
-  background: var(--paper);
+  /* Dégradé de page : le fond se bleuit imperceptiblement en descendant,
+     pour qu'aucune zone claire ne soit jamais un aplat mort. */
+  background:
+    linear-gradient(180deg, #F8FAFD 0%, #F2F6FC 46%, #E9EFF9 100%);
+  background-attachment: scroll;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: var(--fs-body);
@@ -199,6 +203,62 @@ section:not(.is-dark) .grad {
 .section--white { background: var(--white); }
 
 .is-dark { background: var(--navy-900); color: var(--on-dark); }
+
+/* ------------------------------------------------------------
+   TEXTURE — grain global
+   Un voile fixe sur toute la page (hero et bandes sombres compris)
+   pour casser le rendu "aplat numérique". Invisible consciemment,
+   perceptible inconsciemment.
+   ------------------------------------------------------------ */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  pointer-events: none;
+  opacity: 0.022;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ------------------------------------------------------------
+   PROFONDEUR — halos bleus ancrés aux sections
+   De larges taches diluées, alternées gauche/droite, qui créent
+   du relief sans motif identifiable.
+   ------------------------------------------------------------ */
+.section:not(.is-dark)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(680px circle at 14% 22%, rgba(46, 155, 255, 0.075), transparent 62%);
+}
+.section:not(.is-dark):nth-of-type(even)::before {
+  background: radial-gradient(740px circle at 86% 28%, rgba(30, 127, 224, 0.07), transparent 64%);
+}
+
+/* Le contenu repasse au-dessus des décors de fond */
+.section > .container { position: relative; z-index: 1; }
+
+/* ------------------------------------------------------------
+   MARQUE — l'arc du logo en filigrane
+   L'horizon du hero réapparaît, énorme et presque invisible.
+   Se pose à la main sur les sections qu'on veut habiter.
+   ------------------------------------------------------------ */
+.section--arc { overflow: hidden; }
+.section--arc::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -14%;
+  width: 165%;
+  aspect-ratio: 3 / 1;
+  transform: translateX(-50%);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.055;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 260' preserveAspectRatio='none'%3E%3Cpath d='M0 232 C 260 40, 940 40, 1200 232 C 920 120, 280 120, 0 232 Z' fill='%232E9BFF'/%3E%3C/svg%3E") no-repeat center bottom / 100% 100%;
+}
 
 .section-head { max-width: 720px; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
 .section-head--center { margin-inline: auto; text-align: center; }
