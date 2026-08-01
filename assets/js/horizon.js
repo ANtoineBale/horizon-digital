@@ -58,10 +58,7 @@
     const fade = 1 - Math.max(0, (e - FADE_FROM) / (1 - FADE_FROM)) * 0.95;
     inner.style.setProperty('--fade', fade.toFixed(3));
 
-    // Exposées sur le hero pour que les enfants ET l'indicateur de scroll héritent.
-    // --p : progression brute (indicateur de scroll)
-    // --e : progression adoucie (ligne d'horizon)
-    hero.style.setProperty('--p', progress.toFixed(4));
+    // Progression adoucie, exposée en CSS pour la ligne d'horizon
     hero.style.setProperty('--e', e.toFixed(4));
   }
 
@@ -115,7 +112,6 @@
   /* --- Démarrage --- */
   if (reduced.matches) {
     // Mouvement désactivé : le décor reste une belle image fixe
-    hero.style.setProperty('--p', '0');
     hero.style.setProperty('--e', '0');
     return;
   }

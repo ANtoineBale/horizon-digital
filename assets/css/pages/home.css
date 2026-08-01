@@ -181,49 +181,6 @@
   flex-shrink: 0;
 }
 
-/* Indicateur de scroll */
-.hero__scroll {
-  position: absolute;
-  left: 50%;
-  bottom: 2.25rem;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.625rem;
-  font-size: var(--fs-eyebrow);
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(234, 241, 251, 0.5);
-  opacity: calc(1 - var(--p, 0) * 2.5);
-  pointer-events: none;
-  z-index: 2;
-}
-.hero__scroll-line {
-  width: 1px; height: 46px;
-  background: linear-gradient(180deg, rgba(234,241,251,0.5), transparent);
-  position: relative;
-  overflow: hidden;
-}
-.hero__scroll-line::after {
-  content: '';
-  position: absolute;
-  top: -50%; left: 0;
-  width: 100%; height: 50%;
-  background: var(--blue-300);
-  animation: scrollCue 2.2s var(--ease-io) infinite;
-}
-@keyframes scrollCue {
-  0%   { transform: translateY(0); opacity: 0; }
-  35%  { opacity: 1; }
-  100% { transform: translateY(300%); opacity: 0; }
-}
-@media (prefers-reduced-motion: reduce) {
-  .hero__scroll-line::after { animation: none; }
-}
-@media (max-height: 700px) { .hero__scroll { display: none; } }
-
 /* ============================================================
    POSITIONNEMENT — split texte / chiffre
    ============================================================ */
