@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — Horizon Digital</title>
+  <meta name="description" content="Un premier échange gratuit, sans engagement, pour cadrer votre projet digital. Réponse sous 48 h ouvrées.">
+  <meta name="theme-color" content="#0A1226">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://horizondigital.fr/contact.html">
+  <meta property="og:title" content="Contact — Horizon Digital">
+  <meta property="og:description" content="Parlons de votre projet. Premier échange gratuit, sans engagement.">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://horizondigital.fr/contact.html">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/design-system.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/pages/inner.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Aller au contenu principal</a>
+
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo logo--light" aria-label="Horizon Digital — Accueil">
+      <svg class="logo__mark" viewBox="0 0 128 88" aria-hidden="true">
+        <defs><linearGradient id="logoArc" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#1E7FE0"/><stop offset="50%" stop-color="#63B4FF"/><stop offset="100%" stop-color="#1E7FE0"/>
+        </linearGradient></defs>
+        <g fill="#2E9BFF">
+          <rect x="34" y="8" width="14" height="72" rx="1.5"/>
+          <rect x="80" y="8" width="14" height="72" rx="1.5"/>
+          <rect x="34" y="36" width="60" height="14" rx="1.5"/>
+        </g>
+        <path d="M6 60 C 30 34, 98 34, 122 60 C 96 46, 32 46, 6 60 Z" fill="url(#logoArc)"/>
+      </svg>
+      <span class="logo__word"><span class="logo__name">Horizon</span><span class="logo__sub">Digital</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="index.html" class="nav__link">Accueil</a></li>
+        <li class="nav__item nav__item--has-menu">
+          <button class="nav__trigger nav__link" aria-expanded="false" aria-haspopup="true">
+            Expertises
+            <svg class="nav__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="nav__menu" role="menu">
+            <a href="expertises.html#strategie" role="menuitem">Stratégie de marque<small>Positionnement, identité, plateforme</small></a>
+            <a href="expertises.html#communication" role="menuitem">Communication &amp; contenu<small>Ligne éditoriale, réseaux, campagnes</small></a>
+            <a href="expertises.html#presence" role="menuitem">Présence digitale<small>Site, SEO, acquisition</small></a>
+            <a href="expertises.html#ia" role="menuitem">IA &amp; automatisation<small>Workflows, contenus, outils sur mesure</small></a>
+          </div>
+        </li>
+        <li class="nav__item"><a href="realisations.html" class="nav__link">Réalisations</a></li>
+        <li class="nav__item"><a href="presentation.html" class="nav__link">Agence</a></li>
+        <li class="nav__item nav__cta"><a href="contact.html" class="btn btn--primary">Parlons de votre projet</a></li>
+      </ul>
+    </nav>
+
+    <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════════════════════ HERO ══════════════════════════ -->
+  <section class="page-hero">
+    <div class="page-hero__decor" aria-hidden="true"></div>
+    <div class="container">
+      <nav class="crumbs" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a><span aria-hidden="true">/</span><span>Contact</span>
+      </nav>
+      <span class="eyebrow">Contact</span>
+      <h1>Parlons de <span class="grad">votre projet</span>.</h1>
+      <p class="lead">Un premier échange gratuit, sans engagement. Vous en repartez avec un périmètre clair, un planning et un ordre de grandeur budgétaire — même si nous ne travaillons pas ensemble ensuite.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ FORMULAIRE ══════════════════════════ -->
+  <section class="section">
+    <div class="container">
+      <div class="contact__grid">
+
+        <!-- Colonne formulaire -->
+        <div data-reveal>
+          <div id="form-status" class="form-status" hidden tabindex="-1"></div>
+
+          <!-- [À FAIRE] Remplacer VOTRE_ID par l'identifiant Formspree réel -->
+          <form id="contact-form" class="form" action="https://formspree.io/f/VOTRE_ID" method="POST" novalidate>
+
+            <div class="field">
+              <label for="name">Nom</label>
+              <input type="text" id="name" name="name" autocomplete="name" placeholder="Votre nom" required>
+            </div>
+
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" autocomplete="email" placeholder="vous@entreprise.fr" required>
+            </div>
+
+            <div class="field">
+              <label for="company">Entreprise ou projet <span>(facultatif)</span></label>
+              <input type="text" id="company" name="company" autocomplete="organization" placeholder="Nom de votre structure">
+            </div>
+
+            <div class="field">
+              <label for="need">Ce dont vous auriez besoin <span>(facultatif)</span></label>
+              <input type="text" id="need" name="need" placeholder="Marque, site, contenus, automatisation…">
+            </div>
+
+            <div class="field">
+              <label for="message">Votre projet en quelques mots</label>
+              <textarea id="message" name="message" placeholder="Où vous en êtes, ce que vous cherchez à obtenir, et sous quel délai si vous en avez un." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary">
+              Envoyer ma demande
+              <span class="btn__arrow" aria-hidden="true">→</span>
+            </button>
+
+            <p class="form__note">
+              Vos informations servent uniquement à répondre à votre demande. Elles ne sont ni revendues, ni utilisées pour de la prospection.
+              Détails dans les <a href="mentions-legales.html">mentions légales</a>.
+            </p>
+          </form>
+        </div>
+
+        <!-- Colonne latérale -->
+        <aside class="contact__aside" data-reveal="1">
+
+          <div class="contact__block">
+            <h3>En direct</h3>
+            <dl class="contact__list">
+              <div>
+                <dt>E-mail</dt>
+                <dd><a href="mailto:contact@horizondigital.fr">contact@horizondigital.fr</a></dd>
+              </div>
+              <div>
+                <dt>LinkedIn</dt>
+                <dd><a href="https://www.linkedin.com/in/antoine-balesi-203494299" target="_blank" rel="noopener noreferrer">Antoine Balesi</a></dd>
+              </div>
+              <div>
+                <dt>Zone d'intervention</dt>
+                <dd>Marseille, Aix-en-Provence — et à distance partout en France.</dd>
+              </div>
+              <div>
+                <dt>Délai de réponse</dt>
+                <dd>48 h ouvrées</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="contact__block">
+            <h3>Ce qui se passe ensuite</h3>
+            <ol class="next">
+              <li>Vous m'écrivez votre besoin, même en quelques lignes.</li>
+              <li>On fixe un échange de 30 minutes, en visio ou par téléphone.</li>
+              <li>Vous recevez une proposition écrite : périmètre, planning, budget.</li>
+              <li>Vous décidez. Sans relance commerciale de ma part.</li>
+            </ol>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ FAQ COURTE ══════════════════════════ -->
+  <section class="section section--paper section--arc">
+    <div class="container">
+      <div class="section-head section-head--center" data-reveal>
+        <span class="eyebrow">Avant de m'écrire</span>
+        <h2>Trois questions qui reviennent souvent.</h2>
+      </div>
+
+      <div class="faq" data-reveal="1">
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">
+            <span>Je ne sais pas encore exactement ce dont j'ai besoin. Je vous écris quand même ?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a"><div>
+            <p>Oui, et c'est même le cas le plus fréquent. Le premier échange sert justement à transformer une intuition en périmètre. Décrivez la situation plutôt que la solution — on identifiera ensemble le bon point de départ.</p>
+          </div></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">
+            <span>Mon budget est limité. Est-ce que ça vaut le coup d'en parler ?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a"><div>
+            <p>Dites-le dès le premier message : c'est une contrainte de cadrage comme une autre. Selon le montant, on réduit le périmètre, on échelonne, ou je vous oriente vers une autre solution. Personne ne gagne à démarrer un projet sous-financé.</p>
+          </div></div>
+        </div>
+
+        <div class="faq__item">
+          <button class="faq__q" aria-expanded="false">
+            <span>L'échange est-il vraiment gratuit ?</span>
+            <span class="faq__icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq__a"><div>
+            <p>Oui, et sans contrepartie. Vous repartez avec l'analyse et l'estimation écrite, que vous décidiez de travailler avec moi ou non. C'est le seul moyen honnête de savoir si nous sommes faits pour collaborer.</p>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo logo--light" aria-label="Horizon Digital — Accueil">
+          <svg class="logo__mark" viewBox="0 0 128 88" aria-hidden="true">
+            <g fill="#2E9BFF">
+              <rect x="34" y="8" width="14" height="72" rx="1.5"/>
+              <rect x="80" y="8" width="14" height="72" rx="1.5"/>
+              <rect x="34" y="36" width="60" height="14" rx="1.5"/>
+            </g>
+            <path d="M6 60 C 30 34, 98 34, 122 60 C 96 46, 32 46, 6 60 Z" fill="#63B4FF"/>
+          </svg>
+          <span class="logo__word"><span class="logo__name">Horizon</span><span class="logo__sub">Digital</span></span>
+        </a>
+        <p>Marketing, communication et intelligence artificielle. Un partenaire unique pour élargir votre horizon digital.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Expertises</h4>
+        <ul>
+          <li><a href="expertises.html#strategie">Stratégie de marque</a></li>
+          <li><a href="expertises.html#communication">Communication</a></li>
+          <li><a href="expertises.html#presence">Présence digitale</a></li>
+          <li><a href="expertises.html#ia">IA &amp; automatisation</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Agence</h4>
+        <ul>
+          <li><a href="presentation.html">Qui suis-je</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@horizondigital.fr">contact@horizondigital.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/antoine-balesi-203494299" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span data-year>2026</span> Horizon Digital — Marseille / Aix-en-Provence — Tous droits réservés.</p>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/in/antoine-balesi-203494299" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/contact.js" defer></script>
+</body>
+</html>

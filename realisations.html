@@ -2,363 +2,399 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Réalisations — Studio Balesi</title>
-  <meta name="description" content="FregaHouse, Le Jardin du Repos, Shibui, portfolio éditorial : des projets menés jusqu'à la livraison.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Réalisations — Horizon Digital</title>
+  <meta name="description" content="FregaHouse, Le Jardin du Repos, Shibui, portfolio éditorial : des marques et des produits menés jusqu'à la mise en ligne.">
+  <meta name="theme-color" content="#0A1226">
 
-  <meta property="og:title" content="Réalisations — Studio Balesi">
-  <meta property="og:description" content="Des projets concrets, menés jusqu'à la livraison.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://studiobalesi.fr/realisations.html">
+  <meta property="og:url" content="https://horizondigital.fr/realisations.html">
+  <meta property="og:title" content="Réalisations — Horizon Digital">
+  <meta property="og:description" content="Des marques lancées, pas des maquettes.">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://horizondigital.fr/realisations.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
   <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/pages/realisations.css">
+  <link rel="stylesheet" href="assets/css/pages/inner.css">
 </head>
 <body>
 
-  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+<a href="#main" class="skip-link">Aller au contenu principal</a>
 
-  <!-- HEADER -->
-  <header class="site-header" role="banner">
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo logo--light" aria-label="Horizon Digital — Accueil">
+      <svg class="logo__mark" viewBox="0 0 128 88" aria-hidden="true">
+        <defs><linearGradient id="logoArc" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#1E7FE0"/><stop offset="50%" stop-color="#63B4FF"/><stop offset="100%" stop-color="#1E7FE0"/>
+        </linearGradient></defs>
+        <g fill="#2E9BFF">
+          <rect x="34" y="8" width="14" height="72" rx="1.5"/>
+          <rect x="80" y="8" width="14" height="72" rx="1.5"/>
+          <rect x="34" y="36" width="60" height="14" rx="1.5"/>
+        </g>
+        <path d="M6 60 C 30 34, 98 34, 122 60 C 96 46, 32 46, 6 60 Z" fill="url(#logoArc)"/>
+      </svg>
+      <span class="logo__word"><span class="logo__name">Horizon</span><span class="logo__sub">Digital</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="index.html" class="nav__link">Accueil</a></li>
+        <li class="nav__item nav__item--has-menu">
+          <button class="nav__trigger nav__link" aria-expanded="false" aria-haspopup="true">
+            Expertises
+            <svg class="nav__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="nav__menu" role="menu">
+            <a href="expertises.html#strategie" role="menuitem">Stratégie de marque<small>Positionnement, identité, plateforme</small></a>
+            <a href="expertises.html#communication" role="menuitem">Communication &amp; contenu<small>Ligne éditoriale, réseaux, campagnes</small></a>
+            <a href="expertises.html#presence" role="menuitem">Présence digitale<small>Site, SEO, acquisition</small></a>
+            <a href="expertises.html#ia" role="menuitem">IA &amp; automatisation<small>Workflows, contenus, outils sur mesure</small></a>
+          </div>
+        </li>
+        <li class="nav__item"><a href="realisations.html" class="nav__link">Réalisations</a></li>
+        <li class="nav__item"><a href="presentation.html" class="nav__link">Agence</a></li>
+        <li class="nav__item nav__cta"><a href="contact.html" class="btn btn--primary">Parlons de votre projet</a></li>
+      </ul>
+    </nav>
+
+    <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════════════════════ HERO ══════════════════════════ -->
+  <section class="page-hero">
+    <div class="page-hero__decor" aria-hidden="true"></div>
     <div class="container">
-      <nav class="nav-inner" aria-label="Navigation principale">
-        <a href="index.html" class="nav-logo" aria-label="Studio Balesi — Accueil">
-          <img src="assets/images/logo-sb-blue.svg" alt="" width="160" height="40" class="nav-logo-img">
-        </a>
-
-        <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Ouvrir le menu">
-          <span></span><span></span><span></span>
-        </button>
-
-        <ul class="nav-links" id="nav-links" role="list">
-          <li><a href="index.html">Accueil</a></li>
-          <li class="nav-item-dropdown">
-            <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Expertises</button>
-            <div class="nav-dropdown" role="menu">
-              <a href="expertises.html#identite" role="menuitem">
-                Identité
-                <small>Marque, naming, charte</small>
-              </a>
-              <a href="expertises.html#presence" role="menuitem">
-                Présence
-                <small>Site, réseaux, contenus</small>
-              </a>
-              <a href="expertises.html#projet" role="menuitem">
-                Projet
-                <small>Cadrage, coordination</small>
-              </a>
-            </div>
-          </li>
-          <li><a href="realisations.html">Réalisations</a></li>
-          <li><a href="presentation.html">Présentation</a></li>
-          <li class="nav-cta"><a href="contact.html" class="btn btn-primary">Me contacter</a></li>
-        </ul>
+      <nav class="crumbs" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a><span aria-hidden="true">/</span><span>Réalisations</span>
       </nav>
+      <span class="eyebrow">Réalisations</span>
+      <h1>Des marques lancées, <span class="grad">pas des maquettes</span>.</h1>
+      <p class="lead">Quatre projets menés jusqu'au bout : mise en ligne, premiers clients, passation. Avec ce que chacun m'a appris.</p>
+
+      <div class="jump">
+        <a href="#fregahouse">FregaHouse</a>
+        <a href="#jardin">Le Jardin du Repos</a>
+        <a href="#shibui">Shibui</a>
+        <a href="#portfolio">Portfolio éditorial</a>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main id="main-content">
-
-    <!-- HERO -->
-    <section class="realisations-hero">
-      <div class="container">
-        <span class="surtitre">Réalisations</span>
-        <h1>Des projets concrets, menés jusqu'à la <em>livraison</em>.</h1>
-        <p class="realisations-hero-sub">Avant Studio Balesi, j'ai lancé des marques, conçu des sites et coordonné des équipes. Voici ce que ça donne sur le terrain.</p>
-
-        <div class="realisations-meta">
-          <div class="meta-item">
-            <span class="meta-num"><em>4</em></span>
-            <span class="meta-label">Projets livrés</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-num"><em>3</em></span>
-            <span class="meta-label">Marques créées</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-num"><em>2</em></span>
-            <span class="meta-label">Cofondations</span>
-          </div>
-          <div class="meta-item">
-            <span class="meta-num"><em>30j</em></span>
-            <span class="meta-label">Plus court délai marque</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- RÉALISATION 1 — FREGAHOUSE -->
-    <section class="realisation" id="fregahouse">
-      <div class="container">
-        <div class="realisation-inner">
-
-          <div class="realisation-visuals">
-            <div class="realisation-visual realisation-visual--photo">
-              <img src="assets/images/realisations/fregahouse-stand.jpg" alt="Stand FregaHouse au salon de l'immobilier" loading="lazy">
-            </div>
-            <div class="realisation-visuals--gallery">
-              <div class="realisation-visual realisation-visual--logo">
-                <img src="assets/images/realisations/logo-fregahouse.png" alt="Logo FregaHouse" loading="lazy">
-              </div>
-              <div class="realisation-visual realisation-visual--photo">
-                <img src="assets/images/realisations/fregahouse-panneau.jpg" alt="Panneau principal FregaHouse" loading="lazy">
-              </div>
-            </div>
-          </div>
-
-          <div class="realisation-body">
-            <div class="realisation-meta">
-              <span class="realisation-tag">Lancement de marque</span>
-              <span class="realisation-tag">Branding</span>
-              <span class="realisation-tag">Site web</span>
-              <span class="realisation-tag">Salon immobilier</span>
-            </div>
-
-            <h2>FregaHouse</h2>
-            <p class="realisation-context">Mission de communication chez SAS FregaConcept — Sept. 2025 → Avril 2026.</p>
-
-            <p>
-              Création de FregaHouse de A à Z : naming des deux gammes (Gaïa &amp; Lumina), identité visuelle, charte graphique, stratégie éditoriale, site internet et supports physiques pour le salon de l'immobilier. Une marque livrée, prête à rencontrer ses premiers clients.
-            </p>
-
-            <div class="realisation-details">
-              <div>
-                <p class="realisation-detail-label">Mon rôle</p>
-                <p class="realisation-detail-value">Naming, branding, charte, site, supports salon, structuration de l'offre.</p>
-              </div>
-              <div>
-                <p class="realisation-detail-label">Chiffres-clés</p>
-                <p class="realisation-detail-value">2 gammes lancées · 30 jours pour livrer la marque · 1 salon couvert.</p>
-              </div>
-            </div>
-
-            <p class="realisation-quote">
-              Ce que j'en retiens — une bonne marque tient si elle se distribue.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- RÉALISATION 2 — LE JARDIN DU REPOS -->
-    <section class="realisation realisation--reverse" id="jardin-du-repos">
-      <div class="container">
-        <div class="realisation-inner">
-
-          <div class="realisation-visuals">
-            <div class="realisation-visual realisation-visual--screen">
-              <img src="assets/images/realisations/jardin-site.png" alt="Site Le Jardin du Repos" loading="lazy">
-            </div>
-            <div class="realisation-visuals--gallery">
-              <div class="realisation-visual realisation-visual--logo">
-                <img src="assets/images/realisations/logo-jardin-du-repos.png" alt="Logo Le Jardin du Repos" loading="lazy">
-              </div>
-              <div class="realisation-visual realisation-visual--screen">
-                <img src="assets/images/realisations/jardin-simulateur.png" alt="Simulateur tarifaire Le Jardin du Repos" loading="lazy">
-              </div>
-            </div>
-          </div>
-
-          <div class="realisation-body">
-            <div class="realisation-meta">
-              <span class="realisation-tag">Création d'un service</span>
-              <span class="realisation-tag">Branding</span>
-              <span class="realisation-tag">Site live</span>
-              <span class="realisation-tag">Outil sur mesure</span>
-            </div>
-
-            <h2>Le Jardin du Repos</h2>
-            <p class="realisation-context">Service cofondé à deux — Lancé en 2025, en cours.</p>
-
-            <p>
-              Conception complète d'un service d'entretien, de nettoyage et de fleurissement de sépultures : positionnement (familles éloignées qui veulent prendre soin d'une tombe), identité de marque, site internet et simulateur tarifaire codé main pour fluidifier le devis. Du concept au premier client signé.
-            </p>
-
-            <div class="realisation-details">
-              <div>
-                <p class="realisation-detail-label">Mon rôle</p>
-                <p class="realisation-detail-value">Concept, branding, site, simulateur, communication de lancement, relation client terrain.</p>
-              </div>
-              <div>
-                <p class="realisation-detail-label">Chiffres-clés</p>
-                <p class="realisation-detail-value">1er client signé · 2 cofondateurs · A→Z (concept à livraison) · Service livré sous la pluie.</p>
-              </div>
-            </div>
-
-            <a href="https://lejardindurepos.fr" class="realisation-link" target="_blank" rel="noopener noreferrer">Voir le site lejardindurepos.fr</a>
-
-            <p class="realisation-quote">
-              Ce que j'en retiens — livrer soi-même change ce qu'on vend.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- RÉALISATION 3 — SHIBUI -->
-    <section class="realisation" id="shibui">
-      <div class="container">
-        <div class="realisation-inner">
-
-          <div class="realisation-visuals realisation-visuals--single">
-            <div class="realisation-visual realisation-visual--logo">
-              <img src="assets/images/realisations/logo-shibui.png" alt="Logo Shibui" loading="lazy">
-            </div>
-          </div>
-
-          <div class="realisation-body">
-            <div class="realisation-meta">
-              <span class="realisation-tag">Application</span>
-              <span class="realisation-tag">Conduite de projet</span>
-              <span class="realisation-tag">Pivot produit</span>
-              <span class="realisation-tag">UX</span>
-            </div>
-
-            <h2>Shibui</h2>
-            <p class="realisation-context">Cofondation, chef de projet — Décembre 2024, en cours.</p>
-
-            <p>
-              Cofondé en décembre 2024 comme une plateforme large de développement personnel (Meet'up), le projet a été recentré en 2025 sur un problème concret : la recherche de stage et d'alternance. Même équipe, même ambition, positionnement plus net. Pitch jury Ynov, bêta en cours.
-            </p>
-
-            <div class="realisation-details">
-              <div>
-                <p class="realisation-detail-label">Mon rôle</p>
-                <p class="realisation-detail-value">Cofondation, coordination équipe (16 puis 12 personnes), recentrage produit, pitch jury, structuration business.</p>
-              </div>
-              <div>
-                <p class="realisation-detail-label">Chiffres-clés</p>
-                <p class="realisation-detail-value">16 personnes coordonnées sur Meet'up · 12 sur Shibui · 1 pivot assumé · Bêta en cours.</p>
-              </div>
-            </div>
-
-            <p class="realisation-quote">
-              Ce que j'en retiens — savoir tuer son idée initiale, c'est savoir avancer.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- RÉALISATION 4 — PORTFOLIO ÉDITORIAL -->
-    <section class="realisation realisation--reverse" id="portfolio">
-      <div class="container">
-        <div class="realisation-inner">
-
-          <div class="realisation-visuals realisation-visuals--single">
-            <div class="realisation-visual" style="aspect-ratio: 4 / 5; background-color: var(--color-paper); padding: 2rem; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 1rem; text-align: center;">
-              <span style="font-family: var(--font-display); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 500; color: var(--color-ink); letter-spacing: -0.03em; line-height: 1;">Antoine<br><em style="color: var(--color-accent);">Balesi</em>.</span>
-              <span style="font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-accent); font-weight: 500;">antoinebale.github.io</span>
-            </div>
-          </div>
-
-          <div class="realisation-body">
-            <div class="realisation-meta">
-              <span class="realisation-tag">Conception</span>
-              <span class="realisation-tag">Développement web</span>
-              <span class="realisation-tag">HTML/CSS/JS vanilla</span>
-            </div>
-
-            <h2>Portfolio éditorial</h2>
-            <p class="realisation-context">Projet personnel — Projet permanent.</p>
-
-            <p>
-              Conception et développement d'un site portfolio à l'identité éditoriale soignée : structure, direction artistique, intégration et mise en ligne. Tout a été réalisé à la main, sans framework, sans constructeur de page. Une vitrine étudiante distincte de Studio Balesi.
-            </p>
-
-            <div class="realisation-details">
-              <div>
-                <p class="realisation-detail-label">Mon rôle</p>
-                <p class="realisation-detail-value">Direction artistique, contenu, développement front, hébergement GitHub Pages.</p>
-              </div>
-              <div>
-                <p class="realisation-detail-label">Stack</p>
-                <p class="realisation-detail-value">HTML5 sémantique, CSS variables modernes, JavaScript vanilla, déploiement GitHub Pages.</p>
-              </div>
-            </div>
-
-            <a href="https://antoinebale.github.io" class="realisation-link" target="_blank" rel="noopener noreferrer">Voir le site antoinebale.github.io</a>
-
-            <p class="realisation-quote">
-              Ce que j'en retiens — pas développeur, mais tout ce que je peux faire à la main, je le fais à la main.
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA FINALE -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-block fade-in">
-          <span class="surtitre">À votre tour</span>
-          <h2>Votre projet pourrait être le prochain.</h2>
-          <p>Un premier échange gratuit, sans engagement, pour comprendre votre besoin et voir si je peux vous aider.</p>
-          <a href="contact.html" class="btn btn-primary">En discuter</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer" role="contentinfo">
+  <!-- ══════════════════════════ FREGAHOUSE ══════════════════════════ -->
+  <section class="project" id="fregahouse">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <p class="footer-mark">Studio <em>Balesi</em>.</p>
-          <p>Le studio digital à une personne pour piloter votre lancement. Marseille / Aix-en-Provence — et à distance.</p>
+      <div class="project__grid">
+
+        <div class="project__visuals" data-reveal>
+          <div class="project__shot">
+            <img src="assets/images/realisations/fregahouse-stand.jpg" alt="Stand FregaHouse au salon de l'immobilier" loading="lazy">
+          </div>
+          <div class="project__pair">
+            <div class="project__shot project__shot--logo">
+              <img src="assets/images/realisations/logo-fregahouse.png" alt="Logo FregaHouse" loading="lazy">
+            </div>
+            <div class="project__shot">
+              <img src="assets/images/realisations/fregahouse-panneau.jpg" alt="Panneau principal du stand FregaHouse" loading="lazy">
+            </div>
+          </div>
         </div>
 
-        <div class="footer-col">
-          <h4>Studio</h4>
-          <ul>
-            <li><a href="presentation.html">Présentation</a></li>
-            <li><a href="realisations.html">Réalisations</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="https://antoinebale.github.io" target="_blank" rel="noopener noreferrer">Portfolio personnel</a></li>
-          </ul>
+        <div class="project__body" data-reveal="1">
+          <div class="project__tags">
+            <span class="project__tag">Stratégie de marque</span>
+            <span class="project__tag">Naming</span>
+            <span class="project__tag">Site web</span>
+            <span class="project__tag">Print &amp; salon</span>
+          </div>
+          <h2>FregaHouse</h2>
+          <p class="project__context">SAS FregaConcept · Immobilier · 2025–2026</p>
+          <p>
+            Une marque immobilière construite intégralement, du nom aux panneaux du salon.
+            J'ai nommé et différencié les deux gammes — <strong>Gaïa</strong> pour les maisons de famille,
+            <strong>Lumina</strong> pour les architectures contemporaines — puis décliné une identité
+            cohérente du site jusqu'au stand physique. La marque est arrivée au salon de l'immobilier prête à vendre.
+          </p>
+
+          <dl class="project__facts">
+            <div>
+              <dt>Mon rôle</dt>
+              <dd>Naming, positionnement, identité visuelle, charte, site, supports salon, structuration de l'offre.</dd>
+            </div>
+            <div>
+              <dt>Résultat</dt>
+              <dd>2 gammes lancées · marque livrée en 30 jours · 1 salon couvert de bout en bout.</dd>
+            </div>
+          </dl>
+
+          <p class="project__quote">Ce que j'en retiens — une bonne marque ne tient que si elle se distribue.</p>
         </div>
 
-        <div class="footer-col">
-          <h4>Expertises</h4>
-          <ul>
-            <li><a href="expertises.html#identite">Identité</a></li>
-            <li><a href="expertises.html#presence">Présence</a></li>
-            <li><a href="expertises.html#projet">Projet</a></li>
-          </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ JARDIN DU REPOS ══════════════════════════ -->
+  <section class="project project--flip section--arc" id="jardin">
+    <div class="container">
+      <div class="project__grid">
+
+        <div class="project__visuals" data-reveal>
+          <div class="project__shot">
+            <img src="assets/images/realisations/jardin-site.png" alt="Page d'accueil du site Le Jardin du Repos" loading="lazy">
+          </div>
+          <div class="project__pair">
+            <div class="project__shot project__shot--logo">
+              <img src="assets/images/realisations/logo-jardin-du-repos.png" alt="Logo Le Jardin du Repos" loading="lazy">
+            </div>
+            <div class="project__shot">
+              <img src="assets/images/realisations/jardin-simulateur.png" alt="Simulateur tarifaire du Jardin du Repos" loading="lazy">
+            </div>
+          </div>
         </div>
 
-        <div class="footer-col">
-          <h4>Légal</h4>
-          <ul>
-            <li><a href="mentions-legales.html">Mentions légales</a></li>
-            <li><a href="contact.html">Nous contacter</a></li>
-          </ul>
+        <div class="project__body" data-reveal="1">
+          <div class="project__tags">
+            <span class="project__tag">Création de service</span>
+            <span class="project__tag">Branding</span>
+            <span class="project__tag">Site live</span>
+            <span class="project__tag">Outil sur mesure</span>
+          </div>
+          <h2>Le Jardin du Repos</h2>
+          <p class="project__context">Service cofondé · Entretien de sépultures · Depuis 2025</p>
+          <p>
+            Un service pensé pour les familles éloignées qui veulent continuer à prendre soin d'une tombe.
+            Tout est parti d'une page blanche : le positionnement, le nom, l'identité — avec le ton juste
+            pour un sujet sensible — puis le site et un <strong>simulateur tarifaire codé sur mesure</strong>
+            pour transformer une demande floue en devis en trois clics.
+          </p>
+
+          <dl class="project__facts">
+            <div>
+              <dt>Mon rôle</dt>
+              <dd>Concept, modèle économique, identité, site, simulateur, communication de lancement, terrain.</dd>
+            </div>
+            <div>
+              <dt>Résultat</dt>
+              <dd>Premier client signé · service en activité · devis automatisé du premier contact à la facture.</dd>
+            </div>
+          </dl>
+
+          <a href="https://lejardindurepos.fr" class="link-arrow" target="_blank" rel="noopener noreferrer">Voir le site en ligne</a>
+
+          <p class="project__quote">Ce que j'en retiens — livrer le service soi-même change ce qu'on vend.</p>
         </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ SHIBUI ══════════════════════════ -->
+  <section class="project" id="shibui">
+    <div class="container">
+      <div class="project__grid">
+
+        <div class="project__visuals" data-reveal>
+          <div class="project__shot project__shot--logo" style="aspect-ratio: 4 / 3;">
+            <img src="assets/images/realisations/logo-shibui.png" alt="Logo Shibui" loading="lazy">
+          </div>
+        </div>
+
+        <div class="project__body" data-reveal="1">
+          <div class="project__tags">
+            <span class="project__tag">Conduite de projet</span>
+            <span class="project__tag">Pivot produit</span>
+            <span class="project__tag">Coordination</span>
+            <span class="project__tag">UX</span>
+          </div>
+          <h2>Shibui</h2>
+          <p class="project__context">Projet cofondé · Application · Depuis décembre 2024</p>
+          <p>
+            Le projet est né sous le nom de Meet'up, comme une plateforme large de développement personnel.
+            Trop large. En 2025, nous l'avons recentré sur un problème précis et vérifiable :
+            la recherche de stage et d'alternance. Même équipe, ambition identique, cible enfin nette.
+            <strong>C'est le projet qui m'a appris à conduire un pivot</strong> sans perdre l'équipe en route.
+          </p>
+
+          <dl class="project__facts">
+            <div>
+              <dt>Mon rôle</dt>
+              <dd>Cofondation, chef de projet, arbitrage du pivot, coordination pluridisciplinaire, pitch jury.</dd>
+            </div>
+            <div>
+              <dt>Résultat</dt>
+              <dd>16 personnes coordonnées sur Meet'up, 12 sur Shibui · 1 pivot assumé · bêta en cours.</dd>
+            </div>
+          </dl>
+
+          <p class="project__quote">Ce que j'en retiens — savoir tuer son idée initiale, c'est savoir avancer.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ PORTFOLIO ══════════════════════════ -->
+  <section class="project project--flip" id="portfolio">
+    <div class="container">
+      <div class="project__grid">
+
+        <div class="project__visuals" data-reveal>
+          <div class="project__shot" style="aspect-ratio: 4 / 3; background: linear-gradient(160deg, var(--navy-800), var(--navy-950)); display: grid; place-items: center; text-align: center; padding: 2rem;">
+            <div>
+              <p style="font-family: var(--font-display); font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 600; letter-spacing: -0.04em; line-height: 1.05; color: #fff;">
+                Antoine<br><span style="background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent;">Balesi</span>
+              </p>
+              <p style="margin-top: 1rem; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue-300);">antoinebale.github.io</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="project__body" data-reveal="1">
+          <div class="project__tags">
+            <span class="project__tag">Conception</span>
+            <span class="project__tag">Développement</span>
+            <span class="project__tag">HTML/CSS/JS</span>
+          </div>
+          <h2>Portfolio éditorial</h2>
+          <p class="project__context">Projet personnel · En ligne · Mis à jour en continu</p>
+          <p>
+            Un site portfolio conçu et développé entièrement à la main : structure, direction artistique,
+            intégration, mise en ligne. Aucun framework, aucun constructeur de pages.
+            C'est le terrain sur lequel je teste ce que je propose ensuite en mission —
+            <strong>je ne vends pas une méthode que je n'aurais pas éprouvée sur mon propre site</strong>.
+          </p>
+
+          <dl class="project__facts">
+            <div>
+              <dt>Mon rôle</dt>
+              <dd>Direction artistique, rédaction, développement front, déploiement, maintenance.</dd>
+            </div>
+            <div>
+              <dt>Stack</dt>
+              <dd>HTML sémantique, CSS moderne (variables, grid), JavaScript vanilla, GitHub Pages.</dd>
+            </div>
+          </dl>
+
+          <a href="https://antoinebale.github.io" class="link-arrow" target="_blank" rel="noopener noreferrer">Voir le site en ligne</a>
+
+          <p class="project__quote">Ce que j'en retiens — ce qu'on fait soi-même, on sait l'expliquer.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ CHIFFRES ══════════════════════════ -->
+  <section class="section is-dark stats-band">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Le bilan</span>
+        <h2>Ce que ces projets ont en commun.</h2>
+        <p class="lead">Aucun n'est resté au stade de la présentation. Tous sont allés jusqu'à l'utilisateur final.</p>
       </div>
 
-      <div class="footer-bottom">
-        <p>© 2026 Studio Balesi — SIREN [à compléter] — Tous droits réservés.</p>
-        <div class="footer-social">
-          <a href="https://www.linkedin.com/in/antoine-balesi-203494299" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-          <a href="mailto:contact@studiobalesi.fr">contact@studiobalesi.fr</a>
+      <div class="stats">
+        <div class="stat" data-reveal="0">
+          <p class="stat__num"><span data-count="4">0</span><span class="stat__suffix">projets</span></p>
+          <p class="stat__label">Menés jusqu'à la mise en ligne</p>
+          <p class="stat__desc">Du cadrage initial à la passation complète.</p>
+        </div>
+        <div class="stat" data-reveal="1">
+          <p class="stat__num"><span data-count="3">0</span><span class="stat__suffix">marques</span></p>
+          <p class="stat__label">Créées de A à Z</p>
+          <p class="stat__desc">Nom, identité, supports et premiers contenus.</p>
+        </div>
+        <div class="stat" data-reveal="2">
+          <p class="stat__num"><span data-count="16">0</span><span class="stat__suffix">personnes</span></p>
+          <p class="stat__label">Coordonnées sur un même projet</p>
+          <p class="stat__desc">Équipe pluridisciplinaire, du cadrage à la bêta.</p>
         </div>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script src="assets/js/main.js"></script>
+  <!-- ══════════════════════════ CTA ══════════════════════════ -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta is-dark" data-reveal>
+        <span class="eyebrow">À votre tour</span>
+        <h2>Le prochain projet pourrait être le vôtre.</h2>
+        <p>Un premier échange gratuit pour comprendre votre besoin et voir concrètement comment je peux vous aider.</p>
+        <div class="cta__actions">
+          <a href="contact.html" class="btn btn--primary">En discuter <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <a href="expertises.html" class="btn btn--ghost">Voir mes expertises</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo logo--light" aria-label="Horizon Digital — Accueil">
+          <svg class="logo__mark" viewBox="0 0 128 88" aria-hidden="true">
+            <g fill="#2E9BFF">
+              <rect x="34" y="8" width="14" height="72" rx="1.5"/>
+              <rect x="80" y="8" width="14" height="72" rx="1.5"/>
+              <rect x="34" y="36" width="60" height="14" rx="1.5"/>
+            </g>
+            <path d="M6 60 C 30 34, 98 34, 122 60 C 96 46, 32 46, 6 60 Z" fill="#63B4FF"/>
+          </svg>
+          <span class="logo__word"><span class="logo__name">Horizon</span><span class="logo__sub">Digital</span></span>
+        </a>
+        <p>Marketing, communication et intelligence artificielle. Un partenaire unique pour élargir votre horizon digital.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Expertises</h4>
+        <ul>
+          <li><a href="expertises.html#strategie">Stratégie de marque</a></li>
+          <li><a href="expertises.html#communication">Communication</a></li>
+          <li><a href="expertises.html#presence">Présence digitale</a></li>
+          <li><a href="expertises.html#ia">IA &amp; automatisation</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Agence</h4>
+        <ul>
+          <li><a href="presentation.html">Qui suis-je</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@horizondigital.fr">contact@horizondigital.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/antoine-balesi-203494299" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span data-year>2026</span> Horizon Digital — Marseille / Aix-en-Provence — Tous droits réservés.</p>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/in/antoine-balesi-203494299" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

@@ -2,373 +2,471 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Expertises — Studio Balesi</title>
-  <meta name="description" content="Trois façons de travailler ensemble : Identité, Présence, Projet. Marque, site, conduite de projet — pour startups et jeunes entreprises.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expertises — Horizon Digital</title>
+  <meta name="description" content="Stratégie de marque, communication & contenu, présence digitale, IA & automatisation. Quatre leviers, des livrables clairs, un seul interlocuteur.">
+  <meta name="theme-color" content="#0A1226">
 
-  <meta property="og:title" content="Expertises — Studio Balesi">
-  <meta property="og:description" content="Trois offres claires : Identité, Présence, Projet. Devis gratuit, sans engagement.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://studiobalesi.fr/expertises.html">
+  <meta property="og:url" content="https://horizondigital.fr/expertises.html">
+  <meta property="og:title" content="Expertises — Horizon Digital">
+  <meta property="og:description" content="Quatre leviers pour faire avancer votre projet : marque, communication, présence digitale et IA.">
 
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="canonical" href="https://horizondigital.fr/expertises.html">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/design-system.css">
   <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/pages/expertises.css">
+  <link rel="stylesheet" href="assets/css/pages/inner.css">
 </head>
 <body>
 
-  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+<a href="#main" class="skip-link">Aller au contenu principal</a>
 
-  <!-- HEADER -->
-  <header class="site-header" role="banner">
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo logo--light" aria-label="Horizon Digital — Accueil">
+      <svg class="logo__mark" viewBox="0 0 128 88" aria-hidden="true">
+        <defs><linearGradient id="logoArc" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0%" stop-color="#1E7FE0"/><stop offset="50%" stop-color="#63B4FF"/><stop offset="100%" stop-color="#1E7FE0"/>
+        </linearGradient></defs>
+        <g fill="#2E9BFF">
+          <rect x="34" y="8" width="14" height="72" rx="1.5"/>
+          <rect x="80" y="8" width="14" height="72" rx="1.5"/>
+          <rect x="34" y="36" width="60" height="14" rx="1.5"/>
+        </g>
+        <path d="M6 60 C 30 34, 98 34, 122 60 C 96 46, 32 46, 6 60 Z" fill="url(#logoArc)"/>
+      </svg>
+      <span class="logo__word"><span class="logo__name">Horizon</span><span class="logo__sub">Digital</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Navigation principale">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="index.html" class="nav__link">Accueil</a></li>
+        <li class="nav__item nav__item--has-menu">
+          <button class="nav__trigger nav__link" aria-expanded="false" aria-haspopup="true">
+            Expertises
+            <svg class="nav__chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <div class="nav__menu" role="menu">
+            <a href="#strategie" role="menuitem">Stratégie de marque<small>Positionnement, identité, plateforme</small></a>
+            <a href="#communication" role="menuitem">Communication &amp; contenu<small>Ligne éditoriale, réseaux, campagnes</small></a>
+            <a href="#presence" role="menuitem">Présence digitale<small>Site, SEO, acquisition</small></a>
+            <a href="#ia" role="menuitem">IA &amp; automatisation<small>Workflows, contenus, outils sur mesure</small></a>
+          </div>
+        </li>
+        <li class="nav__item"><a href="realisations.html" class="nav__link">Réalisations</a></li>
+        <li class="nav__item"><a href="presentation.html" class="nav__link">Agence</a></li>
+        <li class="nav__item nav__cta"><a href="contact.html" class="btn btn--primary">Parlons de votre projet</a></li>
+      </ul>
+    </nav>
+
+    <button class="burger" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ══════════════════════════ HERO ══════════════════════════ -->
+  <section class="page-hero">
+    <div class="page-hero__decor" aria-hidden="true"></div>
     <div class="container">
-      <nav class="nav-inner" aria-label="Navigation principale">
-        <a href="index.html" class="nav-logo" aria-label="Studio Balesi — Accueil">
-          <img src="assets/images/logo-sb-blue.svg" alt="" width="160" height="40" class="nav-logo-img">
-        </a>
-
-        <button class="nav-toggle" aria-controls="nav-links" aria-expanded="false" aria-label="Ouvrir le menu">
-          <span></span><span></span><span></span>
-        </button>
-
-        <ul class="nav-links" id="nav-links" role="list">
-          <li><a href="index.html">Accueil</a></li>
-          <li class="nav-item-dropdown">
-            <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Expertises</button>
-            <div class="nav-dropdown" role="menu">
-              <a href="expertises.html#identite" role="menuitem">
-                Identité
-                <small>Marque, naming, charte</small>
-              </a>
-              <a href="expertises.html#presence" role="menuitem">
-                Présence
-                <small>Site, réseaux, contenus</small>
-              </a>
-              <a href="expertises.html#projet" role="menuitem">
-                Projet
-                <small>Cadrage, coordination</small>
-              </a>
-            </div>
-          </li>
-          <li><a href="realisations.html">Réalisations</a></li>
-          <li><a href="presentation.html">Présentation</a></li>
-          <li class="nav-cta"><a href="contact.html" class="btn btn-primary">Me contacter</a></li>
-        </ul>
+      <nav class="crumbs" aria-label="Fil d'Ariane">
+        <a href="index.html">Accueil</a><span aria-hidden="true">/</span><span>Expertises</span>
       </nav>
+      <span class="eyebrow">Mes expertises</span>
+      <h1>Quatre leviers pour faire <span class="grad">avancer votre projet</span>.</h1>
+      <p class="lead">Chaque mission part du même principe : un périmètre écrit, des livrables nommés, une date. Vous savez ce que vous recevez avant qu'on commence.</p>
+
+      <div class="jump">
+        <a href="#strategie">01 · Stratégie de marque</a>
+        <a href="#communication">02 · Communication</a>
+        <a href="#presence">03 · Présence digitale</a>
+        <a href="#ia">04 · IA &amp; automatisation</a>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main id="main-content">
+  <!-- ══════════════════════════ 01 STRATÉGIE ══════════════════════════ -->
+  <section class="offer section--arc" id="strategie">
+    <div class="container">
+      <div class="offer__grid">
 
-    <!-- HERO -->
-    <section class="expertises-hero">
-      <div class="container">
-        <span class="surtitre">Expertises</span>
-        <h1>Trois façons de travailler <em>ensemble</em>, selon là où en est votre projet.</h1>
-        <p class="expertises-hero-sub">Que vous partiez d'une page blanche ou d'une marque déjà installée, chaque accompagnement vise le même résultat : un livrable concret, prêt à servir votre activité.</p>
+        <aside class="offer__aside" data-reveal>
+          <p class="offer__num">01</p>
+          <h2>Stratégie de marque</h2>
+          <p class="offer__tagline">Clarifier ce que vous êtes, pour qui, et pourquoi on devrait vous choisir plutôt qu'un autre.</p>
+          <dl class="offer__meta">
+            <div><dt>Durée</dt><dd>3 à 5 semaines</dd></div>
+            <div><dt>Format</dt><dd>Mission unique</dd></div>
+            <div><dt>Point de départ</dt><dd>Atelier de cadrage</dd></div>
+          </dl>
+        </aside>
 
-        <div class="expertises-anchors">
-          <a href="#identite" class="expertises-anchor">01 — Identité</a>
-          <a href="#presence" class="expertises-anchor">02 — Présence</a>
-          <a href="#projet" class="expertises-anchor">03 — Projet</a>
-        </div>
-      </div>
-    </section>
+        <div class="offer__body" data-reveal="1">
+          <p class="offer__for">
+            <strong>Pour qui —</strong> une jeune entreprise qui n'a pas encore de visage, ou une marque dont l'image ne raconte plus ce qu'elle est devenue.
+          </p>
 
-    <!-- OFFRE 01 — IDENTITÉ -->
-    <section class="offre" id="identite">
-      <div class="container">
-        <div class="offre-inner">
-          <div class="offre-header">
-            <span class="offre-num">01</span>
-            <h2>Identité</h2>
-            <p class="offre-tagline">Donner un visage clair et cohérent à votre marque.</p>
-          </div>
-          <div class="offre-body">
-            <p class="offre-pour-qui">
-              Pour qui : une startup qui n'a pas encore de visage, ou une marque dont l'image ne reflète <em>plus</em> ce qu'elle est devenue.
-            </p>
-            <div class="offre-cols">
-              <div>
-                <p class="offre-label">Ce que je fais</p>
-                <ul class="offre-list">
-                  <li>Positionnement et plateforme de marque</li>
-                  <li>Naming (si besoin)</li>
-                  <li>Logo et identité visuelle</li>
-                  <li>Charte graphique</li>
-                  <li>Ton de voix et messages clés</li>
-                </ul>
+          <div class="offer__cols">
+            <div>
+              <p class="offer__label">Ce que je fais</p>
+              <ul class="ticks">
+                <li>Atelier de positionnement et analyse concurrentielle</li>
+                <li>Plateforme de marque : promesse, valeurs, preuves</li>
+                <li>Naming et recherche de disponibilité</li>
+                <li>Identité visuelle et déclinaisons</li>
+                <li>Charte graphique et règles d'usage</li>
+                <li>Ton de voix et messages clés</li>
+              </ul>
+            </div>
+            <div>
+              <p class="offer__label">Ce que vous recevez</p>
+              <div class="chips">
+                <span class="chip">Plateforme de marque</span>
+                <span class="chip">Logo + déclinaisons</span>
+                <span class="chip">Charte graphique PDF</span>
+                <span class="chip">Fichiers sources</span>
+                <span class="chip">Guide de ton de voix</span>
+                <span class="chip">Kit réseaux sociaux</span>
               </div>
-              <div>
-                <p class="offre-label">Ce que vous obtenez</p>
-                <p class="offre-result">Un kit de marque cohérent, utilisable immédiatement sur tous vos supports — du print au digital. Une marque qui se distribue, parce que c'est là qu'elle devient réelle.</p>
-              </div>
+              <p style="margin-top:1.5rem; font-size:var(--fs-sm);">
+                Un kit cohérent, utilisable dès le lendemain sur tous vos supports — du print au digital.
+              </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- OFFRE 02 — PRÉSENCE -->
-    <section class="offre" id="presence">
-      <div class="container">
-        <div class="offre-inner">
-          <div class="offre-header">
-            <span class="offre-num">02</span>
-            <h2>Présence</h2>
-            <p class="offre-tagline">Vous rendre visible et joignable en ligne.</p>
-          </div>
-          <div class="offre-body">
-            <p class="offre-pour-qui">
-              Pour qui : une marque qui existe mais qu'on ne <em>trouve</em> pas, ou qui n'a pas de présence digitale à la hauteur.
-            </p>
-            <div class="offre-cols">
-              <div>
-                <p class="offre-label">Ce que je fais</p>
-                <ul class="offre-list">
-                  <li>Site vitrine ou landing page</li>
-                  <li>Mise en place des profils réseaux sociaux</li>
-                  <li>Stratégie de contenu de lancement</li>
-                  <li>Premiers contenus prêts à publier</li>
-                  <li>Mesure et suivi des premiers résultats</li>
-                </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ 02 COMMUNICATION ══════════════════════════ -->
+  <section class="offer" id="communication">
+    <div class="container">
+      <div class="offer__grid">
+
+        <aside class="offer__aside" data-reveal>
+          <p class="offer__num">02</p>
+          <h2>Communication &amp; contenu</h2>
+          <p class="offer__tagline">Dire les bonnes choses, au bon endroit, avec une régularité que vous pouvez tenir.</p>
+          <dl class="offer__meta">
+            <div><dt>Durée</dt><dd>2 à 4 semaines</dd></div>
+            <div><dt>Format</dt><dd>Mission ou suivi mensuel</dd></div>
+            <div><dt>Point de départ</dt><dd>Audit éditorial</dd></div>
+          </dl>
+        </aside>
+
+        <div class="offer__body" data-reveal="1">
+          <p class="offer__for">
+            <strong>Pour qui —</strong> une marque qui publie trop peu, trop irrégulièrement, ou sans que ça ressemble à quelque chose de cohérent.
+          </p>
+
+          <div class="offer__cols">
+            <div>
+              <p class="offer__label">Ce que je fais</p>
+              <ul class="ticks">
+                <li>Audit de l'existant et des concurrents</li>
+                <li>Ligne éditoriale et piliers de contenu</li>
+                <li>Calendrier éditorial sur trois mois</li>
+                <li>Modèles réutilisables (visuels et textes)</li>
+                <li>Premiers contenus prêts à publier</li>
+                <li>Campagne de lancement si besoin</li>
+              </ul>
+            </div>
+            <div>
+              <p class="offer__label">Ce que vous recevez</p>
+              <div class="chips">
+                <span class="chip">Ligne éditoriale</span>
+                <span class="chip">Calendrier 3 mois</span>
+                <span class="chip">Kit de templates</span>
+                <span class="chip">1er mois de contenus</span>
+                <span class="chip">Bibliothèque de prompts</span>
               </div>
-              <div>
-                <p class="offre-label">Ce que vous obtenez</p>
-                <p class="offre-result">Une présence en ligne professionnelle, visible et activable. Pas un site qui dort — un site qui sert votre activité, dès la mise en ligne.</p>
-              </div>
+              <p style="margin-top:1.5rem; font-size:var(--fs-sm);">
+                Les modèles et les prompts sont calibrés sur votre ton : vos publications suivantes se produisent sans moi.
+              </p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- OFFRE 03 — PROJET -->
-    <section class="offre" id="projet">
-      <div class="container">
-        <div class="offre-inner">
-          <div class="offre-header">
-            <span class="offre-num">03</span>
-            <h2>Projet</h2>
-            <p class="offre-tagline">Mener votre projet digital de bout en bout.</p>
-          </div>
-          <div class="offre-body">
-            <p class="offre-pour-qui">
-              Pour qui : une équipe qui a un projet digital à mener mais pas le temps de tout <em>coordonner</em>.
-            </p>
-            <div class="offre-cols">
-              <div>
-                <p class="offre-label">Ce que je fais</p>
-                <ul class="offre-list">
-                  <li>Cadrage du projet et des objectifs</li>
-                  <li>Coordination des intervenants</li>
-                  <li>Suivi d'avancement et points d'étape</li>
-                  <li>Pivots et réajustements</li>
-                  <li>Conduite jusqu'à la livraison</li>
-                </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ 03 PRÉSENCE ══════════════════════════ -->
+  <section class="offer section--arc" id="presence">
+    <div class="container">
+      <div class="offer__grid">
+
+        <aside class="offer__aside" data-reveal>
+          <p class="offer__num">03</p>
+          <h2>Présence digitale</h2>
+          <p class="offer__tagline">Un site qui vous ressemble, qu'on trouve sur Google, et qui transforme un visiteur en contact.</p>
+          <dl class="offer__meta">
+            <div><dt>Durée</dt><dd>4 à 8 semaines</dd></div>
+            <div><dt>Format</dt><dd>Mission unique</dd></div>
+            <div><dt>Point de départ</dt><dd>Cadrage + arborescence</dd></div>
+          </dl>
+        </aside>
+
+        <div class="offer__body" data-reveal="1">
+          <p class="offer__for">
+            <strong>Pour qui —</strong> une activité sans site, ou avec un site qui reçoit des visites mais ne génère aucune demande.
+          </p>
+
+          <div class="offer__cols">
+            <div>
+              <p class="offer__label">Ce que je fais</p>
+              <ul class="ticks">
+                <li>Arborescence et parcours de conversion</li>
+                <li>Rédaction des contenus de chaque page</li>
+                <li>Design et intégration sur mesure</li>
+                <li>SEO technique et éditorial</li>
+                <li>Fiche établissement et profils réseaux</li>
+                <li>Mesure : analytics et suivi des demandes</li>
+              </ul>
+            </div>
+            <div>
+              <p class="offer__label">Ce que vous recevez</p>
+              <div class="chips">
+                <span class="chip">Site en ligne</span>
+                <span class="chip">Nom de domaine configuré</span>
+                <span class="chip">SEO de base</span>
+                <span class="chip">Analytics installé</span>
+                <span class="chip">Documentation de passation</span>
               </div>
-              <div>
-                <p class="offre-label">Ce que vous obtenez</p>
-                <p class="offre-result">Un projet mené à terme, sans avoir à tout suivre vous-même. Quand un pivot est nécessaire, on le fait — savoir tuer son idée initiale, c'est savoir avancer.</p>
-              </div>
+              <p style="margin-top:1.5rem; font-size:var(--fs-sm);">
+                Codé à la main, sans constructeur propriétaire : le site vous appartient et reste rapide dans le temps.
+              </p>
             </div>
           </div>
         </div>
+
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- PROCESS 4 ÉTAPES -->
-    <section class="process-section">
-      <div class="container">
-        <div class="section-head">
-          <span class="surtitre">Méthode</span>
-          <h2>Une méthode claire, du premier échange à la livraison.</h2>
+  <!-- ══════════════════════════ 04 IA ══════════════════════════ -->
+  <section class="offer" id="ia">
+    <div class="container">
+      <div class="offer__grid">
+
+        <aside class="offer__aside" data-reveal>
+          <p class="offer__num">04</p>
+          <h2>IA &amp; automatisation</h2>
+          <p class="offer__tagline">Récupérer les heures que vous perdez chaque semaine sur des tâches qui se répètent.</p>
+          <dl class="offer__meta">
+            <div><dt>Durée</dt><dd>1 à 3 semaines</dd></div>
+            <div><dt>Format</dt><dd>Audit, puis mise en place</dd></div>
+            <div><dt>Point de départ</dt><dd>Audit gratuit</dd></div>
+          </dl>
+        </aside>
+
+        <div class="offer__body" data-reveal="1">
+          <p class="offer__for">
+            <strong>Pour qui —</strong> une équipe qui passe ses journées sur de la saisie, du tri, des relances — pendant que le vrai travail attend.
+          </p>
+
+          <div class="offer__cols">
+            <div>
+              <p class="offer__label">Ce que je fais</p>
+              <ul class="ticks">
+                <li>Cartographie de vos tâches répétitives</li>
+                <li>Chiffrage du temps réellement récupérable</li>
+                <li>Workflows automatisés (Make, Zapier)</li>
+                <li>Assistants et prompts calibrés sur vos usages</li>
+                <li>Connexion entre vos outils existants</li>
+                <li>Formation de vos équipes à l'usage</li>
+              </ul>
+            </div>
+            <div>
+              <p class="offer__label">Ce que vous recevez</p>
+              <div class="chips">
+                <span class="chip">Cartographie des tâches</span>
+                <span class="chip">Workflows en production</span>
+                <span class="chip">Prompts documentés</span>
+                <span class="chip">Session de formation</span>
+                <span class="chip">Manuel d'utilisation</span>
+              </div>
+              <p style="margin-top:1.5rem; font-size:var(--fs-sm);">
+                L'audit est gratuit et honnête : s'il n'y a pas assez de temps à gagner pour justifier la dépense, je vous le dis.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div class="process-grid fade-in">
-          <article class="process-step">
-            <span class="process-step-num">01</span>
-            <h3>Cadrage</h3>
-            <p>On définit ensemble le besoin réel, l'objectif et le périmètre. C'est gratuit et sans engagement.</p>
-          </article>
-          <article class="process-step">
-            <span class="process-step-num">02</span>
-            <h3>Conception</h3>
-            <p>Je vous présente une proposition (direction, contenu, planning). Rien ne démarre avant votre validation.</p>
-          </article>
-          <article class="process-step">
-            <span class="process-step-num">03</span>
-            <h3>Production</h3>
-            <p>Je réalise le travail, avec des points d'étape réguliers pour garder le cap.</p>
-          </article>
-          <article class="process-step">
-            <span class="process-step-num">04</span>
-            <h3>Livraison &amp; passation</h3>
-            <p>Vous recevez un projet fini, et tout ce qu'il faut pour être autonome ensuite.</p>
-          </article>
-        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- TARIFS -->
-    <section class="tarifs-section">
-      <div class="container">
-        <div class="section-head">
-          <span class="surtitre">Budget</span>
-          <h2>Et le budget, on en parle <em>quand</em> ?</h2>
-        </div>
-        <p class="tarifs-text">
-          Chaque projet est différent, je travaille donc <em>sur devis</em> après un premier échange de cadrage. Cet échange est gratuit : vous repartez avec une estimation claire — périmètre, planning, budget — sans engagement.
+  <!-- ══════════════════════════ MÉTHODE ══════════════════════════ -->
+  <section class="section is-dark">
+    <div class="container">
+      <div class="section-head section-head--center" data-reveal>
+        <span class="eyebrow">La méthode</span>
+        <h2>La même pour les quatre.</h2>
+        <p class="lead">Quel que soit le levier, le déroulé ne change pas — c'est ce qui rend le planning tenable.</p>
+      </div>
+
+      <div class="grid grid--4">
+        <article class="card expertise-card expertise-card--ai" data-reveal="0">
+          <span class="card__num">Étape 01</span>
+          <h3>Cadrage</h3>
+          <p>On définit le besoin réel, l'objectif et le périmètre. Gratuit, sans engagement, et vous repartez avec une estimation écrite.</p>
+        </article>
+        <article class="card expertise-card expertise-card--ai" data-reveal="1">
+          <span class="card__num">Étape 02</span>
+          <h3>Conception</h3>
+          <p>Direction, contenu, planning. Rien ne part en production avant votre validation écrite.</p>
+        </article>
+        <article class="card expertise-card expertise-card--ai" data-reveal="2">
+          <span class="card__num">Étape 03</span>
+          <h3>Production</h3>
+          <p>Je réalise, avec des points d'étape réguliers. Vous voyez le travail avancer, pas seulement le résultat final.</p>
+        </article>
+        <article class="card expertise-card expertise-card--ai" data-reveal="3">
+          <span class="card__num">Étape 04</span>
+          <h3>Livraison</h3>
+          <p>Fichiers sources, accès, documentation. La passation fait partie de la mission, pas d'un devis en plus.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════ BUDGET ══════════════════════════ -->
+  <section class="section section--arc">
+    <div class="container">
+      <div class="section-head section-head--center" data-reveal>
+        <span class="eyebrow">Budget</span>
+        <h2>Sur devis — et voici pourquoi.</h2>
+        <p class="lead">
+          Une grille tarifaire affichée oblige à vendre la même chose à tout le monde. Je préfère cadrer d'abord, chiffrer ensuite.
+          Le premier échange est gratuit : vous en repartez avec un périmètre, un planning et un montant. Sans relance commerciale.
         </p>
       </div>
-    </section>
-
-    <!-- MES OUTILS -->
-    <section class="outils-section">
-      <div class="container">
-        <div class="section-head">
-          <span class="surtitre">Mes outils</span>
-          <h2>La stack qui me sert au quotidien.</h2>
-          <p class="lead">Je m'appuie sur des outils éprouvés et sur l'IA pour gagner du temps sur la production, et le réinvestir là où ça compte — la stratégie, la cohérence, l'exécution finale.</p>
-        </div>
-
-        <div class="outils-grid">
-          <div class="outils-col">
-            <h3>Stack principale</h3>
-            <ul>
-              <li>
-                <img src="assets/images/tools/notion.svg" alt="" loading="lazy">
-                <span>Notion <small>Cadrage, suivi, documentation</small></span>
-              </li>
-              <li>
-                <img src="assets/images/tools/canva.svg" alt="" loading="lazy">
-                <span>Canva <small>Identité, supports, contenus</small></span>
-              </li>
-              <li>
-                <img src="assets/images/tools/chatgpt.svg" alt="" loading="lazy">
-                <span>ChatGPT <small>Idéation, rédaction, analyse</small></span>
-              </li>
-              <li>
-                <img src="assets/images/tools/anthropic.svg" alt="" loading="lazy">
-                <span>Claude <small>Stratégie, écriture longue</small></span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="outils-col">
-            <h3>Selon le projet</h3>
-            <ul>
-              <li>
-                <img src="assets/images/tools/figma.svg" alt="" loading="lazy">
-                <span>Figma <small>Maquettes, design système</small></span>
-              </li>
-              <li>
-                <img src="assets/images/tools/wix.svg" alt="" loading="lazy">
-                <span>Wix <small>Sites vitrines sans code</small></span>
-              </li>
-              <li>
-                <img src="assets/images/tools/anthropic.svg" alt="" loading="lazy">
-                <span>Claude Code <small>Sites sur mesure HTML/CSS/JS</small></span>
-              </li>
-              <li>
-                <img src="assets/images/tools/mailchimp.svg" alt="" loading="lazy">
-                <span>Mailchimp <small>Emailing et newsletters</small></span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="outils-col">
-            <h3>En veille</h3>
-            <ul>
-              <li>
-                <img src="assets/images/tools/make.svg" alt="" loading="lazy">
-                <span>Make <small>Automatisations marketing</small></span>
-              </li>
-              <li>
-                <img src="assets/images/tools/zapier.svg" alt="" loading="lazy">
-                <span>Zapier <small>Workflows entre outils</small></span>
-              </li>
-              <li>
-                <img src="assets/images/tools/googleanalytics.svg" alt="" loading="lazy">
-                <span>Google Analytics 4 <small>Mesure et performance</small></span>
-              </li>
-              <li>
-                <img src="assets/images/tools/meta.svg" alt="" loading="lazy">
-                <span>Meta Business Suite <small>Régies réseaux sociaux</small></span>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <div style="text-align:center;" data-reveal="1">
+        <a href="contact.html" class="btn btn--primary">Demander une estimation <span class="btn__arrow" aria-hidden="true">→</span></a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- CTA FINALE -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta-block fade-in">
-          <span class="surtitre">Un projet en tête</span>
-          <h2>Discutons de votre projet ensemble.</h2>
-          <p>Un premier échange gratuit, sans engagement, pour comprendre votre besoin et voir si je peux vous aider.</p>
-          <a href="contact.html" class="btn btn-primary">Demander un premier échange</a>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer" role="contentinfo">
+  <!-- ══════════════════════════ OUTILS ══════════════════════════ -->
+  <section class="section section--paper">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <p class="footer-mark">Studio <em>Balesi</em>.</p>
-          <p>Le studio digital à une personne pour piloter votre lancement. Marseille / Aix-en-Provence — et à distance.</p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Studio</h4>
-          <ul>
-            <li><a href="presentation.html">Présentation</a></li>
-            <li><a href="realisations.html">Réalisations</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="https://antoinebale.github.io" target="_blank" rel="noopener noreferrer">Portfolio personnel</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Expertises</h4>
-          <ul>
-            <li><a href="expertises.html#identite">Identité</a></li>
-            <li><a href="expertises.html#presence">Présence</a></li>
-            <li><a href="expertises.html#projet">Projet</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Légal</h4>
-          <ul>
-            <li><a href="mentions-legales.html">Mentions légales</a></li>
-            <li><a href="contact.html">Nous contacter</a></li>
-          </ul>
-        </div>
+      <div class="section-head" data-reveal>
+        <span class="eyebrow">Les outils</span>
+        <h2>Ce avec quoi je travaille.</h2>
+        <p class="lead">Des outils éprouvés, et l'IA là où elle fait gagner du temps sans dégrader le résultat.</p>
       </div>
 
-      <div class="footer-bottom">
-        <p>© 2026 Studio Balesi — SIREN [à compléter] — Tous droits réservés.</p>
-        <div class="footer-social">
-          <a href="https://www.linkedin.com/in/antoine-balesi-203494299" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-          <a href="mailto:contact@studiobalesi.fr">contact@studiobalesi.fr</a>
+      <div class="tools" data-reveal="1">
+        <div class="tools__col">
+          <h3>Au quotidien</h3>
+          <ul>
+            <li><img src="assets/images/tools/notion.svg" alt="" loading="lazy"><span>Notion<small>Cadrage, suivi, documentation</small></span></li>
+            <li><img src="assets/images/tools/canva.svg" alt="" loading="lazy"><span>Canva<small>Supports et contenus rapides</small></span></li>
+            <li><img src="assets/images/tools/chatgpt.svg" alt="" loading="lazy"><span>ChatGPT<small>Idéation, rédaction, analyse</small></span></li>
+            <li><img src="assets/images/tools/anthropic.svg" alt="" loading="lazy"><span>Claude<small>Stratégie et écriture longue</small></span></li>
+          </ul>
+        </div>
+        <div class="tools__col">
+          <h3>Selon le projet</h3>
+          <ul>
+            <li><img src="assets/images/tools/figma.svg" alt="" loading="lazy"><span>Figma<small>Maquettes et design système</small></span></li>
+            <li><img src="assets/images/tools/anthropic.svg" alt="" loading="lazy"><span>Claude Code<small>Sites sur mesure HTML/CSS/JS</small></span></li>
+            <li><img src="assets/images/tools/wix.svg" alt="" loading="lazy"><span>Wix<small>Vitrines sans code</small></span></li>
+            <li><img src="assets/images/tools/mailchimp.svg" alt="" loading="lazy"><span>Mailchimp<small>Emailing et newsletters</small></span></li>
+          </ul>
+        </div>
+        <div class="tools__col">
+          <h3>Automatisation</h3>
+          <ul>
+            <li><img src="assets/images/tools/make.svg" alt="" loading="lazy"><span>Make<small>Scénarios multi-étapes</small></span></li>
+            <li><img src="assets/images/tools/zapier.svg" alt="" loading="lazy"><span>Zapier<small>Connexion entre outils</small></span></li>
+            <li><img src="assets/images/tools/googleanalytics.svg" alt="" loading="lazy"><span>Google Analytics 4<small>Mesure et performance</small></span></li>
+            <li><img src="assets/images/tools/meta.svg" alt="" loading="lazy"><span>Meta Business<small>Régies réseaux sociaux</small></span></li>
+          </ul>
         </div>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <script src="assets/js/main.js"></script>
+  <!-- ══════════════════════════ CTA ══════════════════════════ -->
+  <section class="section section--tight">
+    <div class="container">
+      <div class="cta is-dark" data-reveal>
+        <span class="eyebrow">Prochaine étape</span>
+        <h2>Un levier vous parle ?</h2>
+        <p>Dites-moi où vous en êtes. Si je ne suis pas le bon interlocuteur, je vous le dirai dès le premier échange.</p>
+        <div class="cta__actions">
+          <a href="contact.html" class="btn btn--primary">Parlons de votre projet <span class="btn__arrow" aria-hidden="true">→</span></a>
+          <a href="realisations.html" class="btn btn--ghost">Voir mes réalisations</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="index.html" class="logo logo--light" aria-label="Horizon Digital — Accueil">
+          <svg class="logo__mark" viewBox="0 0 128 88" aria-hidden="true">
+            <g fill="#2E9BFF">
+              <rect x="34" y="8" width="14" height="72" rx="1.5"/>
+              <rect x="80" y="8" width="14" height="72" rx="1.5"/>
+              <rect x="34" y="36" width="60" height="14" rx="1.5"/>
+            </g>
+            <path d="M6 60 C 30 34, 98 34, 122 60 C 96 46, 32 46, 6 60 Z" fill="#63B4FF"/>
+          </svg>
+          <span class="logo__word"><span class="logo__name">Horizon</span><span class="logo__sub">Digital</span></span>
+        </a>
+        <p>Marketing, communication et intelligence artificielle. Un partenaire unique pour élargir votre horizon digital.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Expertises</h4>
+        <ul>
+          <li><a href="expertises.html#strategie">Stratégie de marque</a></li>
+          <li><a href="expertises.html#communication">Communication</a></li>
+          <li><a href="expertises.html#presence">Présence digitale</a></li>
+          <li><a href="expertises.html#ia">IA &amp; automatisation</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Agence</h4>
+        <ul>
+          <li><a href="presentation.html">Qui suis-je</a></li>
+          <li><a href="realisations.html">Réalisations</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@horizondigital.fr">contact@horizondigital.fr</a></li>
+          <li><a href="https://www.linkedin.com/in/antoine-balesi-203494299" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="mentions-legales.html">Mentions légales</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span data-year>2026</span> Horizon Digital — Marseille / Aix-en-Provence — Tous droits réservés.</p>
+      <div class="footer__social">
+        <a href="https://www.linkedin.com/in/antoine-balesi-203494299" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>
