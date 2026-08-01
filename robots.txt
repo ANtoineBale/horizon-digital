@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Page légale volontairement non indexée (voir aussi sa balise robots)
+Disallow: /mentions-legales.html
+
+Sitemap: https://horizondigital.fr/sitemap.xml

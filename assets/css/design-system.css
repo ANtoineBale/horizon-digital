@@ -32,8 +32,8 @@
   --paper:  #F6F9FD;   /* fond de page clair */
   --paper-2:#EDF3FA;   /* sections de respiration */
   --ink:    #101A33;   /* titres sur fond clair */
-  --muted:  #55637F;   /* texte courant */
-  --muted-2:#7A87A3;   /* texte secondaire */
+  --muted:  #55637F;   /* texte courant — 5.72:1 sur le fond clair */
+  --muted-2:#626F8B;   /* texte secondaire — 4.77:1, conforme AA même en petit corps */
   --line:   rgba(22, 33, 62, 0.10);
   --line-2: rgba(22, 33, 62, 0.18);
 

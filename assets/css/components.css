@@ -473,7 +473,7 @@
   max-width: 34ch;
 }
 
-.footer__col h4 {
+.footer__col h2 {
   font-family: var(--font-body);
   font-size: var(--fs-eyebrow);
   font-weight: 600;

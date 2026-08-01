@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page introuvable — Horizon Digital</title>
+  <meta name="description" content="Cette page n'existe pas ou a été déplacée.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#0A1226">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/assets/css/design-system.css">
+  <link rel="stylesheet" href="/assets/css/components.css">
+  <link rel="stylesheet" href="/assets/css/pages/inner.css">
+
+  <style>
+    /* Page autonome : le décor tient tout l'écran */
+    .lost {
+      min-height: 100svh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background: var(--navy-900);
+      position: relative;
+      overflow: hidden;
+      padding: var(--gutter);
+    }
+    /* Le décor est en z-index -1 dans inner.css : ici il passerait derrière
+       le fond de .lost. On le remonte au-dessus du fond, sous le contenu. */
+    .lost .page-hero__decor { z-index: 0; }
+    .lost__inner { position: relative; z-index: 1; max-width: 620px; }
+    .lost__code {
+      font-family: var(--font-display);
+      font-size: clamp(5rem, 18vw, 11rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: -0.06em;
+      background: var(--grad-text);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1.5rem;
+    }
+    .lost h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--white); margin-bottom: 1rem; }
+    .lost p { color: var(--on-dark-muted); margin-bottom: 2.5rem; }
+    .lost__actions { display: flex; gap: 0.875rem; justify-content: center; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+
+<main class="lost">
+  <div class="page-hero__decor" aria-hidden="true"></div>
+
+  <div class="lost__inner">
+    <p class="lost__code" aria-hidden="true">404</p>
+    <h1>Cette page est hors de l'horizon.</h1>
+    <p>
+      Le lien est peut-être obsolète, ou l'adresse comporte une erreur.
+      Rien n'est perdu : tout le site reste accessible depuis l'accueil.
+    </p>
+    <div class="lost__actions">
+      <a href="/" class="btn btn--primary">Retour à l'accueil <span class="btn__arrow" aria-hidden="true">→</span></a>
+      <a href="/contact.html" class="btn btn--ghost">Me contacter</a>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
