@@ -235,11 +235,17 @@
 }
 @media (max-width: 900px) { .pitch__grid { grid-template-columns: 1fr; } }
 
-.pitch__points { margin-top: 2.5rem; display: grid; gap: 1.25rem; }
+.pitch__points {
+  margin-top: 3.25rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 2rem;
+}
 .pitch__point {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 1rem;
+  gap: 1.125rem;
   align-items: start;
 }
 .pitch__check {
@@ -252,8 +258,16 @@
   flex-shrink: 0;
   margin-top: 2px;
 }
-.pitch__point strong { display: block; color: var(--ink); font-weight: 600; margin-bottom: 0.15rem; }
-.pitch__point p { font-size: var(--fs-sm); }
+.pitch__point strong {
+  display: block;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.45rem;
+}
+.pitch__point p { font-size: var(--fs-sm); line-height: 1.62; }
 
 /* Visuel latéral : arcs concentriques = horizon abstrait */
 .pitch__visual {
@@ -264,28 +278,97 @@
   overflow: hidden;
   display: grid;
   place-items: center;
+  border: 1px solid rgba(99, 180, 255, 0.14);
+  transition: border-color 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
 }
-.pitch__rings {
+.pitch__visual:hover {
+  border-color: rgba(99, 180, 255, 0.34);
+  box-shadow: 0 30px 70px -24px rgba(30, 127, 224, 0.45);
+}
+/* --- Radar : des ondes qui partent du centre et gagnent l'horizon --- */
+.radar {
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
+  pointer-events: none;
 }
-.pitch__ring {
+
+/* Anneaux fixes : la grille de fond, discrète */
+.radar__grid {
   position: absolute;
-  border: 1px solid rgba(99, 180, 255, 0.22);
+  border: 1px solid rgba(99, 180, 255, 0.10);
   border-radius: 50%;
-  animation: pulse 6s var(--ease-io) infinite;
 }
-.pitch__ring:nth-child(1) { width: 30%; aspect-ratio: 1; animation-delay: 0s; }
-.pitch__ring:nth-child(2) { width: 52%; aspect-ratio: 1; animation-delay: 0.7s; }
-.pitch__ring:nth-child(3) { width: 74%; aspect-ratio: 1; animation-delay: 1.4s; }
-.pitch__ring:nth-child(4) { width: 96%; aspect-ratio: 1; animation-delay: 2.1s; }
-@keyframes pulse {
-  0%, 100% { opacity: 0.25; transform: scale(0.98); }
-  50%      { opacity: 0.8;  transform: scale(1.02); }
+.radar__grid:nth-of-type(1) { width: 34%; aspect-ratio: 1; }
+.radar__grid:nth-of-type(2) { width: 58%; aspect-ratio: 1; }
+.radar__grid:nth-of-type(3) { width: 82%; aspect-ratio: 1; }
+
+/* Ondes émises : naissent au centre, s'effacent en s'élargissant */
+.radar__wave {
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1;
+  border: 1px solid rgba(99, 180, 255, 0.55);
+  border-radius: 50%;
+  opacity: 0;
+  animation: emanate 6s cubic-bezier(0.2, 0.6, 0.3, 1) infinite;
 }
-@media (prefers-reduced-motion: reduce) { .pitch__ring { animation: none; } }
+.radar__wave:nth-of-type(4) { animation-delay: 0s; }
+.radar__wave:nth-of-type(5) { animation-delay: 1.5s; }
+.radar__wave:nth-of-type(6) { animation-delay: 3s; }
+.radar__wave:nth-of-type(7) { animation-delay: 4.5s; }
+
+@keyframes emanate {
+  0%   { transform: scale(0.4); opacity: 0; }
+  10%  { opacity: 0.75; }
+  100% { transform: scale(3.1); opacity: 0; }
+}
+
+/* Balayage rotatif, très dilué */
+.radar__sweep {
+  position: absolute;
+  width: 96%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    rgba(46, 155, 255, 0.16) 26deg,
+    transparent 58deg
+  );
+  animation: sweep 9s linear infinite;
+}
+
+/* Point en orbite : donne une direction au mouvement */
+.radar__orbit {
+  position: absolute;
+  width: 58%;
+  aspect-ratio: 1;
+  animation: sweep 13s linear infinite;
+}
+.radar__orbit::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  margin-left: -3.5px;
+  border-radius: 50%;
+  background: var(--blue-300);
+  box-shadow: 0 0 14px 2px rgba(99, 180, 255, 0.75);
+}
+
+@keyframes sweep { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .radar__wave { animation: none; opacity: 0.35; }
+  .radar__wave:nth-of-type(5) { transform: scale(1.7); }
+  .radar__wave:nth-of-type(6) { transform: scale(2.4); }
+  .radar__wave:nth-of-type(7) { transform: scale(3); }
+  .radar__sweep, .radar__orbit { animation: none; }
+}
 
 .pitch__stat { position: relative; text-align: center; }
 .pitch__stat-num {
@@ -298,6 +381,9 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  /* Propriété canonique du texte en dégradé : indépendante de `color`,
+     donc insensible aux règles de couleur héritées du mode sombre. */
+  -webkit-text-fill-color: transparent;
 }
 .pitch__stat-label {
   margin-top: 0.875rem;

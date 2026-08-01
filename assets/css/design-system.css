@@ -134,8 +134,10 @@ h1, h2, h3, h4 {
 }
 
 h1 { font-size: var(--fs-hero); letter-spacing: -0.045em; }
-h2 { font-size: var(--fs-h2);   letter-spacing: -0.035em; }
-h3 { font-size: var(--fs-h3);   line-height: 1.25; }
+/* 1.14 plutôt que 1.1 : les titres de section passent souvent sur
+   3–4 lignes, où un interlignage trop serré devient illisible. */
+h2 { font-size: var(--fs-h2); letter-spacing: -0.035em; line-height: 1.14; }
+h3 { font-size: var(--fs-h3); line-height: 1.25; }
 
 p { color: var(--muted); text-wrap: pretty; }
 
@@ -183,9 +185,16 @@ section:not(.is-dark) .grad {
   color: var(--muted);
   max-width: var(--maxw-text);
 }
-.is-dark .lead,
-.is-dark p { color: var(--on-dark-muted); }
-.is-dark h1, .is-dark h2, .is-dark h3 { color: var(--on-dark); }
+
+/* Respiration titre → chapô, partout et pas seulement dans .section-head */
+h1 + .lead,
+h2 + .lead,
+h3 + .lead { margin-top: 1.5rem; }
+/* :where() n'ajoute aucune spécificité : ces valeurs par défaut du mode
+   sombre restent à (0,1,0) et n'écrasent donc plus les composants qui
+   définissent leur propre couleur (.stat__num, .pitch__stat-num…). */
+.is-dark :where(.lead, p) { color: var(--on-dark-muted); }
+.is-dark :where(h1, h2, h3) { color: var(--on-dark); }
 
 /* ============================================================
    4. LAYOUT
@@ -264,7 +273,6 @@ body::after {
 .section-head--center { margin-inline: auto; text-align: center; }
 .section-head--center .eyebrow { justify-content: center; }
 .section-head--center .lead { margin-inline: auto; }
-.section-head h2 + .lead { margin-top: 1.25rem; }
 
 /* ============================================================
    5. ANIMATIONS D'ENTRÉE
