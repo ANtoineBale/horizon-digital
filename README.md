@@ -1,19 +1,27 @@
-# Studio Balesi — V2
+# Horizon Digital
 
-Site vitrine de Studio Balesi, studio digital à une personne, basé à Marseille et Aix-en-Provence. Conçu et développé par Antoine Balesi.
+Site vitrine d'Horizon Digital, agence marketing, communication & IA portée par une seule personne, basée à Marseille et Aix-en-Provence. Conçu et développé par Antoine Balesi.
 
-**Version 2** : refonte structurelle inspirée des codes des agences digitales contemporaines (structure type perroquet.eu : preuve, services tabulés, FAQ, témoignages), tout en gardant l'identité chromatique (émeraude sobre) et la promesse "studio à une personne, projet livré".
+Quatre expertises : stratégie de marque, communication & contenu, présence digitale, IA & automatisation. Un seul interlocuteur, du cadrage à la livraison.
 
 ## Stack technique
 
-- HTML / CSS / JavaScript vanilla
+- HTML / CSS / JavaScript vanilla, sans framework
+- Typographies Sora + Inter
+- Formulaire de contact via Formspree
 - Hébergé sur GitHub Pages
-- Domaine custom : studiobalesi.fr
+- Domaine custom : horizondigital.fr
+
+## Développement local
+
+```bash
+npx serve -l 3000 .
+```
 
 ## Site
 
-[studiobalesi.fr](https://studiobalesi.fr) — à activer au lancement
+[horizondigital.fr](https://horizondigital.fr) — à activer au lancement
 
 ---
 
-Code source du site Studio Balesi — par Antoine Balesi · [Portfolio personnel](https://antoinebale.github.io)
+Code source du site Horizon Digital — par Antoine Balesi · [Portfolio personnel](https://antoinebale.github.io)
