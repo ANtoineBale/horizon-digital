@@ -104,8 +104,11 @@
         <div data-reveal>
           <div id="form-status" class="form-status" hidden tabindex="-1"></div>
 
-          <!-- [À FAIRE] Remplacer VOTRE_ID par l'identifiant Formspree réel -->
-          <form id="contact-form" class="form" action="https://formspree.io/f/VOTRE_ID" method="POST" novalidate>
+          <form id="contact-form" class="form" action="https://formspree.io/f/xrperpyo" method="POST" novalidate>
+
+            <!-- Objet de l'e-mail reçu + piège à robots (champ invisible, rempli uniquement par les spams) -->
+            <input type="hidden" name="_subject" value="Nouvelle demande — site Horizon Digital">
+            <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" hidden>
 
             <div class="field">
               <label for="name">Nom</label>
