@@ -1,6 +1,6 @@
 /* ============================================================
    components.css — Horizon Digital
-   Logo · Header · Boutons · Cartes · Marquee · FAQ · Footer
+   Logo · Header · Boutons · Cartes · Marquee · FAQ · CTA · Footer
    ============================================================ */
 
 /* ============================================================
@@ -433,6 +433,32 @@
 .faq__q[aria-expanded="true"] + .faq__a { grid-template-rows: 1fr; }
 .faq__a > div { overflow: hidden; }
 .faq__a p { padding-bottom: 1.75rem; padding-right: clamp(0rem, 6vw, 3.5rem); }
+
+/* ============================================================
+   CTA FINALE — partagé par l'accueil et les pages internes
+   ============================================================ */
+.cta {
+  position: relative;
+  padding: clamp(3.5rem, 8vw, 6rem) clamp(1.5rem, 5vw, 4rem);
+  border-radius: var(--r-xl);
+  background: linear-gradient(150deg, var(--navy-800) 0%, var(--navy-950) 65%);
+  text-align: center;
+  overflow: hidden;
+}
+/* Arc lumineux du logo, en fond */
+.cta::before {
+  content: '';
+  position: absolute;
+  left: 50%; bottom: -85%;
+  width: 120%; aspect-ratio: 1.8 / 1;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(46, 155, 255, 0.30), transparent 58%);
+  pointer-events: none;
+}
+.cta > * { position: relative; }
+.cta h2 { color: var(--white); max-width: 18ch; margin-inline: auto; }
+.cta p { margin: 1.25rem auto 2.5rem; max-width: 52ch; color: var(--on-dark-muted); }
+.cta__actions { display: flex; flex-wrap: wrap; gap: 0.875rem; justify-content: center; }
 
 /* ============================================================
    FOOTER
