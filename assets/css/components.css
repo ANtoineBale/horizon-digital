@@ -365,6 +365,54 @@
 .card p { font-size: var(--fs-sm); }
 .card .link-arrow { margin-top: 1.5rem; }
 
+/* --- Carte d'expertise : accueil, Expertises (méthode), Agence (réflexes) --- */
+.expertise-card { display: flex; flex-direction: column; }
+.expertise-card ul { margin-top: 1.25rem; display: grid; gap: 0.5rem; }
+.expertise-card li {
+  position: relative;
+  padding-left: 1.125rem;
+  font-size: var(--fs-sm);
+  color: var(--muted);
+}
+.expertise-card li::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0.65em;
+  width: 6px; height: 1.5px;
+  border-radius: 2px;
+  background: var(--blue-400);
+}
+.expertise-card .link-arrow { margin-top: auto; padding-top: 1.5rem; }
+
+/* Variante sombre (carte IA, cartes sur bandes sombres) */
+.expertise-card--ai {
+  background: linear-gradient(165deg, var(--navy-800), var(--navy-950));
+  border-color: rgba(46, 155, 255, 0.30);
+}
+.expertise-card--ai h3 { color: var(--white); }
+.expertise-card--ai p, .expertise-card--ai li { color: var(--on-dark-muted); }
+.expertise-card--ai .card__num { color: var(--blue-300); }
+.expertise-card--ai .link-arrow { color: var(--blue-300); }
+.expertise-card--ai::before {
+  background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 0%), rgba(46,155,255,0.20), transparent 65%);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--r-pill);
+  background: rgba(46, 155, 255, 0.14);
+  border: 1px solid rgba(46, 155, 255, 0.32);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue-300);
+  margin-bottom: 1rem;
+}
+
 .grid { display: grid; gap: 1.25rem; }
 .grid--2 { grid-template-columns: repeat(2, 1fr); }
 .grid--3 { grid-template-columns: repeat(3, 1fr); }
