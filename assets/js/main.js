@@ -63,11 +63,28 @@ const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     }
   });
 
-  // Sous-menu "Expertises" : clic (mobile) + clavier (desktop)
+  // Sous-menu "Expertises" : simple bouton qui ouvre / ferme la liste
   document.querySelectorAll('.nav__trigger').forEach((trigger) => {
+    const item = trigger.closest('.nav__item--has-menu');
+    const close = () => trigger.setAttribute('aria-expanded', 'false');
+
     trigger.addEventListener('click', () => {
       const expanded = trigger.getAttribute('aria-expanded') === 'true';
       trigger.setAttribute('aria-expanded', String(!expanded));
+    });
+
+    // Fermé au clic en dehors, à Échap et quand le focus quitte le sous-menu
+    document.addEventListener('click', (e) => {
+      if (!item.contains(e.target)) close();
+    });
+    item.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && trigger.getAttribute('aria-expanded') === 'true') {
+        close();
+        trigger.focus();
+      }
+    });
+    item.addEventListener('focusout', (e) => {
+      if (!item.contains(e.relatedTarget)) close();
     });
   });
 })();
@@ -171,13 +188,25 @@ const REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const questions = document.querySelectorAll('.faq__q');
   if (!questions.length) return;
 
-  questions.forEach((q) => {
+  // Relie chaque question à sa réponse ; une réponse fermée est inerte :
+  // ni lue par les lecteurs d'écran, ni atteignable au clavier.
+  const setOpen = (q, open) => {
+    q.setAttribute('aria-expanded', String(open));
+    q.nextElementSibling.inert = !open;
+  };
+
+  questions.forEach((q, i) => {
+    const panel = q.nextElementSibling;
+    panel.id = panel.id || `faq-reponse-${i + 1}`;
+    q.setAttribute('aria-controls', panel.id);
+    setOpen(q, q.getAttribute('aria-expanded') === 'true');
+
     q.addEventListener('click', () => {
       const isOpen = q.getAttribute('aria-expanded') === 'true';
 
       // Un seul panneau ouvert à la fois
-      questions.forEach((other) => other.setAttribute('aria-expanded', 'false'));
-      q.setAttribute('aria-expanded', String(!isOpen));
+      questions.forEach((other) => setOpen(other, false));
+      setOpen(q, !isOpen);
     });
   });
 })();

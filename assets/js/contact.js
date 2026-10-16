@@ -85,14 +85,8 @@
       return;
     }
 
-    // Garde-fou : tant que l'endpoint n'est pas configuré, on bascule
-    // sur l'e-mail plutôt que d'avaler silencieusement le message.
-    if (form.action.includes('VOTRE_ID')) {
-      show('ko', "Le formulaire n'est pas encore relié. Écrivez-moi directement à antoinebalesi@gmail.com — je réponds sous 48 h ouvrées.");
-      return;
-    }
-
-    const label = submit.textContent;
+    // innerHTML et non textContent : on garde la flèche décorative (aria-hidden)
+    const label = submit.innerHTML;
     submit.disabled = true;
     submit.textContent = 'Envoi en cours…';
 
@@ -112,8 +106,10 @@
       }
     } catch {
       submit.disabled = false;
-      submit.textContent = label;
+      submit.innerHTML = label;
       show('ko', "L'envoi a échoué. Réessayez, ou écrivez-moi à antoinebalesi@gmail.com.");
+      // Le focus sur le message le fait lire par les lecteurs d'écran
+      status.focus();
     }
   });
 })();

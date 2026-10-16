@@ -502,7 +502,7 @@
   transition: border-color 0.25s, box-shadow 0.25s;
 }
 .field input::placeholder,
-.field textarea::placeholder { color: rgba(16, 26, 51, 0.32); }
+.field textarea::placeholder { color: var(--muted-2); }
 .field input:focus,
 .field textarea:focus {
   outline: none;
@@ -582,7 +582,7 @@
   content: '0' counter(n);
   font-family: var(--font-display);
   font-weight: 600;
-  color: var(--blue-500);
+  color: var(--blue-600);
 }
 
 /* ============================================================
