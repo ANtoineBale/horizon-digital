@@ -23,9 +23,9 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="canonical" href="https://antoinebale.github.io/horizon-digital/realisations.html">
 
-  <link rel="stylesheet" href="assets/css/design-system.css?v=20261016d">
-  <link rel="stylesheet" href="assets/css/components.css?v=20261016d">
-  <link rel="stylesheet" href="assets/css/pages/inner.css?v=20261016d">
+  <link rel="stylesheet" href="assets/css/design-system.css?v=20261016e">
+  <link rel="stylesheet" href="assets/css/components.css?v=20261016e">
+  <link rel="stylesheet" href="assets/css/pages/inner.css?v=20261016e">
 </head>
 <body>
 
@@ -212,11 +212,17 @@
       <div class="project__grid">
 
         <div class="project__visuals" data-reveal>
-          <div class="project__shot project__shot--wide">
-            <img src="assets/images/realisations/shibui-score-motivation.webp" alt="Slide de présentation Shibui : le score de motivation" loading="lazy" width="1600" height="900">
-          </div>
-          <div class="project__shot project__shot--logo project__shot--banner">
-            <img src="assets/images/realisations/logo-shibui.webp" alt="Logo Shibui" loading="lazy" width="600" height="600">
+          <!-- Le pivot en image : les deux logos, avant / après -->
+          <div class="project__shot project__pivot">
+            <figure class="pivot__step">
+              <img class="pivot__meetup" src="assets/images/realisations/logo-meetup.webp" alt="Logo Meet'up, première version du projet" loading="lazy" width="400" height="400">
+              <figcaption>Avant · Meet'up</figcaption>
+            </figure>
+            <span class="pivot__arrow" aria-hidden="true">→</span>
+            <figure class="pivot__step">
+              <img class="pivot__shibui" src="assets/images/realisations/logo-shibui.webp" alt="Logo Shibui, après le pivot" loading="lazy" width="600" height="600">
+              <figcaption>Après · Shibui</figcaption>
+            </figure>
           </div>
         </div>
 
@@ -403,6 +409,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20261016d" defer></script>
+<script src="assets/js/main.js?v=20261016e" defer></script>
 </body>
 </html>

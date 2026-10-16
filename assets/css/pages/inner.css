@@ -282,8 +282,19 @@
 .project__shot:hover { border-color: rgba(46, 155, 255, 0.45); transform: translateY(-4px); }
 .project__shot img { width: 100%; height: 100%; object-fit: cover; }
 
-.project__shot--logo { background: var(--paper-2); padding: clamp(1.5rem, 4vw, 2.5rem); }
-.project__shot--logo img { width: auto; height: auto; max-width: 76%; max-height: 76%; object-fit: contain; }
+/* Logo centré dans 76 % du cadre, quelle que soit la forme du cadre.
+   En position absolue : les max-height en % ne marchaient pas dans la
+   grille et un logo carré débordait d'un cadre en bandeau. */
+.project__shot--logo { position: relative; background: var(--paper-2); }
+.project__shot--logo img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 76%;
+  height: 76%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+}
 
 .project__pair { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .project__pair .project__shot { aspect-ratio: 1; }
@@ -292,6 +303,46 @@
 .project__visuals .project__shot--portrait { aspect-ratio: 3 / 4; }   /* photos du salon */
 .project__visuals .project__shot--wide     { aspect-ratio: 16 / 9; }  /* capture de site */
 .project__visuals .project__shot--banner   { aspect-ratio: 2.4 / 1; } /* logo en bandeau */
+
+/* Shibui : le pivot en image, logo Meet'up → logo Shibui */
+.project__pivot {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.5rem, 4vw, 2.5rem);
+  padding: clamp(1rem, 4vw, 2.5rem);
+  background: var(--white);
+}
+.pivot__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.875rem;
+}
+.pivot__step figcaption {
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--blue-600);
+  white-space: nowrap;
+}
+/* (0,2,0) pour passer devant .project__shot img (cover, 100 %) */
+.project__pivot .pivot__meetup {
+  width: clamp(64px, 16vw, 120px);
+  height: auto;
+  border-radius: 22%;
+}
+/* Le fichier Shibui est carré avec beaucoup de blanc : on ne garde
+   que la bande centrale, où se trouve le logo */
+.project__pivot .pivot__shibui {
+  width: clamp(140px, 28vw, 230px);
+  height: auto;
+  aspect-ratio: 3.7 / 1;
+  object-fit: cover;
+}
+.pivot__arrow { font-size: 1.5rem; color: var(--blue-500); }
 
 /* Portfolio : nom en grand sur fond sombre, à la place d'une capture */
 .project__shot--name {
