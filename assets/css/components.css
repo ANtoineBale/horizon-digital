@@ -313,6 +313,14 @@
   }
   .nav__trigger[aria-expanded="true"] + .nav__menu { display: block; }
 
+  /* Les règles :hover / :focus-within du bureau sont plus spécifiques et
+     décalaient le sous-menu de moitié hors de l'écran (un toucher sur
+     mobile déclenche :hover). Ici, seul aria-expanded décide. */
+  .nav__item--has-menu:hover .nav__menu,
+  .nav__item--has-menu:focus-within .nav__menu { transform: none; }
+  .nav__item--has-menu:hover .nav__chevron { transform: none; }
+  .nav__item--has-menu .nav__trigger[aria-expanded="true"] .nav__chevron { transform: rotate(180deg); }
+
   .nav__cta { margin-top: 1.25rem; }
   .nav__cta .btn { width: 100%; }
 }
