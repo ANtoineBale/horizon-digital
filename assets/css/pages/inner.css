@@ -168,6 +168,9 @@
 }
 .offer__for strong { font-weight: 600; }
 
+/* Phrase de conclusion sous les livrables */
+.offer__note { margin-top: 1.5rem; font-size: var(--fs-sm); }
+
 .offer__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
 @media (max-width: 680px) { .offer__cols { grid-template-columns: 1fr; gap: 2rem; } }
 
@@ -289,6 +292,35 @@
 .project__visuals .project__shot--portrait { aspect-ratio: 3 / 4; }   /* photos du salon */
 .project__visuals .project__shot--wide     { aspect-ratio: 16 / 9; }  /* capture de site */
 .project__visuals .project__shot--banner   { aspect-ratio: 2.4 / 1; } /* logo en bandeau */
+
+/* Portfolio : nom en grand sur fond sombre, à la place d'une capture */
+.project__shot--name {
+  background: linear-gradient(160deg, var(--navy-800), var(--navy-950));
+  text-align: center;
+  padding: 2rem;
+}
+.project__name {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  color: var(--white);
+}
+.project__name span {
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.project__url {
+  margin-top: 1rem;
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue-300);
+}
 
 /* Logo carré + simulateur très large : colonnes proportionnelles aux
    images (1 et 1,94) pour que les deux cadres aient la même hauteur */

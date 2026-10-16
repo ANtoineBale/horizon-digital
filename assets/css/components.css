@@ -421,6 +421,9 @@
   margin-bottom: 1rem;
 }
 
+/* Bouton centré sous une grille de cartes (ex. « Voir toutes les réalisations ») */
+.section-actions { margin-top: 2.75rem; text-align: center; }
+
 .grid { display: grid; gap: 1.25rem; }
 .grid--2 { grid-template-columns: repeat(2, 1fr); }
 .grid--3 { grid-template-columns: repeat(3, 1fr); }

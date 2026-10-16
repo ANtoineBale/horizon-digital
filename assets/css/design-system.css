@@ -316,6 +316,8 @@ body::after {
 }
 .skip-link:focus { transform: none; outline: none; }
 
+.u-center { text-align: center; }
+
 .sr-only {
   position: absolute;
   width: 1px; height: 1px;
