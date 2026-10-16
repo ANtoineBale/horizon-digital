@@ -49,6 +49,17 @@
 }
 
 .page-hero h1 { color: var(--white); max-width: 20ch; }
+
+/* Portrait (page Agence) : la photo source fait 192 px, affichée à 96 px (2×) */
+.page-hero__avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1.75rem;
+  border: 2px solid rgba(99, 180, 255, 0.55);
+  box-shadow: 0 0 0 6px rgba(46, 155, 255, 0.12);
+}
 .page-hero h1 .grad {
   background: var(--grad-text);
   -webkit-background-clip: text;
@@ -471,6 +482,31 @@
 /* Colonne latérale contact */
 .contact__aside { position: sticky; top: calc(var(--header-h) + 2rem); display: grid; gap: 2.5rem; }
 @media (max-width: 940px) { .contact__aside { position: static; } }
+
+/* Visage de l'interlocuteur, en tête de la colonne contact */
+.contact__person {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--line);
+}
+.contact__person img {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--blue-200);
+}
+.contact__person p { font-size: var(--fs-sm); line-height: 1.45; }
+.contact__person strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--ink);
+}
 
 .contact__block h3 {
   font-size: var(--fs-eyebrow);
