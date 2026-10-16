@@ -10,7 +10,7 @@ Quatre expertises : stratégie de marque, communication & contenu, présence dig
 - Typographies Sora + Inter
 - Formulaire de contact via Formspree
 - Hébergé sur GitHub Pages
-- Domaine custom : horizondigital.fr
+- Domaine personnalisé : à définir
 
 ## Développement local
 
@@ -20,7 +20,7 @@ npx serve -l 3000 .
 
 ## Site
 
-[horizondigital.fr](https://horizondigital.fr) — à activer au lancement
+[antoinebale.github.io/horizon-digital](https://antoinebale.github.io/horizon-digital/)
 
 ---
 

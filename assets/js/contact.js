@@ -88,7 +88,7 @@
     // Garde-fou : tant que l'endpoint n'est pas configuré, on bascule
     // sur l'e-mail plutôt que d'avaler silencieusement le message.
     if (form.action.includes('VOTRE_ID')) {
-      show('ko', "Le formulaire n'est pas encore relié. Écrivez-moi directement à contact@horizondigital.fr — je réponds sous 48 h ouvrées.");
+      show('ko', "Le formulaire n'est pas encore relié. Écrivez-moi directement à antoinebalesi@gmail.com — je réponds sous 48 h ouvrées.");
       return;
     }
 
@@ -113,7 +113,7 @@
     } catch {
       submit.disabled = false;
       submit.textContent = label;
-      show('ko', "L'envoi a échoué. Réessayez, ou écrivez-moi à contact@horizondigital.fr.");
+      show('ko', "L'envoi a échoué. Réessayez, ou écrivez-moi à antoinebalesi@gmail.com.");
     }
   });
 })();
