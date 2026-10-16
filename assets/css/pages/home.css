@@ -156,6 +156,11 @@
 
 .hero__actions { display: flex; flex-wrap: wrap; gap: 0.875rem; }
 
+/* Le hero est sombre sans porter .is-dark : le bouton secondaire
+   reprend ici la variante claire, sinon il disparaît dans le fond. */
+.hero .btn--ghost { --btn-fg: var(--on-dark); border-color: var(--on-dark-line); }
+.hero .btn--ghost:hover { background: var(--white); color: var(--navy-900); border-color: var(--white); }
+
 /* Bandeau de réassurance sous les CTA */
 .hero__trust {
   display: flex;
