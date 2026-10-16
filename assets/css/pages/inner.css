@@ -234,7 +234,12 @@
 .project {
   padding-block: clamp(3.5rem, 7vw, 6rem);
   scroll-margin-top: calc(var(--header-h) + 1rem);
+  /* Ancre l'arc de .section--arc (#jardin) à son projet : sans ça, il se
+     cale sur la page entière et l'élargit sur mobile. */
+  position: relative;
 }
+/* Le contenu repasse au-dessus de l'arc en filigrane */
+.project > .container { position: relative; z-index: 1; }
 .project + .project { border-top: 1px solid var(--line); }
 
 .project__grid {
