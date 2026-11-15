@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 
-# Page légale volontairement non indexée (voir aussi sa balise robots)
-Disallow: /mentions-legales.html
-
+# Les pages légales et 404 utilisent une balise meta noindex.
+# Sur GitHub Pages, seul le robots.txt à la racine de l’hôte contrôle le crawl.
 Sitemap: https://antoinebale.github.io/horizon-digital/sitemap.xml

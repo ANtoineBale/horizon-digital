@@ -74,7 +74,8 @@
   font-size: var(--fs-sm);
   font-weight: 600;
   letter-spacing: -0.01em;
-  white-space: nowrap;
+  white-space: normal;
+  text-align: center;
   background: var(--btn-bg);
   color: var(--btn-fg);
   overflow: hidden;
@@ -213,7 +214,6 @@
   transition: color 0.25s;
 }
 .nav__chevron { transition: transform 0.3s var(--ease-out); }
-.nav__item--has-menu:hover .nav__chevron,
 .nav__trigger[aria-expanded="true"] .nav__chevron { transform: rotate(180deg); }
 
 .nav__menu {
@@ -231,8 +231,7 @@
   transform: translate(-50%, -8px);
   transition: opacity 0.28s var(--ease-out), transform 0.28s var(--ease-out), visibility 0.28s;
 }
-.nav__item--has-menu:hover .nav__menu,
-.nav__item--has-menu:focus-within .nav__menu {
+.nav__trigger[aria-expanded="true"] + .nav__menu {
   opacity: 1;
   visibility: visible;
   transform: translate(-50%, 0);
@@ -262,6 +261,8 @@
   gap: 5px;
   padding: 0.5rem;
   margin-right: -0.5rem;
+  min-width: 44px; min-height: 44px;
+  align-items: center; justify-content: center;
 }
 .burger span {
   display: block;
@@ -320,13 +321,7 @@
   }
   .nav__trigger[aria-expanded="true"] + .nav__menu { display: block; }
 
-  /* Les règles :hover / :focus-within du bureau sont plus spécifiques et
-     décalaient le sous-menu de moitié hors de l'écran (un toucher sur
-     mobile déclenche :hover). Ici, seul aria-expanded décide. */
-  .nav__item--has-menu:hover .nav__menu,
-  .nav__item--has-menu:focus-within .nav__menu { transform: none; }
-  .nav__item--has-menu:hover .nav__chevron { transform: none; }
-  .nav__item--has-menu .nav__trigger[aria-expanded="true"] .nav__chevron { transform: rotate(180deg); }
+  .nav__trigger[aria-expanded="true"] + .nav__menu { transform: none; }
 
   .nav__cta { margin-top: 1.25rem; }
   .nav__cta .btn { width: 100%; }
@@ -344,26 +339,11 @@
   overflow: hidden;
   transition: transform 0.4s var(--ease-out), border-color 0.4s, box-shadow 0.4s var(--ease-out);
 }
-/* Halo bleu qui suit le curseur (vars posées par le JS) */
-.card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    340px circle at var(--mx, 50%) var(--my, 0%),
-    rgba(46, 155, 255, 0.10),
-    transparent 65%
-  );
-  opacity: 0;
-  transition: opacity 0.4s var(--ease-out);
-  pointer-events: none;
-}
-.card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(46, 155, 255, 0.45);
+.card:hover, .card:focus-within {
+  transform: translateY(-2px);
+  border-color: var(--blue-600);
   box-shadow: var(--shadow-md);
 }
-.card:hover::before { opacity: 1; }
 
 .card > * { position: relative; }
 
@@ -520,17 +500,18 @@
 }
 .faq__icon::after { transform: translate(-50%, -50%) rotate(90deg); }
 
-.faq__q[aria-expanded="true"] .faq__icon {
+.faq__item[open] > .faq__q .faq__icon {
   background: var(--grad-cta);
   border-color: transparent;
   transform: rotate(180deg);
 }
-.faq__q[aria-expanded="true"] .faq__icon::before,
-.faq__q[aria-expanded="true"] .faq__icon::after { background: var(--white); }
-.faq__q[aria-expanded="true"] .faq__icon::after { transform: translate(-50%, -50%) rotate(0deg); }
+.faq__item[open] > .faq__q .faq__icon::before,
+.faq__item[open] > .faq__q .faq__icon::after { background: var(--white); }
+.faq__item[open] > .faq__q .faq__icon::after { transform: translate(-50%, -50%) rotate(0deg); }
 
-.faq__a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s var(--ease-out); }
-.faq__q[aria-expanded="true"] + .faq__a { grid-template-rows: 1fr; }
+.faq__q { cursor: pointer; list-style: none; }
+.faq__q::-webkit-details-marker { display: none; }
+.faq__a { display: block; }
 .faq__a > div { overflow: hidden; }
 .faq__a p { padding-bottom: 1.75rem; padding-right: clamp(0rem, 6vw, 3.5rem); }
 
@@ -628,3 +609,52 @@
 .footer__social { display: flex; gap: 1.5rem; }
 .footer__social a { font-size: var(--fs-sm); color: var(--on-dark-muted); transition: color 0.25s; }
 .footer__social a:hover { color: var(--blue-300); }
+
+
+/* Belavi : preuve produit, partagée entre accueil et étude de cas. */
+.belavi-feature { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(336px, .65fr); gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+.belavi-feature h2 { margin-bottom: 1.5rem; }
+.belavi-feature p + p { margin-top: 1rem; }
+.belavi-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1.25rem; margin-top: 1.75rem; }
+.belavi-facts { display: flex; flex-wrap: wrap; gap: .6rem; margin: 1.5rem 0; padding: 0; list-style: none; }
+.belavi-facts li { padding: .5rem .8rem; border: 1px solid var(--line-2); border-radius: var(--r-sm); font-size: var(--fs-sm); color: var(--blue-700); background: var(--blue-050); }
+.belavi-preview { width: 100%; max-width: 310px; margin: 0 auto; }
+.belavi-preview img, .belavi-preview video { display: block; width: 100%; height: auto; border: 6px solid var(--navy-700); border-radius: 1.75rem; box-shadow: var(--shadow-lg); }
+.belavi-preview img { max-height: 540px; object-fit: cover; object-position: top; }
+.belavi-preview--live { max-width: 391px; }
+.belavi-phone-shell { padding: 8px; border-radius: 2.75rem; background: #1c1917; box-shadow: var(--shadow-lg); }
+.belavi-phone { display: block; width: 100%; height: 700px; border: 0; border-radius: 2.25rem; background: #fff; }
+.belavi-phone:focus-visible { outline: 3px solid var(--blue-700); outline-offset: 4px; }
+.belavi-preview figcaption, .belavi-editor figcaption { margin-top: .85rem; font-size: var(--fs-xs); color: var(--muted); line-height: 1.6; }
+.belavi-journey { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; list-style: none; padding: 0; }
+.belavi-journey strong { display: block; color: var(--ink); margin-bottom: .75rem; }
+.belavi-editor { max-width: 900px; margin: 3rem auto 0; }
+.belavi-editor img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--r-md); }
+.belavi-technical { margin-top: 2rem; font-size: var(--fs-sm); color: var(--muted); }
+.belavi-offer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+.belavi-offer h3, .belavi-offer p { margin-bottom: 1rem; }
+.work-card__body .link-arrow { margin-top: 1rem; }
+@media (max-width: 940px) {
+  .belavi-feature, .belavi-journey { grid-template-columns: minmax(0, 1fr); }
+  .belavi-actions .btn { width: 100%; white-space: normal; text-align: center; }
+  .belavi-preview { max-width: 270px; }
+  .belavi-preview--live { max-width: 391px; }
+}
+
+/* Contrastes, éléments étroits et interactions sans mouvement imposé. */
+.hero .eyebrow, .page-hero .eyebrow, .page-hero .link-arrow, .is-dark .link-arrow { color: var(--blue-300); }
+.btn::after { content: none; }
+.offer__next { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-top: 2rem; }
+.contact__intro { margin-bottom: 1.5rem; }
+.contact__intro a { color: var(--blue-600); text-decoration: underline; overflow-wrap: anywhere; }
+@media (max-width: 620px) {
+  .section { padding-block: 3.5rem; }
+  .cta { padding: 2.5rem 1.25rem; }
+  .btn { max-width: 100%; }
+  .belavi-phone { height: 620px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  .card:hover, .card:focus-within, .btn:hover, .btn__arrow, [data-reveal] { transform: none !important; }
+}

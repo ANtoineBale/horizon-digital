@@ -83,7 +83,7 @@
   /* --- Dégradés signature (l'arc du logo) --- */
   --grad-arc:  linear-gradient(90deg, var(--blue-500) 0%, var(--blue-300) 50%, var(--blue-500) 100%);
   --grad-text: linear-gradient(100deg, var(--blue-400) 0%, var(--blue-300) 55%, var(--blue-200) 100%);
-  --grad-cta:  linear-gradient(135deg, var(--blue-500) 0%, var(--blue-400) 100%);
+  --grad-cta:  linear-gradient(135deg, var(--blue-700) 0%, var(--blue-600) 100%);
 
   /* --- Typographie --- */
   --font-display: 'Sora', system-ui, -apple-system, sans-serif;
@@ -314,21 +314,6 @@ body::after {
 .section-head--center { margin-inline: auto; text-align: center; }
 .section-head--center .eyebrow { justify-content: center; }
 .section-head--center .lead { margin-inline: auto; }
-
-/* ============================================================
-   5. ANIMATIONS D'ENTRÉE
-   ============================================================ */
-@media (prefers-reduced-motion: no-preference) {
-  [data-reveal] {
-    opacity: 0;
-    transform: translateY(26px);
-    transition:
-      opacity 0.85s var(--ease-out),
-      transform 0.85s var(--ease-out);
-    transition-delay: var(--reveal-delay, 0ms);
-  }
-  [data-reveal].is-visible { opacity: 1; transform: none; }
-}
 
 /* ============================================================
    6. ACCESSIBILITÉ

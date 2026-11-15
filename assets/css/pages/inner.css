@@ -542,6 +542,7 @@
 .field label span { text-transform: none; letter-spacing: 0; font-weight: 400; color: var(--muted-2); }
 
 .field input,
+.field select,
 .field textarea {
   width: 100%;
   padding: 0.9rem 1.1rem;
@@ -555,6 +556,7 @@
 .field input::placeholder,
 .field textarea::placeholder { color: var(--muted-2); }
 .field input:focus,
+.field select:focus,
 .field textarea:focus {
   outline: none;
   border-color: var(--blue-500);

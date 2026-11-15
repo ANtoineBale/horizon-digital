@@ -186,175 +186,6 @@
   flex-shrink: 0;
 }
 
-/* ============================================================
-   POSITIONNEMENT — split texte / chiffre
-   ============================================================ */
-.pitch__grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: clamp(2.5rem, 6vw, 5rem);
-  align-items: center;
-}
-@media (max-width: 900px) { .pitch__grid { grid-template-columns: 1fr; } }
-
-.pitch__points {
-  margin-top: 3.25rem;
-  padding-top: 2.5rem;
-  border-top: 1px solid var(--line);
-  display: grid;
-  gap: 2rem;
-}
-.pitch__point {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1.125rem;
-  align-items: start;
-}
-.pitch__check {
-  width: 24px; height: 24px;
-  border-radius: 50%;
-  background: var(--blue-050);
-  color: var(--blue-600);
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-.pitch__point strong {
-  display: block;
-  color: var(--ink);
-  font-family: var(--font-display);
-  font-size: 1.0625rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.45rem;
-}
-.pitch__point p { font-size: var(--fs-sm); line-height: 1.62; }
-
-/* Visuel latéral : arcs concentriques = horizon abstrait */
-.pitch__visual {
-  position: relative;
-  aspect-ratio: 1;
-  border-radius: var(--r-xl);
-  background: linear-gradient(160deg, var(--navy-800), var(--navy-950));
-  overflow: hidden;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(99, 180, 255, 0.14);
-  transition: border-color 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
-}
-.pitch__visual:hover {
-  border-color: rgba(99, 180, 255, 0.34);
-  box-shadow: 0 30px 70px -24px rgba(30, 127, 224, 0.45);
-}
-/* --- Radar : des ondes qui partent du centre et gagnent l'horizon --- */
-.radar {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  pointer-events: none;
-}
-
-/* Anneaux fixes : la grille de fond, discrète */
-.radar__grid {
-  position: absolute;
-  border: 1px solid rgba(99, 180, 255, 0.10);
-  border-radius: 50%;
-}
-.radar__grid:nth-of-type(1) { width: 34%; aspect-ratio: 1; }
-.radar__grid:nth-of-type(2) { width: 58%; aspect-ratio: 1; }
-.radar__grid:nth-of-type(3) { width: 82%; aspect-ratio: 1; }
-
-/* Ondes émises : naissent au centre, s'effacent en s'élargissant */
-.radar__wave {
-  position: absolute;
-  width: 30%;
-  aspect-ratio: 1;
-  border: 1px solid rgba(99, 180, 255, 0.55);
-  border-radius: 50%;
-  opacity: 0;
-  animation: emanate 6s cubic-bezier(0.2, 0.6, 0.3, 1) infinite;
-}
-.radar__wave:nth-of-type(4) { animation-delay: 0s; }
-.radar__wave:nth-of-type(5) { animation-delay: 1.5s; }
-.radar__wave:nth-of-type(6) { animation-delay: 3s; }
-.radar__wave:nth-of-type(7) { animation-delay: 4.5s; }
-
-@keyframes emanate {
-  0%   { transform: scale(0.4); opacity: 0; }
-  10%  { opacity: 0.75; }
-  100% { transform: scale(3.1); opacity: 0; }
-}
-
-/* Balayage rotatif, très dilué */
-.radar__sweep {
-  position: absolute;
-  width: 96%;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    transparent 0deg,
-    rgba(46, 155, 255, 0.16) 26deg,
-    transparent 58deg
-  );
-  animation: sweep 9s linear infinite;
-}
-
-/* Point en orbite : donne une direction au mouvement */
-.radar__orbit {
-  position: absolute;
-  width: 58%;
-  aspect-ratio: 1;
-  animation: sweep 13s linear infinite;
-}
-.radar__orbit::after {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: 50%;
-  width: 7px;
-  height: 7px;
-  margin-left: -3.5px;
-  border-radius: 50%;
-  background: var(--blue-300);
-  box-shadow: 0 0 14px 2px rgba(99, 180, 255, 0.75);
-}
-
-@keyframes sweep { to { transform: rotate(360deg); } }
-
-@media (prefers-reduced-motion: reduce) {
-  .radar__wave { animation: none; opacity: 0.35; }
-  .radar__wave:nth-of-type(5) { transform: scale(1.7); }
-  .radar__wave:nth-of-type(6) { transform: scale(2.4); }
-  .radar__wave:nth-of-type(7) { transform: scale(3); }
-  .radar__sweep, .radar__orbit { animation: none; }
-}
-
-.pitch__stat { position: relative; text-align: center; }
-.pitch__stat-num {
-  font-family: var(--font-display);
-  font-size: clamp(3.5rem, 7vw, 5.5rem);
-  font-weight: 700;
-  line-height: 1;
-  letter-spacing: -0.05em;
-  background: var(--grad-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  /* Propriété canonique du texte en dégradé : indépendante de `color`,
-     donc insensible aux règles de couleur héritées du mode sombre. */
-  -webkit-text-fill-color: transparent;
-}
-.pitch__stat-label {
-  margin-top: 0.875rem;
-  font-size: var(--fs-sm);
-  color: var(--on-dark-muted);
-  max-width: 22ch;
-  margin-inline: auto;
-}
-
 /* Les cartes d'expertise (.expertise-card, --ai, .badge) servent aussi
    aux pages internes : elles vivent dans components.css. */
 
@@ -436,3 +267,24 @@
 
 /* La bande de chiffres (.stats-band, .stats, .stat) sert aussi aux
    pages Réalisations et L'agence : elle vit dans components.css. */
+
+/* Des preuves plus proches, un décor stable et des visuels réels. */
+.hero { min-height: min(850px, 100svh); }
+.hero h1 { font-size: clamp(2.35rem, 5.5vw, 4.5rem); }
+.horizon__stars--far, .horizon__ridge--far, .horizon__ridge--mid { display: none; }
+.horizon__scene { transform: none; transition: none; }
+.work-card__thumb--capture { position: relative; padding: 0; aspect-ratio: 16 / 10; overflow: hidden; }
+.work-card__thumb--capture img { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; object-fit: cover; object-position: top; }
+.horizon__arc { bottom: 9%; opacity: .35; }
+.horizon__sun { bottom: 0; opacity: .45; }
+.work-card:hover .work-card__thumb img { transform: none; }
+.step:hover .step__dot { transform: none; }
+@media (max-width: 540px) {
+  .hero { min-height: auto; }
+  .hero__content { padding-block: 3rem 4rem; }
+  .hero__trust { gap: .75rem; }
+  .steps { gap: 1.75rem; }
+  .step { padding-left: 4rem; }
+  .step__dot { position: absolute; left: 0; top: 0; width: 42px; height: 42px; }
+  .steps::before { display: block; left: 21px; top: 0; bottom: 0; width: 1px; height: auto; right: auto; }
+}

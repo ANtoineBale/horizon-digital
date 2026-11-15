@@ -5,6 +5,19 @@
 (() => {
   const form = document.getElementById('contact-form');
   if (!form) return;
+  form.noValidate = true;
+
+  // Valeur autorisée uniquement : aucun texte libre de l’URL n’est injecté.
+  const need = document.getElementById('need');
+  const needs = new Map([
+    ['marque', 'Stratégie de marque et identité'],
+    ['contenus', 'Communication et contenus'],
+    ['site', 'Création ou refonte d’un site web'],
+    ['plateforme', 'Création d’une plateforme web — suite au projet Belavi'],
+    ['automatisation', 'IA et automatisation'],
+  ]);
+  const selectedNeed = needs.get(new URLSearchParams(window.location.search).get('projet'));
+  if (need && !need.value && selectedNeed) need.value = selectedNeed;
 
   const status = document.getElementById('form-status');
   const submit = form.querySelector('[type="submit"]');
@@ -79,6 +92,7 @@
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    if (submit.disabled) return;
     const invalid = validate();
     if (invalid) {
       invalid.focus();
@@ -87,6 +101,8 @@
 
     // innerHTML et non textContent : on garde la flèche décorative (aria-hidden)
     const label = submit.innerHTML;
+    status.hidden = true;
+    form.setAttribute('aria-busy', 'true');
     submit.disabled = true;
     submit.textContent = 'Envoi en cours…';
 
@@ -110,6 +126,8 @@
       show('ko', "L'envoi a échoué. Réessayez, ou écrivez-moi à antoinebalesi@gmail.com.");
       // Le focus sur le message le fait lire par les lecteurs d'écran
       status.focus();
+    } finally {
+      form.removeAttribute('aria-busy');
     }
   });
 })();

@@ -23,9 +23,16 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="canonical" href="https://antoinebale.github.io/horizon-digital/contact.html">
 
-  <link rel="stylesheet" href="assets/css/design-system.css?v=20261016e">
-  <link rel="stylesheet" href="assets/css/components.css?v=20261016e">
-  <link rel="stylesheet" href="assets/css/pages/inner.css?v=20261016e">
+  <link rel="stylesheet" href="assets/css/design-system.css?v=20261114-audit1">
+  <link rel="stylesheet" href="assets/css/components.css?v=20261114-audit1">
+  <link rel="stylesheet" href="assets/css/pages/inner.css?v=20261114-audit1">
+  <noscript><style>
+    .header { position: relative; height: auto; background: var(--navy-900); }
+    .header__inner { flex-wrap: wrap; padding-block: 1rem; height: auto; }
+    .burger, .nav__trigger { display: none; }
+    .nav { position: static; display: flex; visibility: visible; clip-path: none; max-height: none; width: 100%; }
+    .nav__menu { position: static; display: block; visibility: visible; opacity: 1; transform: none; width: 100%; }
+  </style></noscript>
 </head>
 <body>
 
@@ -59,7 +66,7 @@
           <div class="nav__menu" id="menu-expertises">
             <a href="expertises.html#strategie">Stratégie de marque<small>Positionnement, identité, plateforme</small></a>
             <a href="expertises.html#communication">Communication &amp; contenu<small>Ligne éditoriale, réseaux, campagnes</small></a>
-            <a href="expertises.html#presence">Présence digitale<small>Site, SEO, acquisition</small></a>
+            <a href="expertises.html#presence">Sites &amp; plateformes web<small>Sites, plateformes, SEO</small></a>
             <a href="expertises.html#ia">IA &amp; automatisation<small>Workflows, contenus, outils sur mesure</small></a>
           </div>
         </li>
@@ -86,7 +93,7 @@
       </nav>
       <span class="eyebrow">Contact</span>
       <h1>Parlons de <span class="grad">votre projet</span>.</h1>
-      <p class="lead">Un premier échange gratuit, sans engagement. Vous en repartez avec un périmètre clair, un planning et un ordre de grandeur budgétaire — même si nous ne travaillons pas ensemble ensuite.</p>
+      <p class="lead">Un premier échange gratuit de 30 minutes pour comprendre votre besoin et les prochaines étapes. Le périmètre, le planning et le budget sont ensuite précisés dans une proposition écrite, sans engagement.</p>
     </div>
   </section>
 
@@ -97,10 +104,11 @@
       <div class="contact__grid">
 
         <!-- Colonne formulaire -->
-        <div data-reveal>
+        <div>
+          <p class="contact__intro">Je vous réponds sous <strong>48 h ouvrées</strong>. Vous pouvez aussi m’écrire à <a href="mailto:antoinebalesi@gmail.com">antoinebalesi@gmail.com</a>. Seuls le nom, l’e-mail et le message sont nécessaires.</p>
           <div id="form-status" class="form-status" hidden tabindex="-1"></div>
 
-          <form id="contact-form" class="form" action="https://formspree.io/f/xrperpyo" method="POST" novalidate>
+          <form id="contact-form" class="form" action="https://formspree.io/f/xrperpyo" method="POST">
 
             <!-- Objet de l'e-mail reçu + piège à robots (champ invisible, rempli uniquement par les spams) -->
             <input type="hidden" name="_subject" value="Nouvelle demande — site Horizon Digital">
@@ -123,7 +131,14 @@
 
             <div class="field">
               <label for="need">Ce dont vous auriez besoin <span>(facultatif)</span></label>
-              <input type="text" id="need" name="need" placeholder="Marque, site, contenus, automatisation…">
+              <select id="need" name="need">
+                <option value="">À préciser ensemble</option>
+                <option value="Stratégie de marque et identité">Marque et identité</option>
+                <option value="Communication et contenus">Communication et contenus</option>
+                <option value="Création ou refonte d’un site web">Site web</option>
+                <option value="Création d’une plateforme web — suite au projet Belavi">Plateforme web (Belavi)</option>
+                <option value="IA et automatisation">IA et automatisation</option>
+              </select>
             </div>
 
             <div class="field">
@@ -144,7 +159,7 @@
         </div>
 
         <!-- Colonne latérale -->
-        <aside class="contact__aside" data-reveal="1">
+        <aside class="contact__aside">
 
           <div class="contact__person">
             <img src="assets/images/antoine-balesi.webp" alt="" width="64" height="64">
@@ -192,41 +207,41 @@
   <!-- ══════════════════════════ FAQ COURTE ══════════════════════════ -->
   <section class="section section--paper section--arc">
     <div class="container">
-      <div class="section-head section-head--center" data-reveal>
+      <div class="section-head section-head--center">
         <span class="eyebrow">Avant de m'écrire</span>
         <h2>Trois questions qui reviennent souvent.</h2>
       </div>
 
-      <div class="faq" data-reveal="1">
-        <div class="faq__item">
-          <button class="faq__q" aria-expanded="false">
+      <div class="faq">
+        <details class="faq__item" name="faq">
+          <summary class="faq__q">
             <span>Je ne sais pas encore exactement ce dont j'ai besoin. Je vous écris quand même&nbsp;?</span>
             <span class="faq__icon" aria-hidden="true"></span>
-          </button>
+          </summary>
           <div class="faq__a"><div>
             <p>Oui. Le premier échange sert justement à transformer une intuition en périmètre. Décrivez la situation plutôt que la solution — on identifiera ensemble le bon point de départ.</p>
           </div></div>
-        </div>
+        </details>
 
-        <div class="faq__item">
-          <button class="faq__q" aria-expanded="false">
+        <details class="faq__item" name="faq">
+          <summary class="faq__q">
             <span>Mon budget est limité. Est-ce que ça vaut le coup d'en parler&nbsp;?</span>
             <span class="faq__icon" aria-hidden="true"></span>
-          </button>
+          </summary>
           <div class="faq__a"><div>
             <p>Dites-le dès le premier message&nbsp;: c'est une contrainte de cadrage comme une autre. Selon le montant, on réduit le périmètre, on échelonne, ou je vous oriente vers une autre solution. Personne ne gagne à démarrer un projet sous-financé.</p>
           </div></div>
-        </div>
+        </details>
 
-        <div class="faq__item">
-          <button class="faq__q" aria-expanded="false">
+        <details class="faq__item" name="faq">
+          <summary class="faq__q">
             <span>L'échange est-il vraiment gratuit&nbsp;?</span>
             <span class="faq__icon" aria-hidden="true"></span>
-          </button>
+          </summary>
           <div class="faq__a"><div>
             <p>Oui, et sans contrepartie. Vous repartez avec l'analyse et l'estimation écrite, que vous décidiez de travailler avec moi ou non. C'est le seul moyen honnête de savoir si nous sommes faits pour collaborer.</p>
           </div></div>
-        </div>
+        </details>
       </div>
     </div>
   </section>
@@ -248,14 +263,14 @@
           </svg>
           <span class="logo__word"><span class="logo__name">Horizon</span><span class="logo__sub">Digital</span></span>
         </a>
-        <p>Marketing, communication et intelligence artificielle. Un partenaire unique pour élargir votre horizon digital.</p>
+        <p>Marque, sites et plateformes web, contenus et automatisations. Un interlocuteur unique pour élargir votre horizon digital.</p>
       </div>
       <div class="footer__col">
         <h2>Expertises</h2>
         <ul>
           <li><a href="expertises.html#strategie">Stratégie de marque</a></li>
           <li><a href="expertises.html#communication">Communication</a></li>
-          <li><a href="expertises.html#presence">Présence digitale</a></li>
+          <li><a href="expertises.html#presence">Sites &amp; plateformes web</a></li>
           <li><a href="expertises.html#ia">IA &amp; automatisation</a></li>
         </ul>
       </div>
@@ -285,7 +300,7 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20261016e" defer></script>
-<script src="assets/js/contact.js?v=20261016e" defer></script>
+<script src="assets/js/main.js?v=20261114-audit1" defer></script>
+<script src="assets/js/contact.js?v=20261114-audit1" defer></script>
 </body>
 </html>
