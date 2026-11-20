@@ -57,7 +57,7 @@
 .proof--belavi    { --ratio: 0.5; }     /* 600 × 1200 */
 .proof--frega     { --ratio: 0.7532; }  /* 760 × 1009 */
 .proof--jardin    { --ratio: 1.7778; }  /* 1200 × 675 */
-.proof--portfolio { --ratio: 1.6; }     /* 1200 × 750 */
+.proof--portfolio { --ratio: 1.9819; }  /* 1092 × 551 */
 .hero-proof { display: block; color: inherit; }
 .hero-proof img {
   display: block;
@@ -87,7 +87,7 @@
   letter-spacing: -0.03em;
   color: var(--encre);
 }
-.hero-proof__txt span { display: block; font-size: var(--fs-sm); color: var(--ardoise); }
+.hero-proof__txt span { display: block; font-size: var(--fs-sm); color: var(--ardoise); text-wrap: balance; }
 .hero-proof:hover strong { color: var(--cobalt); }
 
 /* Étroit : quatre lignes compactes. La vignette montre l'image entière,
