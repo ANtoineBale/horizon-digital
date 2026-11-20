@@ -698,6 +698,8 @@
 [data-theme="clair"] .theme-toggle__lune { display: block; }
 /* Au-dessus d'un haut de page sombre, le bouton passe en clair */
 .header:not(.is-stuck, .header--solid) .theme-toggle { color: #fff; border-color: rgba(255, 255, 255, 0.3); }
+/* Sans en-tête (page 404) : le bouton flotte en haut à droite */
+.theme-toggle--flottant { position: fixed; top: 1rem; right: 1rem; z-index: 10; margin: 0 !important; }
 @media (min-width: 941px) {
   .header__inner .nav { margin-left: auto; }
   .theme-toggle { margin-left: -1rem; }

@@ -1,0 +1,152 @@
+/* ============================================================
+   theme-clair.css — Studio Balesi · thème clair
+   Le site est sombre par défaut (theme-nuit.css). Quand le visiteur
+   choisit le thème clair, theme.js neutralise la feuille sombre et pose
+   data-theme="clair" sur <html> : ces règles prennent alors le relais.
+   Tout est clair, sans bande sombre ; mêmes effets que le thème sombre,
+   en version douce. Aucune animation en boucle.
+   ============================================================ */
+
+/* ---------- 1. Les anciennes couleurs « sur fond sombre » deviennent claires ---------- */
+:root[data-theme="clair"] {
+  --nuit:           #EEF1F9;  /* les anciennes bandes sombres : un voile bleuté */
+  --abime:          #E9ECF4;  /* pied de page */
+  --ciel:           #2F55FF;  /* l'accent redevient le cobalt — 5,1:1 sur givre */
+  --voile:          #4A5060;
+  --on-dark:        #0B0E14;
+  --on-dark-muted:  #4A5060;
+  --on-dark-line:   rgba(11, 14, 20, 0.14);
+
+  --glow:      rgba(47, 85, 255, 0.28);
+  --shadow-md: 0 24px 48px -28px var(--glow);
+
+  color-scheme: light;
+}
+
+[data-theme="clair"] { background: var(--givre); }
+[data-theme="clair"] body { background: transparent; }
+
+/* ---------- 2. Profondeur : halos pâles fixes derrière la page ---------- */
+[data-theme="clair"] body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60vw 50vh at 88% -8%, rgba(47, 85, 255, 0.13), transparent 70%),
+    radial-gradient(50vw 55vh at -6% 55%, rgba(120, 96, 255, 0.08), transparent 70%),
+    radial-gradient(55vw 50vh at 100% 105%, rgba(47, 85, 255, 0.09), transparent 70%);
+}
+
+/* Les sections se distinguent par un voile et un filet, plus par clair/sombre */
+[data-theme="clair"] :is(.section--paper, .section--white) { background: rgba(255, 255, 255, 0.55); }
+[data-theme="clair"] .is-dark { background: rgba(47, 85, 255, 0.045); color: var(--encre); }
+[data-theme="clair"] :is(.section--paper, .section--white, .section.is-dark) { position: relative; }
+[data-theme="clair"] :is(.section--paper, .section--white, .section.is-dark)::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(47, 85, 255, 0.28), transparent);
+}
+
+/* ---------- 3. En-tête ---------- */
+[data-theme="clair"] .header:is(.is-stuck, .header--solid) { background: rgba(246, 247, 249, 0.78); }
+[data-theme="clair"] .header:not(.is-stuck, .header--solid) .nav__link:hover,
+[data-theme="clair"] .header:not(.is-stuck, .header--solid) .nav__link[aria-current="page"] { color: var(--encre); }
+[data-theme="clair"] .header:not(.is-stuck, .header--solid) .burger span { background: var(--encre); }
+[data-theme="clair"] .header:not(.is-stuck, .header--solid) .theme-toggle { color: var(--encre); border-color: var(--line-2); }
+
+/* ---------- 4. Boutons : un seul style partout ---------- */
+[data-theme="clair"] .btn--primary,
+[data-theme="clair"] .header .nav__cta .btn {
+  --btn-bg: #2F55FF;
+  --btn-fg: #fff;
+  box-shadow: 0 14px 30px -14px rgba(47, 85, 255, 0.7);
+}
+[data-theme="clair"] .btn--primary:hover,
+[data-theme="clair"] .header .nav__cta .btn:hover { --btn-bg: var(--encre); --btn-fg: #fff; }
+[data-theme="clair"] .btn--ghost {
+  --btn-bg: rgba(255, 255, 255, 0.7);
+  --btn-fg: var(--encre);
+  --btn-bd: var(--line-2);
+}
+[data-theme="clair"] .btn--ghost:hover { --btn-bg: var(--encre); --btn-fg: #fff; --btn-bd: var(--encre); }
+
+/* ---------- 5. Titres ---------- */
+[data-theme="clair"] .grad {
+  color: var(--cobalt);
+  background: linear-gradient(95deg, #2F55FF 0%, #6680FF 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+[data-theme="clair"] .home-hero h1 .grad { text-decoration-color: rgba(47, 85, 255, 0.3); }
+
+/* ---------- 6. Cartes : blanches, relief doux, halo au survol ---------- */
+[data-theme="clair"] :is(.card, .work-card, .is-dark .work-card, .is-dark .expertise-card--ai) {
+  background: #fff;
+  border-color: var(--line);
+  box-shadow: 0 18px 40px -30px rgba(20, 30, 80, 0.35);
+}
+[data-theme="clair"] :is(.card, .work-card):is(:hover, :focus-within) {
+  transform: translateY(-4px);
+  border-color: rgba(47, 85, 255, 0.55);
+  box-shadow: 0 28px 56px -28px var(--glow);
+}
+/* La carte « Spécialité » : blanche, cerclée de cobalt, avec son halo */
+[data-theme="clair"] .expertise-card--ai {
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgba(47, 85, 255, 0.14), transparent 60%),
+    #fff;
+  border-color: rgba(47, 85, 255, 0.4);
+}
+[data-theme="clair"] .expertise-card--ai h3 { color: var(--encre); }
+[data-theme="clair"] .badge { color: #fff; }
+[data-theme="clair"] .stat__num { color: var(--encre); }
+
+/* ---------- 7. Héros de l'accueil ---------- */
+[data-theme="clair"] .home-hero { position: relative; background: transparent; overflow: hidden; }
+[data-theme="clair"] .home-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(11, 14, 20, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 14, 20, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  -webkit-mask-image: radial-gradient(80% 70% at 70% 0%, #000 0%, transparent 75%);
+          mask-image: radial-gradient(80% 70% at 70% 0%, #000 0%, transparent 75%);
+}
+[data-theme="clair"] .home-hero > * { position: relative; }
+[data-theme="clair"] .hero-proof img { box-shadow: 0 24px 46px -30px rgba(20, 30, 80, 0.5); }
+[data-theme="clair"] .hero-proof:hover img { border-color: rgba(47, 85, 255, 0.6); box-shadow: 0 28px 56px -28px var(--glow); }
+
+/* ---------- 8. Hauts de page internes et 404 ---------- */
+[data-theme="clair"] .page-hero { background: transparent; border-bottom: 1px solid var(--line); }
+[data-theme="clair"] .page-hero__decor::before { border-color: rgba(47, 85, 255, 0.07); }
+[data-theme="clair"] .lost { background: transparent; }
+[data-theme="clair"] .lost p:not(.lost__code) { color: var(--ardoise); }
+
+/* ---------- 9. Méthode, schéma, FAQ ---------- */
+[data-theme="clair"] .step__dot { box-shadow: 0 0 0 6px rgba(47, 85, 255, 0.06); }
+[data-theme="clair"] .flow__node { background: #fff; }
+[data-theme="clair"] .faq__item[open] { background: linear-gradient(90deg, rgba(47, 85, 255, 0.05), transparent 70%); }
+
+/* ---------- 10. Appel final : un panneau bleuté, toujours le point fort ---------- */
+[data-theme="clair"] .cta {
+  background:
+    radial-gradient(70% 120% at 100% 100%, rgba(47, 85, 255, 0.26), transparent 65%),
+    linear-gradient(180deg, #F3F5FF, #E6EBFF);
+  box-shadow: inset 0 0 0 1px rgba(47, 85, 255, 0.22), 0 40px 80px -50px var(--glow);
+}
+[data-theme="clair"] .cta h2 { color: var(--encre); }
+[data-theme="clair"] .cta::before { border-color: rgba(47, 85, 255, 0.1); }
+
+/* ---------- 11. Images, pied de page, lien d'évitement ---------- */
+[data-theme="clair"] :is(.offer2__shots, .project__shot) { box-shadow: 0 24px 46px -32px rgba(20, 30, 80, 0.45); }
+[data-theme="clair"] .footer { border-top: 1px solid var(--line); }
+[data-theme="clair"] .footer__col a:hover, [data-theme="clair"] .footer__social a:hover { color: var(--cobalt); }
+[data-theme="clair"] .skip-link { background: var(--encre); color: #fff; }
