@@ -1,11 +1,11 @@
 /* ============================================================
-   components.css — Horizon Digital
+   components.css — Studio Balesi
    Logo · Header · Boutons · Cartes · Marquee · FAQ · CTA · Footer
    ============================================================ */
 
 /* ============================================================
    LOGO
-   Mark SVG (H + arc) + mot-marque en texte vivant
+   Mark SVG (soleil levant + arc de l'horizon) + mot-marque en texte vivant
    → net à toute taille, thémable, accessible
    ============================================================ */
 .logo {
@@ -35,7 +35,7 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  margin-top: 0.28rem;
+  margin-bottom: 0.3rem;
   font-family: var(--font-body);
   font-size: 0.5625rem;
   font-weight: 600;
@@ -43,7 +43,7 @@
   text-transform: uppercase;
   color: var(--blue-500);
 }
-/* Les petits traits qui encadrent "DIGITAL" dans le logo */
+/* Les petits traits qui encadrent "STUDIO" dans le logo */
 .logo__sub::before,
 .logo__sub::after {
   content: '';

@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Horizon Digital">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Studio Balesi">
   <defs>
     <linearGradient id="fArc" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0%"   stop-color="#1E7FE0"/>
@@ -7,12 +7,8 @@
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="13" fill="#0A1226"/>
-  <!-- Le H -->
-  <g fill="#2E9BFF">
-    <rect x="17" y="15" width="8" height="34" rx="1"/>
-    <rect x="39" y="15" width="8" height="34" rx="1"/>
-    <rect x="17" y="28" width="30" height="8" rx="1"/>
-  </g>
-  <!-- L'arc -->
-  <path d="M6 41 C 18 25, 46 25, 58 41 C 44 32, 20 32, 6 41 Z" fill="url(#fArc)" opacity="0.95"/>
+  <!-- Le soleil levant -->
+  <path d="M18 30 A14 14 0 0 1 46 30 Z" fill="#2E9BFF"/>
+  <!-- L'arc de l'horizon -->
+  <path d="M6 45 C 18 29, 46 29, 58 45 C 44 36, 20 36, 6 45 Z" fill="url(#fArc)"/>
 </svg>

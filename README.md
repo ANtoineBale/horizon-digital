@@ -1,6 +1,6 @@
-# Horizon Digital
+# Studio Balesi
 
-Site vitrine d'Horizon Digital, agence marketing, communication & IA portée par une seule personne, basée à Marseille et Aix-en-Provence. Conçu et développé par Antoine Balesi.
+Site vitrine de Studio Balesi, agence marketing, communication & IA portée par une seule personne, basée à Marseille et Aix-en-Provence. Conçu et développé par Antoine Balesi.
 
 Quatre expertises : stratégie de marque, communication & contenu, sites & plateformes web, IA & automatisation. Un seul interlocuteur, du cadrage à la livraison.
 
@@ -24,7 +24,7 @@ npx serve -l 3000 .
 
 ---
 
-Code source du site Horizon Digital — par Antoine Balesi · [Portfolio personnel](https://antoinebale.github.io)
+Code source du site Studio Balesi — par Antoine Balesi · [Portfolio personnel](https://antoinebale.github.io)
 
 ## Étude de cas Belavi
 
