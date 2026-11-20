@@ -214,6 +214,138 @@
 }
 
 /* ============================================================
+   BLOC OFFRE v2 — pilote sur l'offre 01 (audit du 20/11/2026)
+   En-tête pleine largeur, preuve réelle à gauche, livrables
+   groupés à droite, démarche repliée, barre de fin compacte.
+   À généraliser aux offres 02 à 04 une fois validé.
+   ============================================================ */
+.offer2__head {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: end;
+  margin-bottom: clamp(2rem, 4vw, 3.25rem);
+}
+.offer2__head .offer__num { font-size: clamp(2.25rem, 4vw, 3.25rem); margin-bottom: 0.5rem; }
+.offer2__head h2 { font-size: clamp(2rem, 3.6vw, 3rem); margin-bottom: 0.875rem; }
+.offer2__promise { font-size: var(--fs-lead); line-height: 1.5; max-width: 36ch; }
+
+.offer2__for {
+  padding-left: 1.25rem;
+  border-left: 3px solid var(--blue-500);
+  color: var(--ink);
+  line-height: 1.55;
+}
+.offer2__for strong {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-size: var(--fs-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--blue-600);
+}
+
+.offer2__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+/* Preuve : une vraie photo du projet, le logo posé dessus */
+.offer2__shots {
+  position: relative;
+  aspect-ratio: 5 / 4;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  background: var(--paper-2);
+  box-shadow: var(--shadow-md);
+}
+.offer2__shot { width: 100%; height: 100%; object-fit: cover; object-position: center 18%; }
+.offer2__logo {
+  position: absolute;
+  left: 1rem; bottom: 1rem;
+  width: min(46%, 220px);
+  height: auto;
+  padding: 0.75rem 1rem;
+  background: var(--white);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-md);
+}
+.offer2__proof figcaption { margin-top: 1rem; font-size: var(--fs-sm); color: var(--muted); line-height: 1.55; }
+.offer2__proof figcaption strong { color: var(--ink); font-weight: 600; }
+.offer2__proof figcaption .link-arrow { display: inline-flex; margin-left: 0.35rem; }
+
+/* Livrables : trois groupes nommés, en texte, sans pastilles */
+.offer2__deliv { border-top: 1px solid var(--line); }
+.offer2__deliv div {
+  display: grid;
+  grid-template-columns: 10.5rem 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line);
+}
+.offer2__deliv dt { font-family: var(--font-display); font-weight: 600; color: var(--ink); }
+.offer2__deliv dd { color: var(--muted); }
+
+/* Démarche : repliée par défaut, élément natif (clavier, sans JS) */
+.offer2__more { margin-top: 1.25rem; }
+.offer2__more summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  min-height: 44px;
+  cursor: pointer;
+  list-style: none;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--blue-600);
+}
+.offer2__more summary::-webkit-details-marker { display: none; }
+.offer2__more summary::before {
+  content: '+';
+  display: grid;
+  place-items: center;
+  width: 22px; height: 22px;
+  border: 1px solid var(--line-2);
+  border-radius: 50%;
+  font-weight: 500;
+  line-height: 1;
+}
+.offer2__more[open] summary::before { content: '–'; }
+.offer2__more .ticks { margin-top: 0.75rem; grid-template-columns: 1fr 1fr; gap: 0.7rem 2rem; }
+
+/* Barre de fin : durée, format, point de départ et bouton, sur une ligne */
+.offer2__bar {
+  margin-top: clamp(2rem, 4vw, 3rem);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem 2rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+}
+.offer2__meta { display: flex; flex-wrap: wrap; gap: 0.75rem 2.5rem; }
+.offer2__meta dt { font-size: var(--fs-xs); color: var(--muted-2); }
+.offer2__meta dd { font-size: var(--fs-sm); font-weight: 600; color: var(--ink); }
+
+@media (max-width: 940px) {
+  .offer2__head, .offer2__grid { grid-template-columns: 1fr; }
+  .offer2__head { align-items: start; }
+  .offer2__shots { aspect-ratio: 16 / 10; }
+}
+@media (max-width: 540px) {
+  .offer2__deliv div { grid-template-columns: 1fr; gap: 0.25rem; }
+  .offer2__more .ticks { grid-template-columns: 1fr; }
+  .offer2__bar { padding: 1.25rem; }
+  .offer2__bar .btn { width: 100%; justify-content: center; }
+}
+
+/* ============================================================
    OUTILS (page Expertises)
    ============================================================ */
 .tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }

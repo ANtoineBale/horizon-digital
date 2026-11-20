@@ -37,7 +37,7 @@
   gap: 0.4rem;
   margin-bottom: 0.3rem;
   font-family: var(--font-body);
-  font-size: 0.5625rem;
+  font-size: 0.625rem;
   font-weight: 600;
   letter-spacing: 0.34em;
   text-transform: uppercase;
@@ -164,7 +164,8 @@
   box-shadow: var(--shadow-sm);
 }
 .header.is-stuck .logo__name { color: var(--navy-700); }
-.header.is-stuck .logo__sub  { color: var(--blue-500); }
+/* --blue-600 : 5.16:1 sur le fond clair (--blue-500 ne donnait que 3.85:1) */
+.header.is-stuck .logo__sub  { color: var(--blue-600); }
 .header.is-stuck .nav__link  { color: var(--muted); }
 .header.is-stuck .nav__link:hover,
 .header.is-stuck .nav__link[aria-current="page"] { color: var(--ink); }
@@ -229,12 +230,13 @@
   opacity: 0;
   visibility: hidden;
   transform: translate(-50%, -8px);
-  transition: opacity 0.28s var(--ease-out), transform 0.28s var(--ease-out), visibility 0.28s;
+  transition: opacity 0.28s var(--ease-out), transform 0.28s var(--ease-out), visibility 0s linear 0.28s;
 }
 .nav__trigger[aria-expanded="true"] + .nav__menu {
   opacity: 1;
   visibility: visible;
   transform: translate(-50%, 0);
+  transition-delay: 0s;
 }
 .nav__menu a {
   display: block;
@@ -630,9 +632,10 @@
 .belavi-journey strong { display: block; color: var(--ink); margin-bottom: .75rem; }
 .belavi-editor { max-width: 900px; margin: 3rem auto 0; }
 .belavi-editor img { width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--r-md); }
-.belavi-technical { margin-top: 2rem; font-size: var(--fs-sm); color: var(--muted); }
+.belavi-technical { margin-top: 2rem; font-size: var(--fs-sm); color: var(--muted); max-width: 72ch; }
 .belavi-offer { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--line); }
 .belavi-offer h3, .belavi-offer p { margin-bottom: 1rem; }
+.belavi-offer p { max-width: 72ch; }
 .work-card__body .link-arrow { margin-top: 1rem; }
 @media (max-width: 940px) {
   .belavi-feature, .belavi-journey { grid-template-columns: minmax(0, 1fr); }

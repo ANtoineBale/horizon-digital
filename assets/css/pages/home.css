@@ -288,3 +288,45 @@
   .step__dot { position: absolute; left: 0; top: 0; width: 42px; height: 42px; }
   .steps::before { display: block; left: 21px; top: 0; bottom: 0; width: 1px; height: auto; right: auto; }
 }
+
+/* ============================================================
+   MOUVEMENT — deux animations sobres (audit du 20/11/2026)
+   Le texte ne dépend jamais d'elles. Avec prefers-reduced-motion,
+   la règle globale de components.css les coupe : on voit alors
+   directement l'état final.
+   ============================================================ */
+
+/* M1 — l'arc de l'horizon se lève une fois, au chargement */
+.horizon__arc {
+  transform-origin: center bottom;
+  animation: arc-rise 0.9s var(--ease-out) both;
+}
+@keyframes arc-rise {
+  from { opacity: 0; transform: translateX(-50%) translateY(24px) scaleY(0.82); }
+}
+
+/* M2 — la ligne de la méthode se trace à l'entrée dans la fenêtre.
+   Sans JavaScript, la ligne est pleine et les pastilles allumées. */
+.steps::after {
+  content: '';
+  position: absolute;
+  top: 25px; left: 0; right: 0;
+  height: 2px;
+  background: var(--grad-arc);
+  transform-origin: left center;
+}
+.step__dot { border-color: var(--blue-400); }
+.steps.is-armed::after { transform: scaleX(0); }
+.steps.is-armed .step__dot { border-color: var(--line-2); }
+.steps.is-armed.is-inview::after { transform: scaleX(1); transition: transform 1.6s var(--ease-out); }
+.steps.is-armed.is-inview .step__dot { border-color: var(--blue-400); }
+.steps.is-armed.is-inview .step:nth-child(2) .step__dot { transition-delay: 0.4s; }
+.steps.is-armed.is-inview .step:nth-child(3) .step__dot { transition-delay: 0.8s; }
+.steps.is-armed.is-inview .step:nth-child(4) .step__dot { transition-delay: 1.2s; }
+@media (max-width: 900px) { .steps::after { display: none; } }
+/* Sous 540 px la méthode est verticale : la ligne se trace de haut en bas */
+@media (max-width: 540px) {
+  .steps::after { display: block; left: 20.5px; top: 0; bottom: 0; right: auto; width: 2px; height: auto; transform-origin: center top; }
+  .steps.is-armed::after { transform: scaleY(0); }
+  .steps.is-armed.is-inview::after { transform: scaleY(1); }
+}

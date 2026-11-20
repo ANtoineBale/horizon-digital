@@ -1,6 +1,6 @@
 /* ============================================================
    main.js — Studio Balesi
-   Header · Navigation · Année
+   Header · Navigation · Année · Méthode
    ============================================================ */
 
 
@@ -114,4 +114,22 @@
 (() => {
   const year = document.querySelector('[data-year]');
   if (year) year.textContent = String(new Date().getFullYear());
+})();
+
+/* ============================================================
+   5. MÉTHODE — la ligne se trace à l'entrée dans la fenêtre
+   Purement décoratif : sans ce script, la ligne est déjà pleine.
+   ============================================================ */
+(() => {
+  const steps = document.querySelector('.steps');
+  if (!steps || !('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  steps.classList.add('is-armed');
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries[0].isIntersecting) return;
+    steps.classList.add('is-inview');
+    observer.disconnect();
+  }, { threshold: 0.35 });
+  observer.observe(steps);
 })();

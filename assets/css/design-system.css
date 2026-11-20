@@ -318,10 +318,15 @@ body::after {
 /* ============================================================
    6. ACCESSIBILITÉ
    ============================================================ */
+/* --blue-600 sur fond clair (5.16:1), --blue-300 sur fond sombre :
+   --blue-400 seul ne donnait que 2.7:1 sur les sections claires. */
 :focus-visible {
-  outline: 2px solid var(--blue-400);
+  outline: 2px solid var(--blue-600);
   outline-offset: 3px;
   border-radius: 4px;
+}
+:is(.is-dark, .hero, .page-hero, .footer, .header:not(.is-stuck)) :focus-visible {
+  outline-color: var(--blue-300);
 }
 
 .skip-link {
