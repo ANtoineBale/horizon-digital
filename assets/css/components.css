@@ -19,7 +19,7 @@
 .logo:hover { opacity: 0.82; }
 
 /* « Le repère » : un cercle ouvert (couleur du texte) et un point,
-   cobalt sur fond clair, lime sur fond sombre */
+   cobalt sur fond clair, bleu ciel sur fond sombre */
 .logo__mark { width: 34px; height: 34px; flex-shrink: 0; }
 .logo__dot { fill: var(--cobalt); }
 
@@ -38,12 +38,12 @@
 
 /* Variante sur fond sombre */
 .logo--light { color: var(--on-dark); }
-.logo--light .logo__dot { fill: var(--lime); }
+.logo--light .logo__dot { fill: var(--ciel); }
 
 /* ============================================================
    BOUTONS
    Rectangles aux angles doux, aplats francs. Sur fond clair le
-   bouton principal est cobalt ; sur fond sombre il passe en lime.
+   bouton principal est cobalt ; sur fond sombre il passe en bleu ciel.
    ============================================================ */
 .btn {
   --btn-bg: var(--encre);
@@ -83,8 +83,8 @@
 }
 .btn--ghost:hover { --btn-bg: var(--encre); --btn-fg: var(--givre); --btn-bd: var(--encre); }
 
-/* Sur fond sombre : lime pour l'action principale (15:1 avec le texte nuit) */
-:is(.is-dark, .hero, .page-hero, .footer) .btn--primary { --btn-bg: var(--lime); --btn-fg: var(--nuit); }
+/* Sur fond sombre : bleu ciel pour l'action principale (10,3:1 avec le texte nuit) */
+:is(.is-dark, .hero, .page-hero, .footer) .btn--primary { --btn-bg: var(--ciel); --btn-fg: var(--nuit); }
 :is(.is-dark, .hero, .page-hero, .footer) .btn--primary:hover { --btn-bg: var(--givre); }
 :is(.is-dark, .hero, .page-hero, .footer) .btn--ghost { --btn-fg: var(--on-dark); --btn-bd: var(--on-dark-line); }
 :is(.is-dark, .hero, .page-hero, .footer) .btn--ghost:hover { --btn-bg: var(--givre); --btn-fg: var(--nuit); --btn-bd: var(--givre); }
@@ -107,7 +107,7 @@
 .link-arrow::after { content: '→'; transition: transform 0.25s var(--ease-out); }
 .link-arrow:hover { background-size: 100% 1.5px; }
 .link-arrow:hover::after { transform: translateX(3px); }
-:is(.is-dark, .hero, .page-hero, .footer, .expertise-card--ai) .link-arrow { color: var(--lime); }
+:is(.is-dark, .hero, .page-hero, .footer, .expertise-card--ai) .link-arrow { color: var(--ciel); }
 
 /* ============================================================
    HEADER
@@ -178,7 +178,7 @@
   transform-origin: left;
   transition: transform 0.3s var(--ease-out);
 }
-.header:not(.is-stuck, .header--solid) .nav__link::after { background: var(--lime); }
+.header:not(.is-stuck, .header--solid) .nav__link::after { background: var(--ciel); }
 .nav__link:hover::after,
 .nav__link[aria-current="page"]::after { transform: scaleX(1); }
 
@@ -229,9 +229,9 @@
 }
 .nav__menu a:hover { background: var(--nuage); color: var(--cobalt); }
 
-/* Bouton du menu : lime tant que l'en-tête est sur le fond sombre (ordinateur) */
+/* Bouton du menu : bleu ciel tant que l'en-tête est sur le fond sombre (ordinateur) */
 @media (min-width: 941px) {
-  .header:not(.is-stuck, .header--solid) .nav__cta .btn { --btn-bg: var(--lime); --btn-fg: var(--nuit); }
+  .header:not(.is-stuck, .header--solid) .nav__cta .btn { --btn-bg: var(--ciel); --btn-fg: var(--nuit); }
   .header:not(.is-stuck, .header--solid) .nav__cta .btn:hover { --btn-bg: var(--givre); }
 }
 
@@ -315,7 +315,7 @@
 
   .nav__cta { margin-top: 1.25rem; }
   .nav__cta .btn { width: 100%; }
-  /* Le panneau du menu est clair : anneau de focus cobalt, pas lime */
+  /* Le panneau du menu est clair : anneau de focus cobalt, pas bleu ciel */
   .header .nav :focus-visible { outline-color: var(--cobalt); }
 }
 
@@ -377,11 +377,11 @@
   background: var(--nuit);
   border-color: var(--on-dark-line);
 }
-.expertise-card--ai:hover, .expertise-card--ai:focus-within { border-color: var(--lime); }
+.expertise-card--ai:hover, .expertise-card--ai:focus-within { border-color: var(--ciel); }
 .expertise-card--ai h3 { color: var(--white); }
 .expertise-card--ai p, .expertise-card--ai li { color: var(--on-dark-muted); }
-.expertise-card--ai .card__num { color: var(--lime); }
-.expertise-card--ai li::before { background: var(--lime); }
+.expertise-card--ai .card__num { color: var(--ciel); }
+.expertise-card--ai li::before { background: var(--ciel); }
 /* Sur une bande déjà sombre, la carte se détache par un voile clair */
 .is-dark .expertise-card--ai { background: rgba(246, 247, 249, 0.04); }
 
@@ -392,7 +392,7 @@
   gap: 0.4rem;
   padding: 0.3rem 0.65rem;
   border-radius: var(--r-sm);
-  background: var(--lime);
+  background: var(--ciel);
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.1em;
@@ -424,7 +424,7 @@
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
 @media (max-width: 780px) { .stats { grid-template-columns: 1fr; gap: 2.5rem; } }
 
-.stat { border-top: 2px solid var(--lime); padding-top: 1.5rem; }
+.stat { border-top: 2px solid var(--ciel); padding-top: 1.5rem; }
 .stat__num {
   font-family: var(--font-display);
   font-size: clamp(3rem, 6vw, 4.75rem);
@@ -436,7 +436,7 @@
   align-items: baseline;
   gap: 0.15em;
 }
-.stat__suffix { font-size: 0.42em; font-weight: 600; color: var(--lime); letter-spacing: -0.02em; }
+.stat__suffix { font-size: 0.42em; font-weight: 600; color: var(--ciel); letter-spacing: -0.02em; }
 .stat__label { margin-top: 1rem; font-size: var(--fs-sm); font-weight: 600; color: var(--on-dark); }
 .stat__desc  { margin-top: 0.4rem; font-size: var(--fs-xs); color: var(--on-dark-muted); max-width: 30ch; }
 
@@ -499,7 +499,7 @@
 
 /* ============================================================
    APPEL FINAL — partagé par l'accueil et les pages internes
-   Le motif du logo (cercle ouvert + point lime) en très grand.
+   Le motif du logo (cercle ouvert + point bleu ciel) en très grand.
    ============================================================ */
 .cta {
   position: relative;
@@ -529,7 +529,7 @@
           mask: conic-gradient(from -68deg, transparent 0 56deg, #000 56deg);
   pointer-events: none;
 }
-/* Le point lime, logé dans l'ouverture. Il pivote autour du centre du cercle. */
+/* Le point bleu ciel, logé dans l'ouverture. Il pivote autour du centre du cercle. */
 .cta::after {
   content: '';
   position: absolute;
@@ -537,7 +537,7 @@
   bottom: calc(var(--ring-bottom) + var(--ring-size) / 2 + var(--ring-radius) - var(--ring-dot) / 2);
   width: var(--ring-dot); height: var(--ring-dot);
   border-radius: 50%;
-  background: var(--lime);
+  background: var(--ciel);
   transform-origin: 50% calc(50% + var(--ring-radius));
   transform: rotate(-40deg);
   pointer-events: none;
@@ -587,7 +587,7 @@
   line-height: 1.4;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--lime);
+  color: var(--ciel);
   margin-bottom: 1rem;
 }
 .footer__col a {
@@ -619,7 +619,7 @@
   color: var(--on-dark-muted);
   transition: color 0.25s;
 }
-.footer__social a:hover { color: var(--lime); }
+.footer__social a:hover { color: var(--ciel); }
 
 /* ============================================================
    BELAVI — preuve produit, partagée entre accueil et étude de cas
@@ -666,7 +666,7 @@
 /* ============================================================
    DIVERS — petits éléments partagés
    ============================================================ */
-.hero .eyebrow, .page-hero .eyebrow { color: var(--lime); }
+.hero .eyebrow, .page-hero .eyebrow { color: var(--ciel); }
 .offer__next { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-top: 2rem; }
 .contact__intro { margin-bottom: 1.5rem; }
 .contact__intro a { color: var(--cobalt); text-decoration: underline; overflow-wrap: anywhere; }
@@ -739,7 +739,7 @@
   line-height: 1.35;
   color: var(--on-dark);
 }
-.flow__node span { font-family: var(--font-display); font-weight: 600; color: var(--lime); }
+.flow__node span { font-family: var(--font-display); font-weight: 600; color: var(--ciel); }
 /* Le lien vers l'étape suivante, et l'impulsion qui le parcourt */
 .flow__node:not(:last-child)::after {
   content: '';
@@ -756,7 +756,7 @@
   width: 10px; height: 10px;
   margin: -5px 0 0 -5px;
   border-radius: 50%;
-  background: var(--lime);
+  background: var(--ciel);
   opacity: 0;
   z-index: 1;
 }
@@ -767,7 +767,7 @@
 .flow.is-running .flow__node:nth-child(4) { animation-delay: 4.5s; }
 .flow.is-paused .flow__node, .flow.is-paused .flow__node::before { animation-play-state: paused; }
 @keyframes flow-node {
-  0%, 22% { border-color: var(--lime); background: rgba(198, 243, 94, 0.07); }
+  0%, 22% { border-color: var(--ciel); background: rgba(169, 187, 255, 0.07); }
   30%, 100% { border-color: var(--on-dark-line); background: transparent; }
 }
 @keyframes flow-dot-x {
@@ -799,7 +799,7 @@
   padding: 0 0.25rem;
   font-size: var(--fs-xs);
   font-weight: 600;
-  color: var(--lime);
+  color: var(--ciel);
   text-decoration: underline;
   text-underline-offset: 4px;
   cursor: pointer;

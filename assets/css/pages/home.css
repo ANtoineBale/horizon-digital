@@ -19,9 +19,9 @@
 }
 /* La seconde phrase passe toujours à la ligne, d'un seul bloc… */
 .home-hero h1 .grad { display: block; }
-/* …et se souligne de lime une fois la page chargée (le texte, lui, est là d'emblée) */
+/* …et se souligne de bleu ciel une fois la page chargée (le texte, lui, est là d'emblée) */
 .home-hero h1 .grad {
-  text-decoration: underline 0.09em var(--lime);
+  text-decoration: underline 0.09em var(--ciel);
   text-underline-offset: 0.14em;
   text-decoration-skip-ink: none;
   animation: underline-in 0.7s 0.5s var(--ease-out) both;
@@ -202,8 +202,8 @@
 .work-card .link-arrow { margin-top: auto; padding-top: 0.75rem; align-self: flex-start; }
 
 .is-dark .work-card { background: rgba(246, 247, 249, 0.04); border-color: var(--on-dark-line); }
-.is-dark .work-card:hover, .is-dark .work-card:focus-within { border-color: var(--lime); }
-.is-dark .work-card__tags { color: var(--lime); }
+.is-dark .work-card:hover, .is-dark .work-card:focus-within { border-color: var(--ciel); }
+.is-dark .work-card__tags { color: var(--ciel); }
 
 /* La vignette d'une carte garde ses coins du bas droits pendant son apparition */
 .work-card__thumb.is-armed { clip-path: inset(0 0 16% 0); }

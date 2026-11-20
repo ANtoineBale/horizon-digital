@@ -49,7 +49,7 @@
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 1.75rem;
-  border: 2px solid var(--lime);
+  border: 2px solid var(--ciel);
 }
 
 /* Fil d'Ariane */
@@ -69,7 +69,7 @@
   text-underline-offset: 3px;
   transition: color 0.2s;
 }
-.crumbs a:hover { color: var(--lime); }
+.crumbs a:hover { color: var(--ciel); }
 
 /* Ancres rapides sous le titre */
 .jump {
@@ -93,8 +93,8 @@
   color: var(--on-dark);
   transition: border-color 0.25s, color 0.25s;
 }
-.jump a::after { content: '↓'; color: var(--lime); }
-.jump a:hover { border-color: var(--lime); color: var(--lime); }
+.jump a::after { content: '↓'; color: var(--ciel); }
+.jump a:hover { border-color: var(--ciel); color: var(--ciel); }
 @media (max-width: 540px) {
   .jump { display: grid; grid-template-columns: 1fr 1fr; }
   .jump a { justify-content: space-between; padding-inline: 0.75rem; font-size: var(--fs-xs); }
@@ -325,7 +325,7 @@
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.125rem;
-  color: var(--lime);
+  color: var(--ciel);
   margin-bottom: 0.75rem;
 }
 .method h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
