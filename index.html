@@ -25,12 +25,12 @@
 
   <link rel="preload" href="assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/design-system.css?v=20261120y">
-  <link rel="stylesheet" href="assets/css/components.css?v=20261120y">
-  <link rel="stylesheet" href="assets/css/pages/home.css?v=20261120y">
-  <link rel="stylesheet" href="assets/css/theme-nuit.css?v=20261120y" id="theme-nuit">
-  <link rel="stylesheet" href="assets/css/theme-clair.css?v=20261120y">
-  <script src="assets/js/theme.js?v=20261120y"></script>
+  <link rel="stylesheet" href="assets/css/design-system.css?v=20261120z">
+  <link rel="stylesheet" href="assets/css/components.css?v=20261120z">
+  <link rel="stylesheet" href="assets/css/pages/home.css?v=20261120z">
+  <link rel="stylesheet" href="assets/css/theme-nuit.css?v=20261120z" id="theme-nuit">
+  <link rel="stylesheet" href="assets/css/theme-clair.css?v=20261120z">
+  <script src="assets/js/theme.js?v=20261120z"></script>
 
   <script type="application/ld+json">
   {
@@ -128,23 +128,30 @@
       </div>
     </div>
 
+    <!-- Quatre projets, chacun dans son format d'origine : aucune image n'est rognée -->
     <ul class="container home-hero__proofs">
-      <li>
+      <li class="proof--belavi">
         <a class="hero-proof" href="projet-belavi.html">
-          <img class="hero-proof__img--belavi" src="assets/images/realisations/belavi-livret-mas.webp" alt="Livret d’exemple Belavi : le Mas des Oliviers" width="600" height="1200" fetchpriority="high">
+          <img src="assets/images/realisations/belavi-livret-mas.webp" alt="Livret d’exemple Belavi sur téléphone : le Mas des Oliviers" width="600" height="1200" fetchpriority="high">
           <span class="hero-proof__txt"><strong>Belavi</strong><span>Plateforme web · IA</span></span>
         </a>
       </li>
-      <li>
+      <li class="proof--frega">
         <a class="hero-proof" href="realisations.html#fregahouse">
-          <img class="hero-proof__img--frega" src="assets/images/realisations/fregahouse-panneau.webp" alt="Panneau de salon FregaHouse, avec le logo et les villas" width="760" height="1009">
+          <img src="assets/images/realisations/fregahouse-panneau.webp" alt="Panneau de salon FregaHouse, avec le logo, les villas et les plans" width="760" height="1009">
           <span class="hero-proof__txt"><strong>FregaHouse</strong><span>Marque livrée en 30 jours</span></span>
         </a>
       </li>
-      <li>
+      <li class="proof--jardin">
         <a class="hero-proof" href="realisations.html#jardin">
           <img src="assets/images/realisations/jardin-site.webp" alt="Page d’accueil du site Le Jardin du Repos" width="1200" height="675">
           <span class="hero-proof__txt"><strong>Le Jardin du Repos</strong><span>Marque · Site · Outil sur mesure</span></span>
+        </a>
+      </li>
+      <li class="proof--portfolio">
+        <a class="hero-proof" href="realisations.html#portfolio">
+          <img src="assets/images/realisations/portfolio-nuit.webp" alt="Page d’accueil du portfolio d’Antoine Balesi" width="1200" height="750">
+          <span class="hero-proof__txt"><strong>Portfolio</strong><span>Site codé sur mesure avec l’IA</span></span>
         </a>
       </li>
     </ul>
@@ -519,6 +526,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20261120y" defer></script>
+<script src="assets/js/main.js?v=20261120z" defer></script>
 </body>
 </html>

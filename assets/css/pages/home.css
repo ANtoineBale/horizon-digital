@@ -42,38 +42,41 @@
 }
 .home-hero__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
-/* Les trois projets */
+/* Les quatre projets : une rangée où chaque image garde son format
+   d'origine (téléphone, panneau, captures d'écran). La largeur de chaque
+   case est proportionnelle au format : toutes les images ont donc la même
+   hauteur, et aucune n'est rognée. */
 .home-hero__proofs {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  align-items: flex-start;
   gap: 1.25rem;
   list-style: none;
-  padding-block: clamp(1.5rem, 2.4vw, 2rem) clamp(2.5rem, 5vw, 4rem);
+  padding-block: clamp(1.25rem, 2vw, 1.75rem) clamp(2.5rem, 5vw, 4rem);
 }
+.home-hero__proofs li { flex: var(--ratio) 1 0; min-width: 0; }
+.proof--belavi    { --ratio: 0.5; }     /* 600 × 1200 */
+.proof--frega     { --ratio: 0.7532; }  /* 760 × 1009 */
+.proof--jardin    { --ratio: 1.7778; }  /* 1200 × 675 */
+.proof--portfolio { --ratio: 1.6; }     /* 1200 × 750 */
 .hero-proof { display: block; color: inherit; }
 .hero-proof img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: var(--ratio);
   object-fit: cover;
-  object-position: top;
   border: 1px solid var(--line);
   border-radius: var(--r-md);
   transition: transform 0.4s var(--ease-out);
   /* Elles montent en place une fois, sans jamais être masquées */
   animation: proof-rise 0.9s 0.1s var(--ease-out) both;
 }
+/* Le livret Belavi se présente comme un téléphone */
+.proof--belavi img { border: 3px solid #1B2040; border-radius: 16px; }
 .home-hero__proofs li:nth-child(2) img { animation-delay: 0.2s; }
 .home-hero__proofs li:nth-child(3) img { animation-delay: 0.3s; }
+.home-hero__proofs li:nth-child(4) img { animation-delay: 0.4s; }
 @keyframes proof-rise { from { transform: translateY(24px); } }
-.hero-proof__img--frega { object-position: 50% 24% !important; }
-.hero-proof__img--belavi { object-position: 50% 12% !important; }
-/* Ordinateur : la hauteur des images suit celle de la fenêtre, pour que
-   les trois projets et leurs noms tiennent dans le premier écran */
-@media (min-width: 801px) {
-  .hero-proof img { aspect-ratio: auto; height: clamp(180px, 28vh, 310px); }
-}
 .hero-proof:hover img { transform: translateY(-4px); }
 .hero-proof__txt { display: block; padding-top: 0.75rem; }
 .hero-proof__txt strong {
@@ -87,9 +90,10 @@
 .hero-proof__txt span { display: block; font-size: var(--fs-sm); color: var(--ardoise); }
 .hero-proof:hover strong { color: var(--cobalt); }
 
-/* Étroit : trois lignes compactes, vignette à gauche */
+/* Étroit : quatre lignes compactes. La vignette montre l'image entière,
+   posée sur un fond, au lieu de la rogner. */
 @media (max-width: 800px) {
-  .home-hero__proofs { grid-template-columns: 1fr; gap: 0; }
+  .home-hero__proofs { display: block; }
   .hero-proof {
     display: grid;
     grid-template-columns: 112px 1fr;
@@ -97,6 +101,16 @@
     gap: 1rem;
     padding: 0.75rem 0;
     border-top: 1px solid var(--line);
+  }
+  .hero-proof img, .proof--belavi img {
+    width: 112px;
+    height: 84px;
+    aspect-ratio: auto;
+    object-fit: contain;
+    padding: 5px;
+    background: var(--nuage);
+    border: 1px solid var(--line);
+    border-radius: var(--r-sm);
   }
   .hero-proof__txt { padding-top: 0; }
   .hero-proof:hover img { transform: none; }
@@ -214,3 +228,13 @@
 /* La vignette d'une carte garde ses coins du bas droits pendant son apparition */
 .work-card__thumb.is-armed { clip-path: inset(0 0 16% 0); }
 .work-card__thumb.is-armed.is-inview { clip-path: inset(0 0 0 0); }
+
+/* Fenêtres basses (ordinateurs portables) : le héros se resserre pour que
+   la rangée de projets et ses légendes tiennent dans le premier écran */
+@media (min-width: 801px) and (max-height: 780px) {
+  .home-hero__top { padding-top: 1.5rem; }
+  .home-hero .eyebrow { margin-bottom: 0.875rem; }
+  .home-hero h1 { font-size: clamp(2.125rem, 3.4vw + 0.4rem, 3.5rem); margin-bottom: 1rem; }
+  .home-hero__proofs { padding-top: 1rem; }
+  .hero-proof__txt { padding-top: 0.5rem; }
+}
