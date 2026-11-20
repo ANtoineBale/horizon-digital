@@ -10,7 +10,7 @@ Quatre expertises : stratégie de marque, communication & contenu, sites & plate
 - Typographies Sora + Inter
 - Formulaire de contact via Formspree
 - Hébergé sur GitHub Pages
-- Domaine personnalisé : à définir
+- Domaine personnalisé : studiobalesi.fr (fichier `CNAME`)
 
 ## Développement local
 
@@ -20,7 +20,7 @@ npx serve -l 3000 .
 
 ## Site
 
-[antoinebale.github.io/horizon-digital](https://antoinebale.github.io/horizon-digital/)
+[studiobalesi.fr](https://studiobalesi.fr/)
 
 ---
 
@@ -44,7 +44,7 @@ node --check assets/js/horizon.js
 
 Le test du formulaire est entièrement hors ligne : succès, erreurs et reprise utilisent un faux transport, aucun message n’est envoyé.
 
-Pour vérifier les chemins GitHub Pages et la page 404, lancer `python scripts/preview.py`, puis ouvrir `http://127.0.0.1:3002/horizon-digital/` et une URL inexistante sous ce préfixe. Pour la vraie iframe Belavi, conserver l’aperçu sur le port 3000 décrit plus haut.
+Pour vérifier la page 404, lancer `python scripts/preview.py`, puis ouvrir `http://127.0.0.1:3002/` et une URL inexistante. Pour la vraie iframe Belavi, conserver l’aperçu sur le port 3000 décrit plus haut.
 
 - Vérifier les huit pages à 390, 768 et 1440 px, ainsi que les boutons à 320 px.
 - Vérifier menu, Échap, Tab/Maj+Tab, changement de largeur avec menu ouvert, FAQ et focus du formulaire.
@@ -52,5 +52,5 @@ Pour vérifier les chemins GitHub Pages et la page 404, lancer `python scripts/p
 - Reporter tout changement d’en-tête et de pied de page sur les sept pages principales ; la 404 est autonome.
 - Utiliser la même version `?v=…` pour tous les CSS/JS des huit pages.
 - Garder le véritable iframe Belavi et le statut terminé du Jardin du Repos, sans ancien lien externe.
-- Vérifier les métadonnées, le sitemap et les chemins `/horizon-digital/` avant toute publication. Le robots.txt d’un sous-dossier ne remplace pas celui de la racine de l’hôte.
+- Vérifier les métadonnées et le sitemap avant toute publication : toutes les adresses sont en `https://studiobalesi.fr/`.
 - Les réglages Formspree, le stockage du document Belavi, les mesures sur téléphone réel et la recette après déploiement restent des vérifications distinctes.

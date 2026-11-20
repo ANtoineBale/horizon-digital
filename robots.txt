@@ -3,4 +3,4 @@ Allow: /
 
 # Les pages légales et 404 utilisent une balise meta noindex.
 # Sur GitHub Pages, seul le robots.txt à la racine de l’hôte contrôle le crawl.
-Sitemap: https://antoinebale.github.io/horizon-digital/sitemap.xml
+Sitemap: https://studiobalesi.fr/sitemap.xml
