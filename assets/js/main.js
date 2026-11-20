@@ -192,27 +192,19 @@
 })();
 
 /* ============================================================
-   8. SCHÉMA D'AUTOMATISATION — animation en boucle, avec bouton pause
-   Ne démarre pas en mouvement réduit ; se met en pause hors de l'écran.
+   8. SCHÉMA D'AUTOMATISATION — l'impulsion parcourt les quatre étapes
+   une seule fois, quand le schéma entre dans la fenêtre (4,7 s, pas de
+   boucle). Rien ne démarre en mouvement réduit.
    ============================================================ */
 (() => {
   const flow = document.querySelector('[data-flow]');
   if (!flow) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const toggle = flow.querySelector('.flow__toggle');
-  if (!toggle) return;
-  let pausedByUser = false;
-  const apply = (paused) => flow.classList.toggle('is-paused', paused);
-  flow.classList.add('is-running');
-  toggle.hidden = false;
-  toggle.addEventListener('click', () => {
-    pausedByUser = !pausedByUser;
-    apply(pausedByUser);
-    toggle.textContent = pausedByUser ? 'Relancer l’animation' : 'Mettre l’animation en pause';
-  });
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver((entries) => {
-      apply(pausedByUser || !entries[0].isIntersecting);
-    }).observe(flow);
-  }
+  if (!('IntersectionObserver' in window)) return;
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries[0].isIntersecting) return;
+    flow.classList.add('is-running');
+    observer.disconnect();
+  }, { threshold: 0.6 });
+  observer.observe(flow);
 })();
