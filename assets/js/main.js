@@ -216,3 +216,36 @@
     }).observe(flow);
   }
 })();
+
+/* ============================================================
+   9. THÈME — bouton clair / sombre dans l'en-tête
+   Le site est sombre par défaut ; le choix est gardé sur l'appareil
+   du visiteur (localStorage), jamais envoyé. Le bouton n'existe
+   qu'avec JavaScript, puisqu'il ne ferait rien sans lui.
+   ============================================================ */
+(() => {
+  const sheet = document.getElementById('theme-nuit');
+  const bar = document.querySelector('.header__inner');
+  if (!sheet || !bar) return;
+  const root = document.documentElement;
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'theme-toggle';
+  button.innerHTML =
+    '<svg class="theme-toggle__soleil" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>' +
+    '<svg class="theme-toggle__lune" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>';
+  const label = () => {
+    const clair = root.getAttribute('data-theme') === 'clair';
+    button.setAttribute('aria-label', clair ? 'Passer au thème sombre' : 'Passer au thème clair');
+    button.title = clair ? 'Thème sombre' : 'Thème clair';
+  };
+  button.addEventListener('click', () => {
+    const clair = root.getAttribute('data-theme') !== 'clair';
+    sheet.media = clair ? 'not all' : 'all';
+    if (clair) root.setAttribute('data-theme', 'clair'); else root.removeAttribute('data-theme');
+    try { localStorage.setItem('theme', clair ? 'clair' : 'sombre'); } catch (error) { /* stockage indisponible */ }
+    label();
+  });
+  label();
+  bar.insertBefore(button, bar.querySelector('.burger'));
+})();

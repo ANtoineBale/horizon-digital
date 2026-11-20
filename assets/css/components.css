@@ -678,6 +678,35 @@
 }
 
 /* ============================================================
+   BOUTON DE THÈME — clair / sombre (ajouté par main.js)
+   Le soleil propose le thème clair, la lune le retour au sombre.
+   ============================================================ */
+.theme-toggle {
+  flex: none;
+  display: inline-grid;
+  place-items: center;
+  width: 44px; height: 44px;
+  border: 1px solid var(--line-2);
+  border-radius: var(--r-md);
+  color: var(--encre);
+  cursor: pointer;
+  transition: background-color 0.25s, border-color 0.25s, transform 0.25s var(--ease-out);
+}
+.theme-toggle:hover { border-color: currentColor; transform: rotate(12deg); }
+.theme-toggle__lune { display: none; }
+[data-theme="clair"] .theme-toggle__soleil { display: none; }
+[data-theme="clair"] .theme-toggle__lune { display: block; }
+/* Au-dessus d'un haut de page sombre, le bouton passe en clair */
+.header:not(.is-stuck, .header--solid) .theme-toggle { color: #fff; border-color: rgba(255, 255, 255, 0.3); }
+@media (min-width: 941px) {
+  .header__inner .nav { margin-left: auto; }
+  .theme-toggle { margin-left: -1rem; }
+}
+@media (max-width: 940px) {
+  .theme-toggle { margin-left: auto; margin-right: -1.25rem; }
+}
+
+/* ============================================================
    MOUVEMENT — partagé par toutes les pages
    Règles : le texte n'attend jamais une animation ; tout est visible
    sans JavaScript ; la règle « mouvement réduit » ci-dessous coupe tout.
