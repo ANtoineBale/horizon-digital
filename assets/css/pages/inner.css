@@ -118,17 +118,6 @@
 }
 .offer + .offer { border-top: 1px solid var(--line); }
 
-.offer__grid {
-  display: grid;
-  grid-template-columns: 340px 1fr;
-  gap: clamp(2rem, 5vw, 4.5rem);
-  align-items: start;
-}
-@media (max-width: 940px) { .offer__grid { grid-template-columns: 1fr; gap: 2rem; } }
-
-.offer__aside { position: sticky; top: calc(var(--header-h) + 2rem); }
-@media (max-width: 940px) { .offer__aside { position: static; } }
-
 .offer__num {
   font-family: var(--font-display);
   font-size: clamp(3rem, 5.5vw, 4.5rem);
@@ -141,38 +130,8 @@
   color: transparent;
   margin-bottom: 0.75rem;
 }
-.offer__aside h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); margin-bottom: 1rem; }
-.offer__tagline { font-size: var(--fs-sm); max-width: 32ch; }
-
-.offer__meta {
-  margin-top: 1.75rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--line);
-  display: grid;
-  gap: 0.875rem;
-}
-.offer__meta div { display: flex; justify-content: space-between; gap: 1rem; font-size: var(--fs-sm); }
-.offer__meta dt { color: var(--muted-2); }
-.offer__meta dd { color: var(--ink); font-weight: 600; text-align: right; }
-
-.offer__body { display: grid; gap: 2.25rem; }
-
-.offer__for {
-  padding: 1.25rem 1.5rem;
-  background: var(--blue-050);
-  border-left: 3px solid var(--blue-500);
-  border-radius: 0 var(--r-sm) var(--r-sm) 0;
-  font-size: var(--fs-lead);
-  line-height: 1.5;
-  color: var(--ink);
-}
-.offer__for strong { font-weight: 600; }
-
 /* Phrase de conclusion sous les livrables */
 .offer__note { margin-top: 1.5rem; font-size: var(--fs-sm); }
-
-.offer__cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-@media (max-width: 680px) { .offer__cols { grid-template-columns: 1fr; gap: 2rem; } }
 
 .offer__label {
   font-size: var(--fs-eyebrow);
@@ -201,23 +160,11 @@
   transform: rotate(-45deg);
 }
 
-/* Livrables en pastilles */
-.chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-.chip {
-  padding: 0.4rem 0.85rem;
-  border-radius: var(--r-pill);
-  border: 1px solid var(--line-2);
-  background: var(--white);
-  font-size: var(--fs-xs);
-  font-weight: 500;
-  color: var(--ink);
-}
-
 /* ============================================================
-   BLOC OFFRE v2 — pilote sur l'offre 01 (audit du 20/11/2026)
-   En-tête pleine largeur, preuve réelle à gauche, livrables
-   groupés à droite, démarche repliée, barre de fin compacte.
-   À généraliser aux offres 02 à 04 une fois validé.
+   BLOC OFFRE — gabarit des quatre offres (audit du 20/11/2026)
+   En-tête pleine largeur, preuve réelle d'un côté, livrables
+   groupés de l'autre, démarche repliée, barre de fin compacte.
+   .offer2--flip place la preuve à droite.
    ============================================================ */
 .offer2__head {
   display: grid;
@@ -332,6 +279,40 @@
 .offer2__meta { display: flex; flex-wrap: wrap; gap: 0.75rem 2.5rem; }
 .offer2__meta dt { font-size: var(--fs-xs); color: var(--muted-2); }
 .offer2__meta dd { font-size: var(--fs-sm); font-weight: 600; color: var(--ink); }
+
+/* Variantes de cadrage selon le visuel */
+.offer2__shots--16x10 { aspect-ratio: 16 / 10; }
+.offer2__shots--19x10 { aspect-ratio: 19 / 10; }
+.offer2__shot--top   { object-position: center top; }
+.offer2__shot--stand { object-position: center 42%; }
+/* Seconde capture en médaillon (offre 03) */
+.offer2__inset {
+  position: absolute;
+  right: 1rem; bottom: 1rem;
+  width: 44%;
+  height: auto;
+  border-radius: var(--r-sm);
+  border: 3px solid var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+/* Preuve à droite, une offre sur deux */
+@media (min-width: 941px) {
+  .offer2--flip .offer2__grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); }
+  .offer2--flip .offer2__proof { order: 2; }
+}
+
+.offer2__head .badge { margin-bottom: 0.75rem; }
+
+/* Encart « plus qu'un site vitrine » de l'offre 03 */
+.offer2__plus {
+  margin-top: 1.75rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--blue-050);
+  border-radius: var(--r-md);
+}
+.offer2__plus h3 { font-size: 1.0625rem; margin-bottom: 0.5rem; }
+.offer2__plus p { font-size: var(--fs-sm); margin-bottom: 0.75rem; }
 
 @media (max-width: 940px) {
   .offer2__head, .offer2__grid { grid-template-columns: 1fr; }
