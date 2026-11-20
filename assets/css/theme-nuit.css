@@ -47,16 +47,16 @@ body::before {
 
 /* Les sections ne se distinguent plus par clair/sombre, mais par un voile
    et un filet lumineux */
-.section--paper, .section--white, .is-dark { background: rgba(255, 255, 255, 0.022); }
-.section--paper, .section--white, .section.is-dark { position: relative; }
-:is(.section--paper, .section--white, .section.is-dark)::before {
+.section--paper, .is-dark { background: rgba(255, 255, 255, 0.022); }
+.section--paper, .section.is-dark { position: relative; }
+:is(.section--paper, .section.is-dark)::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(159, 178, 255, 0.4), transparent);
 }
-:is(.section--paper, .section--white, .section.is-dark)::after {
+:is(.section--paper, .section.is-dark)::after {
   content: '';
   position: absolute;
   bottom: 0; left: 0; right: 0;
@@ -78,30 +78,30 @@ body::before {
 /* ---------- 4. Boutons ---------- */
 .btn { --btn-bg: transparent; --btn-fg: var(--encre); }
 .btn--primary,
-:is(.is-dark, .hero, .page-hero, .footer) .btn--primary,
+:is(.is-dark, .page-hero, .footer) .btn--primary,
 .header .nav__cta .btn {
   --btn-bg: var(--ciel);
   --btn-fg: #080A18;
   box-shadow: 0 0 0 1px rgba(169, 187, 255, 0.35), 0 14px 36px -14px rgba(120, 146, 255, 0.75);
 }
 .btn--primary:hover,
-:is(.is-dark, .hero, .page-hero, .footer) .btn--primary:hover,
+:is(.is-dark, .page-hero, .footer) .btn--primary:hover,
 .header .nav__cta .btn:hover { --btn-bg: #fff; --btn-fg: #080A18; }
 .btn--ghost,
-:is(.is-dark, .hero, .page-hero, .footer) .btn--ghost {
+:is(.is-dark, .page-hero, .footer) .btn--ghost {
   --btn-bg: rgba(255, 255, 255, 0.04);
   --btn-fg: var(--encre);
   --btn-bd: rgba(255, 255, 255, 0.22);
 }
 .btn--ghost:hover,
-:is(.is-dark, .hero, .page-hero, .footer) .btn--ghost:hover {
+:is(.is-dark, .page-hero, .footer) .btn--ghost:hover {
   --btn-bg: rgba(255, 255, 255, 0.1);
   --btn-fg: #fff;
   --btn-bd: rgba(255, 255, 255, 0.45);
 }
 
 /* ---------- 5. Titres : le mot mis en valeur prend un dégradé froid ---------- */
-.grad, :is(.is-dark, .hero, .page-hero) .grad {
+.grad, :is(.is-dark, .page-hero) .grad {
   color: var(--ciel);
   background: linear-gradient(95deg, #7C95FF 0%, #C4D0FF 100%);
   -webkit-background-clip: text;
@@ -112,14 +112,13 @@ body::before {
 .eyebrow, .is-dark .eyebrow { color: var(--ciel); }
 
 /* ---------- 6. Cartes : surfaces en verre, relief au survol ---------- */
-.card, .expertise-card--ai, .is-dark .expertise-card--ai, .work-card, .is-dark .work-card {
+.card, .expertise-card--ai, .is-dark .expertise-card--ai {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02));
   border-color: var(--line);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
 }
 .card:hover, .card:focus-within,
-.expertise-card--ai:hover, .expertise-card--ai:focus-within,
-.is-dark .work-card:hover, .is-dark .work-card:focus-within {
+.expertise-card--ai:hover, .expertise-card--ai:focus-within {
   transform: translateY(-4px);
   border-color: rgba(159, 178, 255, 0.55);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 28px 60px -28px var(--glow);

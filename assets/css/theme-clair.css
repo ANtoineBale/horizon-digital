@@ -40,10 +40,10 @@
 }
 
 /* Les sections se distinguent par un voile et un filet, plus par clair/sombre */
-[data-theme="clair"] :is(.section--paper, .section--white) { background: rgba(255, 255, 255, 0.55); }
+[data-theme="clair"] .section--paper { background: rgba(255, 255, 255, 0.55); }
 [data-theme="clair"] .is-dark { background: rgba(47, 85, 255, 0.045); color: var(--encre); }
-[data-theme="clair"] :is(.section--paper, .section--white, .section.is-dark) { position: relative; }
-[data-theme="clair"] :is(.section--paper, .section--white, .section.is-dark)::before {
+[data-theme="clair"] :is(.section--paper, .section.is-dark) { position: relative; }
+[data-theme="clair"] :is(.section--paper, .section.is-dark)::before {
   content: '';
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -85,12 +85,12 @@
 [data-theme="clair"] .home-hero h1 .grad { text-decoration-color: rgba(47, 85, 255, 0.3); }
 
 /* ---------- 6. Cartes : blanches, relief doux, halo au survol ---------- */
-[data-theme="clair"] :is(.card, .work-card, .is-dark .work-card, .is-dark .expertise-card--ai) {
+[data-theme="clair"] :is(.card, .is-dark .expertise-card--ai) {
   background: #fff;
   border-color: var(--line);
   box-shadow: 0 18px 40px -30px rgba(20, 30, 80, 0.35);
 }
-[data-theme="clair"] :is(.card, .work-card):is(:hover, :focus-within) {
+[data-theme="clair"] .card:is(:hover, :focus-within) {
   transform: translateY(-4px);
   border-color: rgba(47, 85, 255, 0.55);
   box-shadow: 0 28px 56px -28px var(--glow);

@@ -84,10 +84,10 @@
 .btn--ghost:hover { --btn-bg: var(--encre); --btn-fg: var(--givre); --btn-bd: var(--encre); }
 
 /* Sur fond sombre : bleu ciel pour l'action principale (10,3:1 avec le texte nuit) */
-:is(.is-dark, .hero, .page-hero, .footer) .btn--primary { --btn-bg: var(--ciel); --btn-fg: var(--nuit); }
-:is(.is-dark, .hero, .page-hero, .footer) .btn--primary:hover { --btn-bg: var(--givre); }
-:is(.is-dark, .hero, .page-hero, .footer) .btn--ghost { --btn-fg: var(--on-dark); --btn-bd: var(--on-dark-line); }
-:is(.is-dark, .hero, .page-hero, .footer) .btn--ghost:hover { --btn-bg: var(--givre); --btn-fg: var(--nuit); --btn-bd: var(--givre); }
+:is(.is-dark, .page-hero, .footer) .btn--primary { --btn-bg: var(--ciel); --btn-fg: var(--nuit); }
+:is(.is-dark, .page-hero, .footer) .btn--primary:hover { --btn-bg: var(--givre); }
+:is(.is-dark, .page-hero, .footer) .btn--ghost { --btn-fg: var(--on-dark); --btn-bd: var(--on-dark-line); }
+:is(.is-dark, .page-hero, .footer) .btn--ghost:hover { --btn-bg: var(--givre); --btn-fg: var(--nuit); --btn-bd: var(--givre); }
 
 .btn__arrow { transition: transform 0.25s var(--ease-out); }
 .btn:hover .btn__arrow { transform: translateX(4px); }
@@ -107,7 +107,7 @@
 .link-arrow::after { content: '→'; transition: transform 0.25s var(--ease-out); }
 .link-arrow:hover { background-size: 100% 1.5px; }
 .link-arrow:hover::after { transform: translateX(3px); }
-:is(.is-dark, .hero, .page-hero, .footer, .expertise-card--ai) .link-arrow { color: var(--ciel); }
+:is(.is-dark, .page-hero, .footer, .expertise-card--ai) .link-arrow { color: var(--ciel); }
 
 /* ============================================================
    HEADER
@@ -401,8 +401,6 @@
   margin-bottom: 1rem;
 }
 
-/* Bouton centré sous une grille de cartes (ex. « Voir toutes les réalisations ») */
-.section-actions { margin-top: 2.75rem; text-align: center; }
 
 .grid { display: grid; gap: 1.25rem; }
 .grid--2 { grid-template-columns: repeat(2, 1fr); }
@@ -666,8 +664,7 @@
 /* ============================================================
    DIVERS — petits éléments partagés
    ============================================================ */
-.hero .eyebrow, .page-hero .eyebrow { color: var(--ciel); }
-.offer__next { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; margin-top: 2rem; }
+.page-hero .eyebrow { color: var(--ciel); }
 .contact__intro { margin-bottom: 1.5rem; }
 .contact__intro a { color: var(--cobalt); text-decoration: underline; overflow-wrap: anywhere; }
 @media (max-width: 620px) {
@@ -728,11 +725,11 @@
 
 /* Images : elles finissent de se découvrir à l'entrée dans la fenêtre.
    Classes posées par main.js ; l'image reste visible aux 5/6 avant. */
-:is(.offer2__shots, .project__shot, .work-card__thumb, .belavi-editor img).is-armed {
+:is(.offer2__shots, .project__shot, .belavi-editor img).is-armed {
   clip-path: inset(0 0 16% 0 round var(--r-md));
   transform: translateY(18px);
 }
-:is(.offer2__shots, .project__shot, .work-card__thumb, .belavi-editor img).is-armed.is-inview {
+:is(.offer2__shots, .project__shot, .belavi-editor img).is-armed.is-inview {
   clip-path: inset(0 0 0 0 round var(--r-md));
   transform: none;
   transition: clip-path 0.9s var(--ease-out), transform 0.9s var(--ease-out);

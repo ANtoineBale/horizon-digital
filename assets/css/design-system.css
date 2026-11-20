@@ -172,7 +172,7 @@ p { color: var(--ardoise); text-wrap: pretty; }
   background: none;
   -webkit-text-fill-color: currentColor;
 }
-:is(.is-dark, .hero, .page-hero) .grad { color: var(--ciel); }
+:is(.is-dark, .page-hero) .grad { color: var(--ciel); }
 
 /* Eyebrow / surtitre */
 .eyebrow {
@@ -225,16 +225,11 @@ h3 + .lead { margin-top: 1.5rem; }
 .section { padding-block: var(--section-y); position: relative; }
 .section--tight { padding-block: clamp(3.5rem, 6vw, 5.5rem); }
 .section--paper { background: var(--brume); }
-.section--white { background: var(--white); }
 
 .is-dark { background: var(--nuit); color: var(--on-dark); }
 
 /* Le contenu passe au-dessus des décors de fond éventuels */
 .section > .container { position: relative; z-index: 1; }
-
-/* Ancienne classe de l'arc d'horizon : l'arc a disparu avec l'identité
-   précédente. La classe reste dans le HTML jusqu'aux lots de pages. */
-.section--arc { overflow: hidden; }
 
 .section-head { max-width: 720px; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
 .section-head--center { margin-inline: auto; text-align: center; }
@@ -250,7 +245,7 @@ h3 + .lead { margin-top: 1.5rem; }
   outline-offset: 3px;
   border-radius: 4px;
 }
-:is(.is-dark, .hero, .page-hero, .footer, .header:not(.is-stuck, .header--solid)) :focus-visible {
+:is(.is-dark, .page-hero, .footer, .header:not(.is-stuck, .header--solid)) :focus-visible {
   outline-color: var(--ciel);
 }
 
