@@ -1,0 +1,233 @@
+/* ============================================================
+   theme-nuit.css — Studio Balesi · essai « tout sombre »
+   Chargé en dernier. Il redéfinit les couleurs de base, puis ajoute
+   la profondeur : halos fixes, surfaces en verre, reliefs au survol.
+   Aucune animation en boucle ; le contenu reste visible sans JavaScript.
+   ============================================================ */
+
+/* ---------- 1. Couleurs de base ---------- */
+:root {
+  --givre:   #080A18;  /* fond de page */
+  --brume:   #0C0F22;  /* sections de respiration */
+  --nuage:   #111530;  /* encarts */
+  --encre:   #F3F5FB;  /* titres — 18:1 sur le fond */
+  --ardoise: #B6BBD0;  /* texte courant — 10:1 sur le fond */
+  --cobalt:  #9FB2FF;  /* liens et repères — 9,5:1 sur le fond */
+  --nuit:    #0C0F22;
+  --white:   #10142B;  /* surface des cartes */
+  --line:    rgba(255, 255, 255, 0.09);
+  --line-2:  rgba(255, 255, 255, 0.16);
+
+  --surface:        rgba(255, 255, 255, 0.035);
+  --surface-hover:  rgba(255, 255, 255, 0.06);
+  --glow:           rgba(72, 104, 255, 0.45);
+
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 24px 50px -24px var(--glow);
+  --shadow-lg: 0 40px 80px -30px rgba(0, 0, 0, 0.8);
+
+  color-scheme: dark;
+}
+
+html { background: var(--givre); }
+body { background: transparent; }
+
+/* ---------- 2. Profondeur : deux halos fixes derrière la page ---------- */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(60vw 50vh at 85% -5%, rgba(47, 85, 255, 0.22), transparent 70%),
+    radial-gradient(50vw 55vh at -5% 55%, rgba(110, 80, 255, 0.13), transparent 70%),
+    radial-gradient(55vw 50vh at 100% 105%, rgba(47, 85, 255, 0.14), transparent 70%);
+}
+
+/* Les sections ne se distinguent plus par clair/sombre, mais par un voile
+   et un filet lumineux */
+.section--paper, .section--white, .is-dark { background: rgba(255, 255, 255, 0.022); }
+.section--paper, .section--white, .section.is-dark { position: relative; }
+:is(.section--paper, .section--white, .section.is-dark)::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(159, 178, 255, 0.4), transparent);
+}
+:is(.section--paper, .section--white, .section.is-dark)::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(159, 178, 255, 0.16), transparent);
+}
+
+/* ---------- 3. En-tête ---------- */
+.header:is(.is-stuck, .header--solid) {
+  background: rgba(8, 10, 24, 0.72);
+  backdrop-filter: saturate(160%) blur(16px);
+  -webkit-backdrop-filter: saturate(160%) blur(16px);
+}
+.header .logo__dot, .logo .logo__dot { fill: var(--ciel) !important; }
+.header:not(.is-stuck, .header--solid) .nav__link:hover,
+.header:not(.is-stuck, .header--solid) .nav__link[aria-current="page"] { color: #fff; }
+.header:not(.is-stuck, .header--solid) .burger span { background: #fff; }
+
+/* ---------- 4. Boutons ---------- */
+.btn { --btn-bg: transparent; --btn-fg: var(--encre); }
+.btn--primary,
+:is(.is-dark, .hero, .page-hero, .footer) .btn--primary,
+.header .nav__cta .btn {
+  --btn-bg: var(--ciel);
+  --btn-fg: #080A18;
+  box-shadow: 0 0 0 1px rgba(169, 187, 255, 0.35), 0 14px 36px -14px rgba(120, 146, 255, 0.75);
+}
+.btn--primary:hover,
+:is(.is-dark, .hero, .page-hero, .footer) .btn--primary:hover,
+.header .nav__cta .btn:hover { --btn-bg: #fff; --btn-fg: #080A18; }
+.btn--ghost,
+:is(.is-dark, .hero, .page-hero, .footer) .btn--ghost {
+  --btn-bg: rgba(255, 255, 255, 0.04);
+  --btn-fg: var(--encre);
+  --btn-bd: rgba(255, 255, 255, 0.22);
+}
+.btn--ghost:hover,
+:is(.is-dark, .hero, .page-hero, .footer) .btn--ghost:hover {
+  --btn-bg: rgba(255, 255, 255, 0.1);
+  --btn-fg: #fff;
+  --btn-bd: rgba(255, 255, 255, 0.45);
+}
+
+/* ---------- 5. Titres : le mot mis en valeur prend un dégradé froid ---------- */
+.grad, :is(.is-dark, .hero, .page-hero) .grad {
+  color: var(--ciel);
+  background: linear-gradient(95deg, #7C95FF 0%, #C4D0FF 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.home-hero h1 .grad { text-decoration-color: rgba(159, 178, 255, 0.55); }
+.eyebrow, .is-dark .eyebrow { color: var(--ciel); }
+
+/* ---------- 6. Cartes : surfaces en verre, relief au survol ---------- */
+.card, .expertise-card--ai, .is-dark .expertise-card--ai, .work-card, .is-dark .work-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02));
+  border-color: var(--line);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+.card:hover, .card:focus-within,
+.expertise-card--ai:hover, .expertise-card--ai:focus-within,
+.is-dark .work-card:hover, .is-dark .work-card:focus-within {
+  transform: translateY(-4px);
+  border-color: rgba(159, 178, 255, 0.55);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12), 0 28px 60px -28px var(--glow);
+}
+.expertise-card--ai h3, .cta h2 { color: #fff; }
+/* La carte « Spécialité » garde un halo propre */
+.expertise-card--ai {
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgba(72, 104, 255, 0.28), transparent 60%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02));
+  border-color: rgba(159, 178, 255, 0.3);
+}
+.badge { color: #080A18; }
+
+/* ---------- 7. Héros de l'accueil ---------- */
+.home-hero { position: relative; background: transparent; overflow: hidden; }
+/* Une trame fine qui s'efface vers le bas */
+.home-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  background-size: 72px 72px;
+  -webkit-mask-image: radial-gradient(80% 70% at 70% 0%, #000 0%, transparent 75%);
+          mask-image: radial-gradient(80% 70% at 70% 0%, #000 0%, transparent 75%);
+}
+.home-hero > * { position: relative; }
+.hero-proof img {
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 30px 60px -34px rgba(0, 0, 0, 0.9);
+}
+.hero-proof:hover img {
+  border-color: rgba(159, 178, 255, 0.6);
+  box-shadow: 0 30px 70px -30px var(--glow);
+}
+.hero-proof:hover strong { color: #fff; }
+@media (max-width: 800px) { .hero-proof { border-top-color: var(--line); } }
+
+/* ---------- 8. Belavi : le cadre du téléphone reste sombre ---------- */
+.belavi-phone-shell { background: #1A1F3D; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.14), 0 50px 90px -40px var(--glow); }
+.belavi-preview img, .belavi-preview video { border-color: #1A1F3D; }
+.belavi-phone-shell .belavi-phone-poster { border: 0; }
+.belavi-facts li { border-left-color: rgba(159, 178, 255, 0.45); }
+
+/* ---------- 9. Méthode ---------- */
+.steps::before { background: linear-gradient(90deg, rgba(159, 178, 255, 0.5), rgba(159, 178, 255, 0.08)); }
+.step__dot {
+  background: #10142B;
+  border-color: rgba(159, 178, 255, 0.6);
+  color: var(--ciel);
+  box-shadow: 0 0 0 6px rgba(159, 178, 255, 0.06);
+}
+
+/* ---------- 10. Schéma d'automatisation ---------- */
+.flow__node { background: rgba(255, 255, 255, 0.03); }
+
+/* ---------- 11. FAQ ---------- */
+.faq__icon { background: rgba(255, 255, 255, 0.1) !important; }
+.faq__icon::before, .faq__icon::after { background: var(--encre) !important; }
+.faq__item[open] > .faq__q .faq__icon { background: var(--ciel) !important; }
+.faq__item[open] > .faq__q .faq__icon::before,
+.faq__item[open] > .faq__q .faq__icon::after { background: #080A18 !important; }
+.faq__item[open] { background: linear-gradient(90deg, rgba(159, 178, 255, 0.05), transparent 70%); }
+
+/* ---------- 12. Appel final ---------- */
+.cta {
+  background:
+    radial-gradient(70% 120% at 100% 100%, rgba(72, 104, 255, 0.38), transparent 65%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  box-shadow: inset 0 0 0 1px rgba(159, 178, 255, 0.28), 0 50px 100px -50px var(--glow);
+}
+
+/* ---------- 13. Pied de page ---------- */
+.footer { background: rgba(3, 4, 14, 0.7); border-top: 1px solid var(--line); }
+.footer__col a:hover { color: #fff; }
+
+/* ---------- 14. Lien d'évitement et sélection ---------- */
+.skip-link { color: #fff; }
+::selection { background: rgba(120, 146, 255, 0.45); color: #fff; }
+
+/* ---------- 15. Pages internes ---------- */
+/* Les logos des projets sont dessinés pour un fond clair : ils le gardent */
+.project__shot--logo, .offer2__logo { background: #F6F7F9; }
+.offer2__logo { box-shadow: 0 18px 40px -18px rgba(0, 0, 0, 0.9); }
+/* Les chiffres du bilan */
+.stat__num { color: #fff; }
+/* Les icônes d'outils, dessinées en noir, se posent sur une pastille claire */
+.tools__col img {
+  width: 26px; height: 26px;
+  padding: 4px;
+  margin-top: 0;
+  background: #F6F7F9;
+  border-radius: 7px;
+  opacity: 1;
+}
+/* Captures et photos : un liseré pour les détacher du fond */
+.offer2__shots, .project__shot { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1), 0 30px 60px -34px rgba(0, 0, 0, 0.9); }
+/* Haut de page interne : le halo remplace l'aplat */
+.page-hero { background: transparent; border-bottom: 1px solid var(--line); }
+/* Champs de formulaire */
+.form input, .form select, .form textarea,
+form input:not([type="checkbox"]):not([type="radio"]), form select, form textarea {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--encre);
+}
+form select option { background: #10142B; color: var(--encre); }
+form ::placeholder { color: rgba(182, 187, 208, 0.75); }
