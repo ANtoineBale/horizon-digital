@@ -10,3 +10,9 @@ node_modules/
 
 # Notes de projet pour Claude Code (gardees en local, hors depot public)
 CLAUDE.md
+
+# Audits et captures de travail (gardes en local, hors depot public)
+AUDIT_HORIZON_DIGITAL.md
+APPLICATION_AUDIT.md
+INTEGRATION_BELAVI.md
+audit-captures-*/
