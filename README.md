@@ -7,7 +7,7 @@ Quatre expertises : stratégie de marque, communication & contenu, sites & plate
 ## Stack technique
 
 - HTML / CSS / JavaScript vanilla, sans framework
-- Typographies Sora + Inter
+- Typographies Bricolage Grotesque + Instrument Sans, hébergées sur le site
 - Formulaire de contact via Formspree
 - Hébergé sur GitHub Pages
 - Domaine personnalisé : studiobalesi.fr (fichier `CNAME`)
@@ -39,7 +39,6 @@ python scripts/check-site.py
 node scripts/test-contact.cjs
 node --check assets/js/main.js
 node --check assets/js/contact.js
-node --check assets/js/horizon.js
 ```
 
 Le test du formulaire est entièrement hors ligne : succès, erreurs et reprise utilisent un faux transport, aucun message n’est envoyé.

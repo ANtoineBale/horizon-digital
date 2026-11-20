@@ -5,99 +5,86 @@
 
 /* ============================================================
    0. POLICES — hébergées sur le site (aucun appel à Google)
-   Sora et Inter, fichiers variables Google Fonts, licence SIL OFL.
-   Un fichier par sous-ensemble : latin (français) + latin étendu.
+   Bricolage Grotesque (titres) et Instrument Sans (texte), fichiers
+   variables Google Fonts, licence SIL OFL. Bricolage garde son axe de
+   taille optique : les grands titres se resserrent d'eux-mêmes.
    ============================================================ */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Instrument Sans';
   font-style: normal;
   font-weight: 400 600;
   font-display: swap;
-  src: url('../fonts/inter-latin.woff2') format('woff2');
+  src: url('../fonts/instrument-sans-latin.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Instrument Sans';
   font-style: normal;
   font-weight: 400 600;
   font-display: swap;
-  src: url('../fonts/inter-latin-ext.woff2') format('woff2');
+  src: url('../fonts/instrument-sans-latin-ext.woff2') format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 @font-face {
-  font-family: 'Sora';
+  font-family: 'Bricolage Grotesque';
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 500 700;
   font-display: swap;
-  src: url('../fonts/sora-latin.woff2') format('woff2');
+  src: url('../fonts/bricolage-grotesque-latin.woff2') format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 @font-face {
-  font-family: 'Sora';
+  font-family: 'Bricolage Grotesque';
   font-style: normal;
-  font-weight: 400 700;
+  font-weight: 500 700;
   font-display: swap;
-  src: url('../fonts/sora-latin-ext.woff2') format('woff2');
+  src: url('../fonts/bricolage-grotesque-latin-ext.woff2') format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 
 /* ============================================================
-   1. TOKENS
-   Palette dérivée du logo : navy du mot-marque, bleu du "H",
-   bleu vif de l'arc. Tout le reste en découle.
+   1. TOKENS — direction « Cobalt » (refonte de novembre 2026)
+   Fond blanc froid, sections sombres bleu nuit, bleu cobalt vif,
+   accent lime sur fond sombre. Contrastes calculés : CLAUDE.md, §4.
    ============================================================ */
 :root {
-  /* --- Bleus de marque --- */
-  --blue-700: #0F52A8;
-  --blue-600: #1668C9;  /* liens sur fond clair (contraste AA) */
-  --blue-500: #1E7FE0;  /* primaire — le "H" du logo */
-  --blue-400: #2E9BFF;  /* vif — l'arc du logo, accents sur fond sombre */
-  --blue-300: #63B4FF;  /* halo */
-  --blue-200: #A8D3FF;
-  --blue-100: #D6E9FF;
-  --blue-050: #EEF5FF;
-
-  /* --- Navys --- */
-  --navy-950: #060B18;  /* fond le plus profond */
-  --navy-900: #0A1226;  /* fond hero */
-  --navy-800: #101A33;
-  --navy-700: #16213E;  /* navy du mot-marque "HORIZON" */
-  --navy-600: #1F2C4C;
-  --navy-500: #2C3B60;
+  /* --- Palette --- */
+  --givre:     #F6F7F9;  /* fond de page */
+  --brume:     #E9ECF2;  /* sections de respiration */
+  --nuage:     #EEF0F5;  /* encarts clairs */
+  --encre:     #0B0E14;  /* titres — 18.0:1 sur givre */
+  --ardoise:   #4A5060;  /* texte courant — 7.5:1 sur givre, 6.8:1 sur brume */
+  --cobalt:    #2F55FF;  /* liens et bouton principal — 5.1:1 sur givre, 4.6:1 sur brume, blanc dessus 5.4:1 */
+  --pervenche: #5B72FF;  /* filets et puces décoratifs, jamais du texte */
+  --nuit:      #0A0D1F;  /* sections sombres — givre 18.0:1 */
+  --abime:     #05071A;  /* fond le plus profond */
+  --lime:      #C6F35E;  /* accent sur fond sombre — 15.0:1 sur nuit */
+  --voile:     #C5C9DA;  /* texte secondaire sur nuit — 11.7:1 */
 
   /* --- Neutres --- */
   --white:  #FFFFFF;
-  --paper:  #F6F9FD;   /* fond de page clair */
-  --paper-2:#EDF3FA;   /* sections de respiration */
-  --ink:    #101A33;   /* titres sur fond clair */
-  --muted:  #55637F;   /* texte courant — 5.72:1 sur le fond clair */
-  --muted-2:#626F8B;   /* texte secondaire — 4.77:1, conforme AA même en petit corps */
-  --line:   rgba(22, 33, 62, 0.10);
-  --line-2: rgba(22, 33, 62, 0.18);
+  --line:   rgba(11, 14, 20, 0.10);
+  --line-2: rgba(11, 14, 20, 0.20);
 
   /* --- Sur fond sombre --- */
-  --on-dark:        #EAF1FB;
-  --on-dark-muted:  rgba(234, 241, 251, 0.66);
-  --on-dark-line:   rgba(234, 241, 251, 0.14);
+  --on-dark:        #F6F7F9;
+  --on-dark-muted:  rgba(246, 247, 249, 0.72);  /* 9.4:1 sur nuit */
+  --on-dark-line:   rgba(246, 247, 249, 0.18);
 
-  /* --- Dégradés signature (l'arc du logo) --- */
-  --grad-arc:  linear-gradient(90deg, var(--blue-500) 0%, var(--blue-300) 50%, var(--blue-500) 100%);
-  --grad-text: linear-gradient(100deg, var(--blue-400) 0%, var(--blue-300) 55%, var(--blue-200) 100%);
-  --grad-cta:  linear-gradient(135deg, var(--blue-700) 0%, var(--blue-600) 100%);
 
   /* --- Typographie --- */
-  --font-display: 'Sora', system-ui, -apple-system, sans-serif;
-  --font-body:    'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: 'Bricolage Grotesque', system-ui, -apple-system, sans-serif;
+  --font-body:    'Instrument Sans', system-ui, -apple-system, sans-serif;
 
   /* Échelle fluide */
-  --fs-hero:    clamp(2.75rem, 6.2vw, 5.25rem);
-  --fs-h2:      clamp(2rem, 3.8vw, 3.25rem);
+  --fs-hero:    clamp(2.6rem, 5.8vw, 5.25rem);
+  --fs-h2:      clamp(2rem, 4vw, 3.4rem);
   --fs-h3:      clamp(1.25rem, 1.8vw, 1.5rem);
   --fs-lead:    clamp(1.0625rem, 1.4vw, 1.25rem);
   --fs-body:    1.0625rem;
   --fs-sm:      0.9375rem;
   --fs-xs:      0.8125rem;
-  --fs-eyebrow: 0.6875rem;
+  --fs-eyebrow: 0.75rem;
 
   /* --- Rythme --- */
   --section-y: clamp(5rem, 9vw, 8.5rem);
@@ -108,15 +95,15 @@
   /* --- Formes --- */
   --r-sm:  8px;
   --r-md:  14px;
-  --r-lg:  22px;
-  --r-xl:  32px;
-  --r-pill: 999px;
+  --r-lg:  14px;
+  --r-xl:  20px;
+  --r-pill: 14px;
 
-  /* --- Ombres (portées bleutées, jamais grises) --- */
-  --shadow-sm: 0 2px 8px rgba(16, 26, 51, 0.05);
-  --shadow-md: 0 12px 32px -8px rgba(16, 26, 51, 0.12);
-  --shadow-lg: 0 28px 64px -16px rgba(16, 26, 51, 0.20);
-  --shadow-blue: 0 20px 48px -12px rgba(30, 127, 224, 0.35);
+  /* --- Ombres --- */
+  --shadow-sm: 0 2px 8px rgba(11, 14, 20, 0.05);
+  --shadow-md: 0 12px 32px -10px rgba(11, 14, 20, 0.16);
+  --shadow-lg: 0 30px 60px -20px rgba(11, 14, 20, 0.32);
+  --shadow-blue: 0 14px 30px -14px rgba(47, 85, 255, 0.5);
 
   /* --- Transitions --- */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -137,12 +124,8 @@ html {
 }
 
 body {
-  /* Dégradé de page : le fond se bleuit imperceptiblement en descendant,
-     pour qu'aucune zone claire ne soit jamais un aplat mort. */
-  background:
-    linear-gradient(180deg, #F8FAFD 0%, #F2F6FC 46%, #E9EFF9 100%);
-  background-attachment: scroll;
-  color: var(--ink);
+  background: var(--givre);
+  color: var(--encre);
   font-family: var(--font-body);
   font-size: var(--fs-body);
   line-height: 1.65;
@@ -168,35 +151,28 @@ input, textarea, select { font: inherit; color: inherit; }
 h1, h2, h3, h4 {
   font-family: var(--font-display);
   font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--encre);
   text-wrap: balance;
 }
 
-h1 { font-size: var(--fs-hero); letter-spacing: -0.045em; }
+h1 { font-size: var(--fs-hero); }
 /* 1.14 plutôt que 1.1 : les titres de section passent souvent sur
    3–4 lignes, où un interlignage trop serré devient illisible. */
-h2 { font-size: var(--fs-h2); letter-spacing: -0.035em; line-height: 1.14; }
-h3 { font-size: var(--fs-h3); line-height: 1.25; }
+h2 { font-size: var(--fs-h2); line-height: 1.04; }
+h3 { font-size: var(--fs-h3); line-height: 1.15; letter-spacing: -0.025em; }
 
-p { color: var(--muted); text-wrap: pretty; }
+p { color: var(--ardoise); text-wrap: pretty; }
 
-/* Mot mis en valeur dans un titre — dégradé de l'arc */
+/* Mot mis en valeur dans un titre : cobalt sur fond clair, lime sur
+   fond sombre. Plus aucun dégradé. */
 .grad {
-  background: var(--grad-text);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--cobalt);
+  background: none;
+  -webkit-text-fill-color: currentColor;
 }
-
-/* Sur fond clair, le dégradé passe en bleu profond pour le contraste */
-.on-light .grad,
-section:not(.is-dark) .grad {
-  background: linear-gradient(100deg, var(--blue-600) 0%, var(--blue-500) 55%, var(--blue-400) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-}
+:is(.is-dark, .hero, .page-hero) .grad { color: var(--lime); }
 
 /* Eyebrow / surtitre */
 .eyebrow {
@@ -206,24 +182,23 @@ section:not(.is-dark) .grad {
   font-family: var(--font-body);
   font-size: var(--fs-eyebrow);
   font-weight: 600;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--blue-600);
+  color: var(--cobalt);
   margin-bottom: 1.25rem;
 }
 .eyebrow::before {
   content: '';
   width: 26px;
-  height: 2px;
-  border-radius: 2px;
-  background: var(--grad-arc);
+  height: 1px;
+  background: currentColor;
 }
-.is-dark .eyebrow { color: var(--blue-300); }
+.is-dark .eyebrow { color: var(--lime); }
 
 .lead {
   font-size: var(--fs-lead);
   line-height: 1.6;
-  color: var(--muted);
+  color: var(--ardoise);
   max-width: var(--maxw-text);
 }
 
@@ -249,66 +224,17 @@ h3 + .lead { margin-top: 1.5rem; }
 
 .section { padding-block: var(--section-y); position: relative; }
 .section--tight { padding-block: clamp(3.5rem, 6vw, 5.5rem); }
-.section--paper { background: var(--paper-2); }
+.section--paper { background: var(--brume); }
 .section--white { background: var(--white); }
 
-.is-dark { background: var(--navy-900); color: var(--on-dark); }
+.is-dark { background: var(--nuit); color: var(--on-dark); }
 
-/* ------------------------------------------------------------
-   TEXTURE — grain global
-   Un voile fixe sur toute la page (hero et bandes sombres compris)
-   pour casser le rendu "aplat numérique". Invisible consciemment,
-   perceptible inconsciemment.
-   ------------------------------------------------------------ */
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 300;
-  pointer-events: none;
-  opacity: 0.022;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* ------------------------------------------------------------
-   PROFONDEUR — halos bleus ancrés aux sections
-   De larges taches diluées, alternées gauche/droite, qui créent
-   du relief sans motif identifiable.
-   ------------------------------------------------------------ */
-.section:not(.is-dark)::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background: radial-gradient(680px circle at 14% 22%, rgba(46, 155, 255, 0.075), transparent 62%);
-}
-.section:not(.is-dark):nth-of-type(even)::before {
-  background: radial-gradient(740px circle at 86% 28%, rgba(30, 127, 224, 0.07), transparent 64%);
-}
-
-/* Le contenu repasse au-dessus des décors de fond */
+/* Le contenu passe au-dessus des décors de fond éventuels */
 .section > .container { position: relative; z-index: 1; }
 
-/* ------------------------------------------------------------
-   MARQUE — l'arc du logo en filigrane
-   L'horizon du hero réapparaît, énorme et presque invisible.
-   Se pose à la main sur les sections qu'on veut habiter.
-   ------------------------------------------------------------ */
+/* Ancienne classe de l'arc d'horizon : l'arc a disparu avec l'identité
+   précédente. La classe reste dans le HTML jusqu'aux lots de pages. */
 .section--arc { overflow: hidden; }
-.section--arc::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -14%;
-  width: 165%;
-  aspect-ratio: 3 / 1;
-  transform: translateX(-50%);
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0.055;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 260' preserveAspectRatio='none'%3E%3Cpath d='M0 232 C 260 40, 940 40, 1200 232 C 920 120, 280 120, 0 232 Z' fill='%232E9BFF'/%3E%3C/svg%3E") no-repeat center bottom / 100% 100%;
-}
 
 .section-head { max-width: 720px; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
 .section-head--center { margin-inline: auto; text-align: center; }
@@ -318,15 +244,14 @@ body::after {
 /* ============================================================
    6. ACCESSIBILITÉ
    ============================================================ */
-/* --blue-600 sur fond clair (5.16:1), --blue-300 sur fond sombre :
-   --blue-400 seul ne donnait que 2.7:1 sur les sections claires. */
+/* Cobalt sur fond clair (5.1:1), lime sur fond sombre (15:1). */
 :focus-visible {
-  outline: 2px solid var(--blue-600);
+  outline: 2px solid var(--cobalt);
   outline-offset: 3px;
   border-radius: 4px;
 }
-:is(.is-dark, .hero, .page-hero, .footer, .header:not(.is-stuck)) :focus-visible {
-  outline-color: var(--blue-300);
+:is(.is-dark, .hero, .page-hero, .footer, .header:not(.is-stuck, .header--solid)) :focus-visible {
+  outline-color: var(--lime);
 }
 
 .skip-link {
@@ -334,7 +259,7 @@ body::after {
   top: 0; left: 0;
   z-index: 999;
   padding: 0.875rem 1.5rem;
-  background: var(--navy-900);
+  background: var(--nuit);
   color: var(--white);
   font-size: var(--fs-sm);
   font-weight: 600;

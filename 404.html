@@ -6,13 +6,15 @@
   <title>Page introuvable — Studio Balesi</title>
   <meta name="description" content="Cette page n'existe pas ou a été déplacée.">
   <meta name="robots" content="noindex, follow">
-  <meta name="theme-color" content="#0A1226">
+  <meta name="theme-color" content="#0A0D1F">
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-  <link rel="stylesheet" href="/assets/css/design-system.css?v=20261120c">
-  <link rel="stylesheet" href="/assets/css/components.css?v=20261120c">
-  <link rel="stylesheet" href="/assets/css/pages/inner.css?v=20261120c">
+  <link rel="preload" href="/assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/design-system.css?v=20261120r">
+  <link rel="stylesheet" href="/assets/css/components.css?v=20261120r">
+  <link rel="stylesheet" href="/assets/css/pages/inner.css?v=20261120r">
 
   <!-- Chemins absolus en / : la 404 s'affiche à n'importe quelle
        adresse du site, puisque studiobalesi.fr sert le site à la racine. -->
@@ -23,7 +25,7 @@
       display: grid;
       place-items: center;
       text-align: center;
-      background: var(--navy-900);
+      background: var(--nuit);
       position: relative;
       overflow: hidden;
       padding: var(--gutter);
@@ -32,21 +34,19 @@
        le fond de .lost. On le remonte au-dessus du fond, sous le contenu. */
     .lost .page-hero__decor { z-index: 0; }
     .lost__inner { position: relative; z-index: 1; max-width: 620px; }
-    .lost__code {
+    .lost .lost__code {
       font-family: var(--font-display);
       font-size: clamp(5rem, 18vw, 11rem);
-      font-weight: 700;
+      font-weight: 600;
       line-height: 1;
-      letter-spacing: -0.06em;
-      background: var(--grad-text);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
+      letter-spacing: -0.05em;
+      color: var(--lime);
       margin-bottom: 1.5rem;
     }
-    .lost h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--white); margin-bottom: 1rem; }
+    .lost h1 { font-size: clamp(1.75rem, 4vw, 2.75rem); color: var(--on-dark); margin-bottom: 1rem; }
     .lost p { color: var(--on-dark-muted); margin-bottom: 2.5rem; }
-    .lost__actions { display: flex; gap: 0.875rem; justify-content: center; flex-wrap: wrap; }
+    .lost__actions { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; }
+    @media (max-width: 540px) { .lost__actions .btn { width: 100%; } }
   </style>
 </head>
 <body>
@@ -63,7 +63,7 @@
     </p>
     <div class="lost__actions">
       <a href="/" class="btn btn--primary">Retour à l'accueil <span class="btn__arrow" aria-hidden="true">→</span></a>
-      <a href="/contact.html" class="btn btn--ghost">Me contacter</a>
+      <a href="/contact.html" class="btn btn--ghost">Parlons de votre projet</a>
     </div>
   </div>
 </main>

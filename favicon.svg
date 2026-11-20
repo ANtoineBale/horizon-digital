@@ -1,14 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Studio Balesi">
-  <defs>
-    <linearGradient id="fArc" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%"   stop-color="#1E7FE0"/>
-      <stop offset="50%"  stop-color="#63B4FF"/>
-      <stop offset="100%" stop-color="#1E7FE0"/>
-    </linearGradient>
-  </defs>
-  <rect width="64" height="64" rx="13" fill="#0A1226"/>
-  <!-- Le soleil levant -->
-  <path d="M18 30 A14 14 0 0 1 46 30 Z" fill="#2E9BFF"/>
-  <!-- L'arc de l'horizon -->
-  <path d="M6 45 C 18 29, 46 29, 58 45 C 44 36, 20 36, 6 45 Z" fill="url(#fArc)"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#0A0D1F"/>
+  <circle cx="30" cy="34" r="17" fill="none" stroke="#F6F7F9" stroke-width="5.5" stroke-dasharray="86 20.8" transform="rotate(-10 30 34)"/>
+  <circle cx="43.6" cy="20.4" r="6" fill="#C6F35E"/>
 </svg>

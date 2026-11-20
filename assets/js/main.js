@@ -133,3 +133,86 @@
   }, { threshold: 0.35 });
   observer.observe(steps);
 })();
+
+/* ============================================================
+   6. DÉMO BELAVI — le vrai livret dans le téléphone
+   Sur ordinateur il se charge d'office ; sur mobile, seulement au
+   toucher du bouton (pas de défilement piégé, page plus légère).
+   Sans ce script : la capture et le lien « en grand » restent.
+   ============================================================ */
+(() => {
+  document.querySelectorAll('[data-belavi-demo]').forEach((box) => {
+    const template = box.querySelector('template');
+    const button = box.querySelector('.belavi-demo-btn');
+    const poster = box.querySelector('.belavi-phone-poster');
+    const hint = box.querySelector('[data-belavi-hint]');
+    if (!template || !button || !poster) return;
+
+    const start = (moveFocus) => {
+      const frame = template.content.firstElementChild.cloneNode(true);
+      template.replaceWith(frame);
+      poster.hidden = true;
+      button.hidden = true;
+      if (hint) hint.hidden = false;
+      if (moveFocus) {
+        frame.setAttribute('tabindex', '-1');
+        frame.focus();
+      }
+    };
+
+    if (window.matchMedia('(min-width: 941px)').matches) {
+      start(false);
+    } else {
+      button.hidden = false;
+      button.addEventListener('click', () => start(true), { once: true });
+    }
+  });
+})();
+
+/* ============================================================
+   7. IMAGES ET APPEL FINAL — fin de l'apparition à l'entrée dans la fenêtre
+   Décoratif : sans ce script, ou en mouvement réduit, tout est déjà en place.
+   ============================================================ */
+(() => {
+  if (!('IntersectionObserver' in window)) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const items = document.querySelectorAll('.offer2__shots, .project__shot, .work-card__thumb, .belavi-editor img, .cta');
+  if (!items.length) return;
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-inview');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.2 });
+  items.forEach((item) => {
+    item.classList.add('is-armed');
+    observer.observe(item);
+  });
+})();
+
+/* ============================================================
+   8. SCHÉMA D'AUTOMATISATION — animation en boucle, avec bouton pause
+   Ne démarre pas en mouvement réduit ; se met en pause hors de l'écran.
+   ============================================================ */
+(() => {
+  const flow = document.querySelector('[data-flow]');
+  if (!flow) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const toggle = flow.querySelector('.flow__toggle');
+  if (!toggle) return;
+  let pausedByUser = false;
+  const apply = (paused) => flow.classList.toggle('is-paused', paused);
+  flow.classList.add('is-running');
+  toggle.hidden = false;
+  toggle.addEventListener('click', () => {
+    pausedByUser = !pausedByUser;
+    apply(pausedByUser);
+    toggle.textContent = pausedByUser ? 'Relancer l’animation' : 'Mettre l’animation en pause';
+  });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver((entries) => {
+      apply(pausedByUser || !entries[0].isIntersecting);
+    }).observe(flow);
+  }
+})();
