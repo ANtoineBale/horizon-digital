@@ -438,6 +438,7 @@
 .project__visuals .project__shot--wide     { aspect-ratio: 16 / 9; }  /* capture de site */
 .project__visuals .project__shot--screen   { aspect-ratio: 16 / 10; } /* capture d'écran */
 .project__visuals .project__shot--banner   { aspect-ratio: 2.4 / 1; } /* logo en bandeau */
+.project__visuals .project__shot--globe    { aspect-ratio: 1092 / 551; } /* portfolio : le cadre a le format exact de l'image */
 .project__shot--screen img { object-position: top; }
 
 /* Belavi : le téléphone de démonstration, centré dans la colonne */
