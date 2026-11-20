@@ -25,9 +25,9 @@
 
   <link rel="preload" href="assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/design-system.css?v=20261120r">
-  <link rel="stylesheet" href="assets/css/components.css?v=20261120r">
-  <link rel="stylesheet" href="assets/css/pages/home.css?v=20261120r">
+  <link rel="stylesheet" href="assets/css/design-system.css?v=20261120s">
+  <link rel="stylesheet" href="assets/css/components.css?v=20261120s">
+  <link rel="stylesheet" href="assets/css/pages/home.css?v=20261120s">
 
   <script type="application/ld+json">
   {
@@ -104,36 +104,47 @@
 <main id="main">
 
   <!-- ══════════════════════════════ HÉROS ══════════════════════════════
-       Deux volets : le propos à gauche, une preuve réelle à droite. -->
+       Le propos sur toute la largeur, puis trois projets réels. -->
   <section class="home-hero">
 
-    <div class="home-hero__text">
+    <div class="container home-hero__top">
       <span class="eyebrow">Marque · Sites web · Contenus · IA</span>
 
       <h1>Votre marque, votre site. <span class="grad">Un seul interlocuteur.</span></h1>
 
-      <p class="home-hero__sub">Je suis Antoine Balesi. J’accompagne les professionnels du positionnement à la mise en ligne, avec des contenus et des automatisations adaptés à leur activité. Marseille, Aix-en-Provence et à distance.</p>
+      <div class="home-hero__row">
+        <p class="home-hero__sub">Je suis Antoine Balesi. J’accompagne les professionnels du positionnement à la mise en ligne, avec des contenus et des automatisations adaptés à leur activité. Marseille, Aix-en-Provence et à distance.</p>
 
-      <div class="home-hero__actions">
-        <a href="contact.html" class="btn btn--primary">
-          Parlons de votre projet
-          <span class="btn__arrow" aria-hidden="true">→</span>
-        </a>
-        <a href="#realisations" class="btn btn--ghost">Voir mes réalisations</a>
+        <div class="home-hero__actions">
+          <a href="contact.html" class="btn btn--primary">
+            Parlons de votre projet
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#realisations" class="btn btn--ghost">Voir mes réalisations</a>
+        </div>
       </div>
     </div>
 
-    <div class="home-hero__panel is-dark">
-      <figure class="home-hero__proof">
-        <img src="assets/images/realisations/belavi-editeur.webp" alt="Écran de création d’un livret Belavi" width="1440" height="900" fetchpriority="high">
-        <figcaption>Belavi, la plateforme que j’ai conçue et mise en ligne. <a href="projet-belavi.html">Voir l’étude de cas</a></figcaption>
-      </figure>
-      <ul class="home-hero__trust">
-        <li><strong>1 interlocuteur</strong><span>du cadrage à la livraison</span></li>
-        <li><strong>L’IA</strong><span>là où elle fait gagner du temps</span></li>
-        <li><strong>Premier échange</strong><span>gratuit</span></li>
-      </ul>
-    </div>
+    <ul class="container home-hero__proofs">
+      <li>
+        <a class="hero-proof" href="projet-belavi.html">
+          <img src="assets/images/realisations/belavi-livret-mas.webp" alt="Livret d’exemple Belavi : le Mas des Oliviers" width="600" height="1200" fetchpriority="high">
+          <span class="hero-proof__txt"><strong>Belavi</strong><span>Plateforme web · IA</span></span>
+        </a>
+      </li>
+      <li>
+        <a class="hero-proof" href="realisations.html#fregahouse">
+          <img class="hero-proof__img--frega" src="assets/images/realisations/fregahouse-panneau.webp" alt="Panneau de salon FregaHouse, avec le logo et les villas" width="760" height="1009">
+          <span class="hero-proof__txt"><strong>FregaHouse</strong><span>Marque livrée en 30 jours</span></span>
+        </a>
+      </li>
+      <li>
+        <a class="hero-proof" href="realisations.html#jardin">
+          <img src="assets/images/realisations/jardin-site.webp" alt="Page d’accueil du site Le Jardin du Repos" width="1200" height="675">
+          <span class="hero-proof__txt"><strong>Le Jardin du Repos</strong><span>Marque · Site · Outil sur mesure</span></span>
+        </a>
+      </li>
+    </ul>
 
   </section>
 
@@ -506,6 +517,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20261120r" defer></script>
+<script src="assets/js/main.js?v=20261120s" defer></script>
 </body>
 </html>

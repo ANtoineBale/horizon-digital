@@ -1,36 +1,23 @@
 /* ============================================================
    pages/home.css — Studio Balesi · Accueil
-   Héros en deux volets · Méthode · Réalisations
+   Héros · Méthode · Réalisations
    ============================================================ */
 
 /* ============================================================
-   HÉROS — le propos à gauche sur fond clair, une preuve réelle
-   à droite sur fond nuit. Tout est visible sans JavaScript.
+   HÉROS — le propos sur toute la largeur, puis trois projets réels.
+   Tout est visible sans JavaScript.
    ============================================================ */
 .home-hero {
-  display: grid;
-  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
-  min-height: min(860px, 100svh);
   padding-top: var(--header-h);
   background: var(--givre);
 }
-
-/* Les marges extérieures s'alignent sur le conteneur du site :
-   le pourcentage se calcule sur la largeur de la colonne. */
-.home-hero__text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  padding-block: clamp(3rem, 8vh, 6rem);
-  padding-right: clamp(1.5rem, 4vw, 4rem);
-  padding-left: max(var(--gutter), calc(92.5926% - var(--maxw) / 2 + var(--gutter)));
-}
+.home-hero__top { padding-top: clamp(2.25rem, 5vh, 3rem); }
+.home-hero .eyebrow { margin-bottom: 1.25rem; }
 .home-hero h1 {
-  font-size: clamp(2.125rem, 3.6vw + 0.6rem, 4.25rem);
-  margin-bottom: 1.5rem;
+  font-size: clamp(2.125rem, 5vw + 0.6rem, 5.5rem);
+  margin-bottom: clamp(1.5rem, 3vw, 2.25rem);
 }
-/* La seconde phrase passe toujours à la ligne, d'un seul bloc */
+/* La seconde phrase passe toujours à la ligne, d'un seul bloc… */
 .home-hero h1 .grad { display: block; }
 /* …et se souligne de lime une fois la page chargée (le texte, lui, est là d'emblée) */
 .home-hero h1 .grad {
@@ -40,85 +27,77 @@
   animation: underline-in 0.7s 0.5s var(--ease-out) both;
 }
 @keyframes underline-in { from { text-decoration-color: transparent; } }
+.home-hero__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+}
 .home-hero__sub {
   font-size: var(--fs-lead);
   line-height: 1.6;
   color: var(--ardoise);
   max-width: 50ch;
-  margin-bottom: 2.25rem;
 }
 .home-hero__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
 
-.home-hero__panel {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: clamp(1.5rem, 3vw, 2.25rem);
-  padding-block: clamp(2.5rem, 6vh, 4.5rem);
-  padding-left: clamp(1.5rem, 3.5vw, 3.5rem);
-  padding-right: max(var(--gutter), calc(108.6957% - var(--maxw) / 2 + var(--gutter)));
+/* Les trois projets */
+.home-hero__proofs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  list-style: none;
+  padding-block: clamp(2rem, 4vw, 3rem) clamp(2.5rem, 5vw, 4rem);
 }
-.home-hero__proof img {
+.hero-proof { display: block; color: inherit; }
+.hero-proof img {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: top;
+  border: 1px solid var(--line);
   border-radius: var(--r-md);
-  box-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.6);
+  transition: transform 0.4s var(--ease-out);
+  /* Elles montent en place une fois, sans jamais être masquées */
+  animation: proof-rise 0.9s 0.1s var(--ease-out) both;
 }
-/* La preuve monte en place une fois, au chargement */
-.home-hero__proof img { animation: proof-rise 0.9s 0.1s var(--ease-out) both; }
-@keyframes proof-rise { from { transform: translateY(28px); } }
-.home-hero__proof figcaption {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0 0.75rem;
-  margin-top: 0.5rem;
-  font-size: var(--fs-sm);
-  color: var(--voile);
-}
-.home-hero__proof a {
-  display: inline-flex;
-  align-items: center;
-  min-height: 44px;
-  font-weight: 600;
-  color: var(--lime);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-}
-.home-hero__proof a:hover { color: var(--white); }
-
-.home-hero__trust li {
-  display: flex;
-  align-items: baseline;
-  gap: 1rem;
-  padding: 0.8rem 0;
-  border-top: 1px solid var(--on-dark-line);
-  font-size: var(--fs-sm);
-  color: var(--voile);
-}
-.home-hero__trust strong {
-  flex: 0 0 9.5rem;
+.home-hero__proofs li:nth-child(2) img { animation-delay: 0.2s; }
+.home-hero__proofs li:nth-child(3) img { animation-delay: 0.3s; }
+@keyframes proof-rise { from { transform: translateY(24px); } }
+.hero-proof__img--frega { object-position: 50% 24% !important; }
+.hero-proof:hover img { transform: translateY(-4px); }
+.hero-proof__txt { display: block; padding-top: 0.75rem; }
+.hero-proof__txt strong {
+  display: block;
   font-family: var(--font-display);
+  font-size: 1.25rem;
   font-weight: 600;
-  font-size: 1.125rem;
-  letter-spacing: -0.02em;
-  color: var(--on-dark);
+  letter-spacing: -0.03em;
+  color: var(--encre);
 }
+.hero-proof__txt span { display: block; font-size: var(--fs-sm); color: var(--ardoise); }
+.hero-proof:hover strong { color: var(--cobalt); }
 
-@media (max-width: 900px) {
-  .home-hero { grid-template-columns: minmax(0, 1fr); min-height: 0; }
-  .home-hero__text { padding: 2.75rem var(--gutter) 3rem; }
-  .home-hero__panel { padding: 2.5rem var(--gutter); }
+/* Étroit : trois lignes compactes, vignette à gauche */
+@media (max-width: 800px) {
+  .home-hero__proofs { grid-template-columns: 1fr; gap: 0; }
+  .hero-proof {
+    display: grid;
+    grid-template-columns: 112px 1fr;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--line);
+  }
+  .hero-proof__txt { padding-top: 0; }
+  .hero-proof:hover img { transform: none; }
 }
 @media (max-width: 540px) {
   .home-hero__actions { width: 100%; }
   .home-hero__actions .btn { width: 100%; }
-  .home-hero__trust li { flex-direction: column; gap: 0; }
-  .home-hero__trust strong { flex: none; }
 }
 
 /* Les cartes d'expertise (.expertise-card, --ai, .badge) servent aussi
