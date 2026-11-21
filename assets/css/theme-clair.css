@@ -150,3 +150,7 @@
 [data-theme="clair"] .footer { border-top: 1px solid var(--line); }
 [data-theme="clair"] .footer__col a:hover, [data-theme="clair"] .footer__social a:hover { color: var(--cobalt); }
 [data-theme="clair"] .skip-link { background: var(--encre); color: #fff; }
+
+/* ---------- 12. Outils ---------- */
+[data-theme="clair"] .tools__col { background: #fff; box-shadow: 0 18px 40px -30px rgba(20, 30, 80, 0.35); }
+[data-theme="clair"] .tools__col:hover { border-color: rgba(47, 85, 255, 0.55); box-shadow: 0 28px 56px -28px var(--glow); }
