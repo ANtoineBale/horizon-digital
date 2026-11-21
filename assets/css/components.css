@@ -687,7 +687,7 @@
 @property --lueur-angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
 @keyframes lueur-tourne { to { --lueur-angle: 360deg; } }
 
-:root { --lueur-1: #2F55FF; --lueur-2: #7C5CFF; --lueur-3: #22B8E6; }
+:root { --lueur-1: #2F55FF; --lueur-2: #7C5CFF; --lueur-3: #E84FA6; }
 
 :is(.tools__col, .offer2__bar) { position: relative; }
 :is(.card, .tools__col, .offer2__bar, .contact__aside)::before,
