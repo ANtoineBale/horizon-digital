@@ -824,3 +824,16 @@
 .legal p + p { margin-top: 0.875rem; }
 .legal a { color: var(--cobalt); font-weight: 500; text-decoration: underline; text-underline-offset: 2px; }
 .legal ul { display: grid; gap: 0.5rem; margin-top: 0.75rem; padding-left: 1.25rem; list-style: disc; }
+
+/* ============================================================
+   OFFRE 02 — la photo du stand FregaHouse
+   C'est une photo en hauteur : elle prend la moitié de la largeur et un
+   cadre presque à son format, pour qu'on voie les panneaux ET la table.
+   ============================================================ */
+@media (min-width: 941px) {
+  .offer2--flip .offer2__grid--photo { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+}
+.offer2__shots--stand { aspect-ratio: 5 / 6; }
+.offer2__shot--stand { object-position: center 35%; filter: contrast(1.06) saturate(1.12); }
+@media (max-width: 940px) { .offer2__shots--stand { aspect-ratio: 4 / 5; max-width: 520px; } }
+@media (max-width: 540px) { .offer2__shots.offer2__shots--stand { aspect-ratio: 1; } }
