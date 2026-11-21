@@ -25,12 +25,12 @@
 
   <link rel="preload" href="assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/design-system.css?v=20261121e">
-  <link rel="stylesheet" href="assets/css/components.css?v=20261121e">
-  <link rel="stylesheet" href="assets/css/pages/home.css?v=20261121e">
-  <link rel="stylesheet" href="assets/css/theme-nuit.css?v=20261121e" id="theme-nuit">
-  <link rel="stylesheet" href="assets/css/theme-clair.css?v=20261121e">
-  <script src="assets/js/theme.js?v=20261121e"></script>
+  <link rel="stylesheet" href="assets/css/design-system.css?v=20261121f">
+  <link rel="stylesheet" href="assets/css/components.css?v=20261121f">
+  <link rel="stylesheet" href="assets/css/pages/home.css?v=20261121f">
+  <link rel="stylesheet" href="assets/css/theme-nuit.css?v=20261121f" id="theme-nuit">
+  <link rel="stylesheet" href="assets/css/theme-clair.css?v=20261121f">
+  <script src="assets/js/theme.js?v=20261121f"></script>
 
   <script type="application/ld+json">
   {
@@ -108,7 +108,7 @@
 <main id="main">
 
   <!-- ══════════════════════════════ HÉROS ══════════════════════════════
-       Le propos sur toute la largeur, puis trois projets réels. -->
+       Le propos sur toute la largeur, puis les quatre offres et leur prix. -->
   <section class="home-hero">
 
     <div class="container home-hero__top">
@@ -124,9 +124,62 @@
             Parlons de votre projet
             <span class="btn__arrow" aria-hidden="true">→</span>
           </a>
-          <a href="realisations.html" class="btn btn--ghost">Voir mes réalisations</a>
+          <a href="expertises.html#tarifs" class="btn btn--ghost">Voir les tarifs</a>
           <p class="home-hero__note">Premier échange gratuit de 30 minutes · Réponse sous 48 h ouvrées</p>
         </div>
+      </div>
+    </div>
+
+    <!-- Les quatre offres et leur prix de départ : ce que l'on peut acheter, dès le premier écran -->
+    <ul class="container home-offres" id="expertises">
+      <li>
+        <a class="card offre" href="expertises.html#strategie">
+          <span class="offre__num" aria-hidden="true">01</span>
+          <h2 class="offre__titre">Stratégie de marque</h2>
+          <p class="offre__prix">à partir de <strong>1 500 €</strong></p>
+          <p class="offre__detail">Nom, logo, charte · 3 à 5 semaines</p>
+          <span class="offre__lien">Voir l’offre</span>
+        </a>
+      </li>
+      <li>
+        <a class="card offre" href="expertises.html#communication">
+          <span class="offre__num" aria-hidden="true">02</span>
+          <h2 class="offre__titre">Communication &amp; contenu</h2>
+          <p class="offre__prix">à partir de <strong>900 €</strong></p>
+          <p class="offre__detail">Ligne éditoriale, contenus · 2 à 4 semaines</p>
+          <span class="offre__lien">Voir l’offre</span>
+        </a>
+      </li>
+      <li>
+        <a class="card offre" href="expertises.html#presence">
+          <span class="offre__num" aria-hidden="true">03</span>
+          <h2 class="offre__titre">Site vitrine</h2>
+          <p class="offre__prix">à partir de <strong>1 200 €</strong></p>
+          <p class="offre__detail">3 à 5 pages, en ligne · 4 à 8 semaines</p>
+          <span class="offre__lien">Voir l’offre</span>
+        </a>
+      </li>
+      <li>
+        <a class="card offre vedette" href="expertises.html#ia">
+          <span class="badge">Spécialité</span>
+          <h2 class="offre__titre">IA &amp; automatisation</h2>
+          <p class="offre__prix">diagnostic à <strong>390 €</strong></p>
+          <p class="offre__detail">Puis automatisation à partir de 600 €</p>
+          <span class="offre__lien">Voir l’offre</span>
+        </a>
+      </li>
+    </ul>
+
+  </section>
+
+  <!-- ══════════════════════════ PREUVES ══════════════════════════
+       Les projets réels, sous les offres : ils prouvent, ils ne sont plus le sujet. -->
+  <section class="section section--tight" id="realisations">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Réalisations</span>
+        <h2>Des marques lancées, pas des maquettes.</h2>
+        <p class="lead">Chaque projet est allé plus loin que la maquette&nbsp;: marque créée, site en ligne, premier client — ou bêta en cours pour Shibui.</p>
       </div>
     </div>
 
@@ -134,97 +187,32 @@
     <ul class="container home-hero__proofs">
       <li class="proof--belavi">
         <a class="hero-proof" href="projet-belavi.html">
-          <img src="assets/images/realisations/belavi-livret-mas.webp" srcset="assets/images/realisations/belavi-livret-mas-180.webp 180w, assets/images/realisations/belavi-livret-mas-360.webp 360w, assets/images/realisations/belavi-livret-mas.webp 600w" sizes="(max-width: 800px) 42px, 150px" alt="Livret d’exemple Belavi sur téléphone : le Mas des Oliviers" width="600" height="1200" fetchpriority="high">
+          <img src="assets/images/realisations/belavi-livret-mas.webp" srcset="assets/images/realisations/belavi-livret-mas-180.webp 180w, assets/images/realisations/belavi-livret-mas-360.webp 360w, assets/images/realisations/belavi-livret-mas.webp 600w" sizes="(max-width: 800px) 42px, 150px" alt="Livret d’exemple Belavi sur téléphone : le Mas des Oliviers" width="600" height="1200" loading="lazy">
           <span class="hero-proof__txt"><strong>Belavi</strong><span>Plateforme · IA</span></span>
         </a>
       </li>
       <li class="proof--frega">
         <a class="hero-proof" href="realisations.html#fregahouse">
-          <img src="assets/images/realisations/fregahouse-panneau.webp" srcset="assets/images/realisations/fregahouse-panneau-180.webp 180w, assets/images/realisations/fregahouse-panneau-360.webp 360w, assets/images/realisations/fregahouse-panneau.webp 760w" sizes="(max-width: 800px) 60px, 220px" alt="Panneau de salon FregaHouse, avec le logo, les villas et les plans" width="760" height="1009">
+          <img src="assets/images/realisations/fregahouse-panneau.webp" srcset="assets/images/realisations/fregahouse-panneau-180.webp 180w, assets/images/realisations/fregahouse-panneau-360.webp 360w, assets/images/realisations/fregahouse-panneau.webp 760w" sizes="(max-width: 800px) 60px, 220px" alt="Panneau de salon FregaHouse, avec le logo, les villas et les plans" loading="lazy" width="760" height="1009">
           <span class="hero-proof__txt"><strong>FregaHouse</strong><span>Marque livrée en 30 jours</span></span>
         </a>
       </li>
       <li class="proof--jardin">
         <a class="hero-proof" href="realisations.html#jardin">
-          <img src="assets/images/realisations/jardin-site.webp" srcset="assets/images/realisations/jardin-site-360.webp 360w, assets/images/realisations/jardin-site-720.webp 720w, assets/images/realisations/jardin-site.webp 1200w" sizes="(max-width: 800px) 102px, 520px" alt="Page d’accueil du site Le Jardin du Repos" width="1200" height="675">
+          <img src="assets/images/realisations/jardin-site.webp" srcset="assets/images/realisations/jardin-site-360.webp 360w, assets/images/realisations/jardin-site-720.webp 720w, assets/images/realisations/jardin-site.webp 1200w" sizes="(max-width: 800px) 102px, 520px" alt="Page d’accueil du site Le Jardin du Repos" loading="lazy" width="1200" height="675">
           <span class="hero-proof__txt"><strong>Le Jardin du Repos</strong><span>Marque · Site · Outil sur mesure</span></span>
         </a>
       </li>
       <li class="proof--portfolio">
         <a class="hero-proof" href="realisations.html#portfolio">
-          <img src="assets/images/realisations/portfolio-globe.webp" srcset="assets/images/realisations/portfolio-globe-360.webp 360w, assets/images/realisations/portfolio-globe-720.webp 720w, assets/images/realisations/portfolio-globe.webp 1092w" sizes="(max-width: 800px) 102px, 580px" alt="Haut de la page d’accueil du portfolio d’Antoine Balesi" width="1092" height="551">
+          <img src="assets/images/realisations/portfolio-globe.webp" srcset="assets/images/realisations/portfolio-globe-360.webp 360w, assets/images/realisations/portfolio-globe-720.webp 720w, assets/images/realisations/portfolio-globe.webp 1092w" sizes="(max-width: 800px) 102px, 580px" alt="Haut de la page d’accueil du portfolio d’Antoine Balesi" loading="lazy" width="1092" height="551">
           <span class="hero-proof__txt"><strong>Portfolio</strong><span>Site codé sur mesure avec l’IA</span></span>
         </a>
       </li>
     </ul>
 
-  </section>
-
-  <!-- ══════════════════════════ EXPERTISES ══════════════════════════ -->
-  <section class="section" id="expertises">
-    <div class="container">
-
-      <div class="section-head section-head--center">
-        <span class="eyebrow">Mes expertises</span>
-        <h2>Quatre leviers pour faire avancer votre projet.</h2>
-        <p class="lead">Selon là où vous en êtes, on démarre par la marque, par la visibilité, par l'acquisition — ou par l'automatisation.</p>
-      </div>
-
-      <div class="grid grid--4">
-
-        <article class="card expertise-card">
-          <span class="card__num">01</span>
-          <h3>Stratégie de marque</h3>
-          <p>Clarifier ce que vous êtes, pour qui, et pourquoi on devrait vous choisir.</p>
-          <ul>
-            <li>Positionnement</li>
-            <li>Naming &amp; identité</li>
-            <li>Charte graphique</li>
-            <li>Ton de voix</li>
-          </ul>
-          <a href="expertises.html#strategie" class="link-arrow">En savoir plus</a>
-        </article>
-
-        <article class="card expertise-card">
-          <span class="card__num">02</span>
-          <h3>Communication &amp; contenu</h3>
-          <p>Dire les bonnes choses, au bon endroit, avec régularité.</p>
-          <ul>
-            <li>Ligne éditoriale</li>
-            <li>Réseaux sociaux</li>
-            <li>Campagnes de lancement</li>
-            <li>Supports print &amp; digital</li>
-          </ul>
-          <a href="expertises.html#communication" class="link-arrow">En savoir plus</a>
-        </article>
-
-        <article class="card expertise-card">
-          <span class="card__num">03</span>
-          <h3>Sites &amp; plateformes web</h3>
-          <p>Un site pour présenter votre activité, une plateforme pour faire vivre votre service.</p>
-          <ul>
-            <li>Sites vitrines &amp; plateformes web</li>
-            <li>SEO technique &amp; éditorial</li>
-            <li>Profils &amp; fiches établissement</li>
-            <li>Mesure des résultats</li>
-          </ul>
-          <a href="expertises.html#presence" class="link-arrow">En savoir plus</a>
-        </article>
-
-        <article class="card expertise-card expertise-card--ai vedette">
-          <span class="badge">Spécialité</span>
-          <h3>IA &amp; automatisation</h3>
-          <p>Gagner des heures chaque semaine sur ce qui est répétitif.</p>
-          <ul>
-            <li>Audit des tâches automatisables</li>
-            <li>Workflows Make / Zapier</li>
-            <li>Assistants &amp; prompts sur mesure</li>
-            <li>Formation de vos équipes</li>
-          </ul>
-          <a href="expertises.html#ia" class="link-arrow">En savoir plus</a>
-        </article>
-
-      </div>
+    <div class="container u-center">
+      <a href="realisations.html" class="btn btn--ghost">Voir toutes les réalisations <span class="btn__arrow" aria-hidden="true">→</span></a>
     </div>
   </section>
 
@@ -481,6 +469,6 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20261121e" defer></script>
+<script src="assets/js/main.js?v=20261121f" defer></script>
 </body>
 </html>

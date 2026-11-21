@@ -44,6 +44,61 @@
 /* Ce qui se passe après le clic, dit au moment où l'on hésite */
 .home-hero__note { grid-column: 1 / -1; font-size: var(--fs-xs); color: var(--ardoise); }
 
+/* Les quatre offres du héros : une tuile cliquable par offre, avec son prix
+   de départ. Elles prennent la place des projets dans le premier écran. */
+.home-offres {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  list-style: none;
+  padding-block: clamp(1.25rem, 2vw, 1.75rem) clamp(2.5rem, 5vw, 4rem);
+}
+.home-offres li { display: flex; }
+.offre {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.25rem 1.25rem 0.75rem;
+  color: inherit;
+}
+.offre__num { font-family: var(--font-display); font-size: var(--fs-sm); font-weight: 600; color: var(--cobalt); margin-bottom: 0.5rem; }
+.offre .badge { margin-bottom: 0.5rem; }
+.offre__titre { font-size: 1.1875rem; line-height: 1.15; letter-spacing: -0.025em; }
+.offre__prix { margin-top: 0.625rem; font-size: var(--fs-sm); color: var(--ardoise); }
+.offre__prix strong { font-family: var(--font-display); font-size: 1.625rem; font-weight: 600; letter-spacing: -0.03em; color: var(--encre); white-space: nowrap; }
+.offre__detail { font-size: var(--fs-xs); color: var(--ardoise); }
+.offre__lien {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  margin-top: auto;
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  color: var(--cobalt);
+}
+.offre__lien::after { content: '→'; transition: transform 0.25s var(--ease-out); }
+.offre:hover .offre__lien::after { transform: translateX(3px); }
+@media (max-width: 900px) { .home-offres { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); } }
+/* Téléphone : une offre par ligne, le nom à gauche et le prix à droite */
+@media (max-width: 540px) {
+  .home-offres { grid-template-columns: minmax(0, 1fr); gap: 0.75rem; }
+  .offre {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    column-gap: 1rem;
+    padding: 1rem 1.125rem 0.875rem;
+  }
+  .offre__num, .offre .badge { grid-column: 1 / -1; justify-self: start; margin-bottom: 0.375rem; }
+  .offre__titre { grid-column: 1; }
+  .offre__prix { grid-column: 2; grid-row: 2 / span 2; margin-top: 0; text-align: right; }
+  .offre__prix strong { display: block; }
+  .offre__detail { grid-column: 1; }
+  .offre__lien { grid-column: 1 / -1; min-height: 0; margin-top: 0.625rem; }
+}
+
 /* Les quatre projets : une rangée où chaque image garde son format
    d'origine (téléphone, panneau, captures d'écran). La largeur de chaque
    case est proportionnelle au format : toutes les images ont donc la même
@@ -53,7 +108,7 @@
   align-items: flex-start;
   gap: 1.25rem;
   list-style: none;
-  padding-block: clamp(1.25rem, 2vw, 1.75rem) clamp(2.5rem, 5vw, 4rem);
+  padding-block: 0 clamp(1.75rem, 3vw, 2.5rem);
 }
 .home-hero__proofs li { flex: var(--ratio) 1 0; min-width: 0; }
 .proof--belavi    { --ratio: 0.5; }     /* 600 × 1200 */
@@ -198,6 +253,11 @@
   .home-hero__top { padding-top: 1.5rem; }
   .home-hero .eyebrow { margin-bottom: 0.875rem; }
   .home-hero h1 { font-size: clamp(2.125rem, 3.4vw + 0.4rem, 3.5rem); margin-bottom: 1rem; }
-  .home-hero__proofs { padding-top: 1rem; }
-  .hero-proof__txt { padding-top: 0.5rem; }
+  .home-offres { padding-top: 1rem; }
+}
+/* Très petits écrans : le prix repasse sous le nom, faute de place à droite */
+@media (max-width: 360px) {
+  .offre { grid-template-columns: minmax(0, 1fr); }
+  .offre__prix { grid-column: 1; grid-row: auto; text-align: left; margin-top: 0.25rem; }
+  .offre__prix strong { display: inline; }
 }
