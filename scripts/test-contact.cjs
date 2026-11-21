@@ -54,7 +54,7 @@ function fixture(search = '') {
   invalid.valid(); invalid.nodes.get('email').value = 'incomplete';
   await invalid.send(); assert.equal(invalid.calls, 0); assert.equal(invalid.focus, 'email');
 
-  for (const query of ['marque', 'contenus', 'site', 'plateforme', 'automatisation']) {
+  for (const query of ['marque', 'contenus', 'site', 'plateforme', 'automatisation', 'diagnostic']) {
     assert.notEqual(fixture('?projet=' + query).nodes.get('need').value, '');
   }
   assert.equal(fixture('?projet=%3Cscript%3E').nodes.get('need').value, '');

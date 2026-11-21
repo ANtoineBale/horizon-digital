@@ -25,12 +25,12 @@
 
   <link rel="preload" href="assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/design-system.css?v=20261121f">
-  <link rel="stylesheet" href="assets/css/components.css?v=20261121f">
-  <link rel="stylesheet" href="assets/css/pages/inner.css?v=20261121f">
-  <link rel="stylesheet" href="assets/css/theme-nuit.css?v=20261121f" id="theme-nuit">
-  <link rel="stylesheet" href="assets/css/theme-clair.css?v=20261121f">
-  <script src="assets/js/theme.js?v=20261121f"></script>
+  <link rel="stylesheet" href="assets/css/design-system.css?v=20261121g">
+  <link rel="stylesheet" href="assets/css/components.css?v=20261121g">
+  <link rel="stylesheet" href="assets/css/pages/inner.css?v=20261121g">
+  <link rel="stylesheet" href="assets/css/theme-nuit.css?v=20261121g" id="theme-nuit">
+  <link rel="stylesheet" href="assets/css/theme-clair.css?v=20261121g">
+  <script src="assets/js/theme.js?v=20261121g"></script>
   <noscript><style>
     .header { position: relative; height: auto; background: var(--nuit); }
     .header__inner { flex-wrap: wrap; padding-block: 1rem; height: auto; }
@@ -104,6 +104,10 @@
           <p class="contact__intro">Je vous réponds sous <strong>48 h ouvrées</strong>. Vous pouvez aussi m’écrire à <a href="mailto:antoinebalesi@gmail.com">antoinebalesi@gmail.com</a>. Seuls le nom, l’e-mail et le message sont nécessaires.</p>
           <div id="form-status" class="form-status" hidden tabindex="-1"></div>
 
+          <!-- Rappel de l'offre choisie : rempli par contact.js quand on arrive depuis une offre
+               (?projet=…) ou quand on choisit un besoin dans la liste. Vide et masqué sinon. -->
+          <div id="offre-choisie" class="offre-choisie" hidden aria-live="polite"></div>
+
           <form id="contact-form" class="form" action="https://formspree.io/f/xrperpyo" method="POST">
 
             <!-- Objet de l'e-mail reçu + piège à robots (champ invisible, rempli uniquement par les spams) -->
@@ -134,6 +138,7 @@
                 <option value="Création ou refonte d’un site web">Site web</option>
                 <option value="Création d’une plateforme web — suite au projet Belavi">Plateforme web (Belavi)</option>
                 <option value="IA et automatisation">IA et automatisation</option>
+                <option value="Diagnostic IA — 390 €">Diagnostic IA (390 €)</option>
               </select>
             </div>
 
@@ -289,7 +294,7 @@
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=20261121f" defer></script>
-<script src="assets/js/contact.js?v=20261121f" defer></script>
+<script src="assets/js/main.js?v=20261121g" defer></script>
+<script src="assets/js/contact.js?v=20261121g" defer></script>
 </body>
 </html>

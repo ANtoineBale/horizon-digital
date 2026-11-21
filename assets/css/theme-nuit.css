@@ -237,3 +237,6 @@ form ::placeholder { color: rgba(182, 187, 208, 0.75); }
 
 /* ---------- 18. Offres du héros ---------- */
 .offre__prix strong { color: #fff; }
+
+/* ---------- 19. Rappel de l'offre choisie (page Contact) ---------- */
+.offre-choisie { background: linear-gradient(180deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.02)); }

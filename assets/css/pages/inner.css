@@ -896,3 +896,24 @@
   .tarif { grid-template-columns: 1fr; }
   .tarif__prix { grid-column: 1; grid-row: auto; text-align: left; }
 }
+
+/* ============================================================
+   PARCOURS D'ACHAT
+   ============================================================ */
+/* Offre 04 : deux boutons (le diagnostic à prix fixe, puis l'offre complète) */
+.offer2__actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+@media (max-width: 540px) { .offer2__actions, .offer2__actions .btn { width: 100%; } }
+
+/* Page Contact : rappel de l'offre choisie, au-dessus du formulaire */
+.offre-choisie {
+  margin-bottom: 1.5rem;
+  padding: 1.125rem 1.25rem;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--cobalt);
+  border-radius: var(--r-md);
+}
+.offre-choisie__label { font-size: var(--fs-eyebrow); font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cobalt); }
+.offre-choisie__titre { margin-top: 0.375rem; font-family: var(--font-display); font-size: 1.375rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1.15; color: var(--encre); }
+.offre-choisie__prix { margin-top: 0.125rem; font-size: var(--fs-sm); font-weight: 600; color: var(--encre); }
+.offre-choisie__note { margin-top: 0.625rem; font-size: var(--fs-sm); color: var(--ardoise); }
