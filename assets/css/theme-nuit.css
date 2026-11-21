@@ -226,3 +226,6 @@ form input:not([type="checkbox"]):not([type="radio"]), form select, form textare
 }
 form select option { background: #10142B; color: var(--encre); }
 form ::placeholder { color: rgba(182, 187, 208, 0.75); }
+
+/* ---------- 16. Bordure lumineuse : couleurs plus claires sur fond sombre ---------- */
+:root { --lueur-1: #A9BBFF; --lueur-2: #8B6CFF; --lueur-3: #4FD8FF; }

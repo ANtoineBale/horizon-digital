@@ -675,6 +675,51 @@
 }
 
 /* ============================================================
+   BORDURE LUMINEUSE — un dégradé tournant qui suit le contour
+   Deux usages :
+   · au survol ou au focus clavier, sur les cartes et les panneaux ;
+   · sur les trois blocs mis en avant (.vedette et l'appel final), où elle
+     est visible en permanence et fait un seul tour à l'entrée dans la
+     fenêtre.
+   Elle ne tourne en continu que pendant le survol : aucune animation sans
+   fin ne démarre toute seule. Le mouvement réduit la fige (règle globale).
+   ============================================================ */
+@property --lueur-angle { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
+@keyframes lueur-tourne { to { --lueur-angle: 360deg; } }
+
+:root { --lueur-1: #2F55FF; --lueur-2: #7C5CFF; --lueur-3: #22B8E6; }
+
+:is(.tools__col, .offer2__bar) { position: relative; }
+:is(.card, .tools__col, .offer2__bar, .contact__aside)::before,
+.cta__lueur {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1.5px;
+  border-radius: inherit;
+  pointer-events: none;
+  background: conic-gradient(from var(--lueur-angle), var(--lueur-1), var(--lueur-2), var(--lueur-3), var(--lueur-1));
+  /* On ne garde que l'anneau : le centre est découpé */
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: 0;
+  transition: opacity 0.35s;
+}
+/* Survol ou focus clavier : la bordure s'allume et tourne tant qu'on y reste */
+:is(.card, .tools__col, .offer2__bar, .contact__aside):is(:hover, :focus-within)::before,
+.cta:is(:hover, :focus-within) .cta__lueur {
+  opacity: 1;
+  animation: lueur-tourne 4s linear infinite;
+}
+/* Blocs mis en avant : la bordure reste visible, et fait un tour à l'arrivée */
+.vedette::before, .cta__lueur { opacity: 0.85; }
+.vedette.is-armed.is-inview::before,
+.cta.is-armed.is-inview .cta__lueur { animation: lueur-tourne 4s linear 1; }
+.vedette.is-armed.is-inview:is(:hover, :focus-within)::before,
+.cta.is-armed.is-inview:is(:hover, :focus-within) .cta__lueur { animation: lueur-tourne 4s linear infinite; }
+
+/* ============================================================
    BOUTON DE THÈME — clair / sombre (ajouté par main.js)
    Le soleil propose le thème clair, la lune le retour au sombre.
    ============================================================ */

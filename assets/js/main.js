@@ -176,7 +176,7 @@
 (() => {
   if (!('IntersectionObserver' in window)) return;
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const items = document.querySelectorAll('.offer2__shots, .project__shot, .belavi-editor img, .cta');
+  const items = document.querySelectorAll('.offer2__shots, .project__shot, .belavi-editor img, .cta, .vedette');
   if (!items.length) return;
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
