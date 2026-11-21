@@ -292,6 +292,9 @@
 .offer2__meta { display: flex; flex-wrap: wrap; gap: 0.75rem 2.5rem; }
 .offer2__meta dt { font-size: var(--fs-xs); color: var(--ardoise); }
 .offer2__meta dd { font-size: var(--fs-sm); font-weight: 600; color: var(--encre); }
+/* Le prix : premier repère de la barre, chiffre mis en avant */
+.offer2__prix dd { font-weight: 500; color: var(--ardoise); }
+.offer2__prix strong { font-family: var(--font-display); font-size: 1.25rem; font-weight: 600; letter-spacing: -0.02em; color: var(--cobalt); white-space: nowrap; }
 
 /* Preuve à droite, une offre sur deux */
 @media (min-width: 941px) {
@@ -837,3 +840,59 @@
 .offer2__shot--stand { object-position: center 35%; filter: contrast(1.06) saturate(1.12); }
 @media (max-width: 940px) { .offer2__shots--stand { aspect-ratio: 4 / 5; max-width: 520px; } }
 @media (max-width: 540px) { .offer2__shots.offer2__shots--stand { aspect-ratio: 1; } }
+
+/* ============================================================
+   TARIFS — récapitulatif des quatre prix de départ (page Expertises)
+   Une ligne par offre : nom, ce qui est inclus, prix, lien vers l'offre.
+   ============================================================ */
+.tarifs {
+  list-style: none;
+  padding: 0;
+  max-width: 980px;
+  margin-inline: auto;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.tarif {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.5fr) auto auto;
+  align-items: center;
+  gap: 0.5rem 2rem;
+  padding: 1.25rem 1.5rem;
+  transition: background-color 0.25s;
+}
+.tarif + .tarif { border-top: 1px solid var(--line); }
+.tarif:hover { background: var(--nuage); }
+.tarif__offre { display: flex; align-items: baseline; gap: 0.75rem; }
+.tarif__num { font-family: var(--font-display); font-size: var(--fs-sm); font-weight: 600; color: var(--cobalt); }
+.tarif h3 { font-size: 1.125rem; }
+.tarif__inclus { font-size: var(--fs-sm); color: var(--ardoise); }
+.tarif__prix { font-size: var(--fs-sm); color: var(--ardoise); text-align: right; white-space: nowrap; }
+.tarif__prix strong { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; letter-spacing: -0.03em; color: var(--encre); }
+.tarif .link-arrow { white-space: nowrap; }
+.tarifs__notes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem clamp(2rem, 5vw, 4rem);
+  max-width: 980px;
+  margin: clamp(2rem, 4vw, 3rem) auto 0;
+}
+.tarifs__notes h3 { font-size: 1.125rem; margin-bottom: 0.875rem; }
+.tarifs__notes p { font-size: var(--fs-sm); color: var(--ardoise); }
+.tarifs__notes .ticks { font-size: var(--fs-sm); }
+.tarifs__notes .tarifs__tva { margin-top: 0.875rem; font-size: var(--fs-xs); }
+.tarifs__action { margin-top: clamp(2rem, 4vw, 3rem); }
+@media (max-width: 860px) {
+  .tarif { grid-template-columns: 1fr auto; gap: 0.25rem 1rem; padding: 1rem 1.125rem 0.5rem; }
+  .tarif__offre { grid-column: 1; }
+  .tarif__prix { grid-column: 2; grid-row: 1; }
+  .tarif__inclus { grid-column: 1 / -1; }
+  .tarif .link-arrow { grid-column: 1 / -1; justify-self: start; }
+  .tarifs__notes { grid-template-columns: 1fr; }
+}
+@media (max-width: 350px) {
+  .tarif { grid-template-columns: 1fr; }
+  .tarif__prix { grid-column: 1; grid-row: auto; text-align: left; }
+}

@@ -154,3 +154,6 @@
 /* ---------- 12. Outils ---------- */
 [data-theme="clair"] .tools__col { background: #fff; box-shadow: 0 18px 40px -30px rgba(20, 30, 80, 0.35); }
 [data-theme="clair"] .tools__col:hover { border-color: rgba(47, 85, 255, 0.55); box-shadow: 0 28px 56px -28px var(--glow); }
+
+/* ---------- 13. Tarifs ---------- */
+[data-theme="clair"] .tarifs { background: #fff; box-shadow: 0 18px 40px -30px rgba(20, 30, 80, 0.35); }
